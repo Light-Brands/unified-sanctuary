@@ -12,18 +12,18 @@
 
   <style>
     :root {
-      --color-forest-floor: #2D3A2E;
-      --color-living-green: #5C7C5E;
-      --color-rich-earth: #8B7355;
-      --color-cream-canvas: #F5F0E8;
-      --color-charcoal-root: #1A1A1A;
-      --color-sage-mist: #6B8E7A;
-      --color-sand-path: #C9B896;
-      --color-deep-moss: #4A5D4A;
-      --color-farm-soil-umber: #704214;
-      --color-retreat-mineral-spring: #7BA3A8;
-      --color-venue-ember-glow: #C65D3B;
-      --color-community-hearth-clay: #B5651D;
+      --color-forest-floor: #1F2D20;
+      --color-living-green: #4A7050;
+      --color-rich-earth: #7A5F42;
+      --color-cream-canvas: #FAF7F0;
+      --color-charcoal-root: #0D0D0D;
+      --color-sage-mist: #5A7D68;
+      --color-sand-path: #D4C49A;
+      --color-deep-moss: #3A4D3C;
+      --color-farm-soil-umber: #5A360E;
+      --color-retreat-mineral-spring: #4E9099;
+      --color-venue-ember-glow: #D4482A;
+      --color-community-hearth-clay: #C45A15;
     }
 
     *, *::before, *::after {
@@ -74,15 +74,16 @@
       padding: 0.75rem 1.25rem;
       background: white;
       border-radius: 4px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
       font-size: 0.85rem;
       font-weight: 500;
       color: var(--color-forest-floor);
-      transition: box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .back-link:hover {
-      box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 35px rgba(0,0,0,0.18);
+      transform: translateY(-2px);
     }
 
     .back-link svg {
@@ -201,12 +202,14 @@
       text-transform: uppercase;
       color: var(--color-forest-floor);
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--color-forest-floor);
-      transition: gap 0.3s ease;
+      border-bottom: 3px solid var(--color-forest-floor);
+      transition: all 0.3s ease;
     }
 
     .hero-cta:hover {
       gap: 1.5rem;
+      color: var(--color-deep-moss);
+      border-bottom-color: var(--color-rich-earth);
     }
 
     .hero-cta svg {
@@ -335,11 +338,14 @@
       background: white;
       padding: 3rem 2rem;
       text-align: center;
-      transition: background 0.4s ease;
+      transition: all 0.4s ease;
+      position: relative;
     }
 
     .platform-card:hover {
       background: var(--color-cream-canvas);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     }
 
     .platform-number {
@@ -366,8 +372,13 @@
 
     .platform-accent {
       width: 40px;
-      height: 3px;
+      height: 4px;
       margin: 0 auto;
+      transition: width 0.3s ease;
+    }
+
+    .platform-card:hover .platform-accent {
+      width: 60px;
     }
 
     .platform-card--farm .platform-accent { background: var(--color-farm-soil-umber); }
@@ -408,7 +419,13 @@
 
     .value-item {
       padding-left: 1.5rem;
-      border-left: 2px solid var(--color-sage-mist);
+      border-left: 3px solid var(--color-sage-mist);
+      transition: all 0.3s ease;
+    }
+
+    .value-item:hover {
+      border-left-color: var(--color-rich-earth);
+      transform: translateX(5px);
     }
 
     .value-item h4 {
@@ -421,7 +438,7 @@
 
     .value-item p {
       font-size: 0.95rem;
-      color: #666;
+      color: #555;
       margin: 0;
       line-height: 1.6;
     }
@@ -536,19 +553,22 @@
       font-weight: 600;
       font-size: 0.9rem;
       letter-spacing: 0.05em;
-      transition: background 0.3s ease;
+      box-shadow: 0 6px 25px rgba(31, 45, 32, 0.25);
+      transition: all 0.3s ease;
     }
 
     .btn-primary:hover {
       background: var(--color-charcoal-root);
       color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(31, 45, 32, 0.35);
     }
 
     .btn-secondary {
       padding: 1.25rem 2.5rem;
       background: transparent;
       color: var(--color-forest-floor);
-      border: 1px solid var(--color-forest-floor);
+      border: 2px solid var(--color-forest-floor);
       font-weight: 600;
       font-size: 0.9rem;
       letter-spacing: 0.05em;
@@ -558,6 +578,8 @@
     .btn-secondary:hover {
       background: var(--color-forest-floor);
       color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(31, 45, 32, 0.25);
     }
 
     /* Newsletter Section */

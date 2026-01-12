@@ -12,19 +12,19 @@
 
   <style>
     :root {
-      --color-slate-dark: #2C3E50;
-      --color-slate-medium: #4A5568;
-      --color-slate-light: #718096;
-      --color-granite: #6B7280;
-      --color-stone-cream: #F7F5F2;
+      --color-slate-dark: #1E2D3D;
+      --color-slate-medium: #3A4A5C;
+      --color-slate-light: #5A6E82;
+      --color-granite: #5A6570;
+      --color-stone-cream: #FAF8F5;
       --color-stone-warm: #E8E4DE;
-      --color-charcoal: #1A202C;
-      --color-accent-copper: #B87333;
-      --color-accent-moss: #6B8E7A;
-      --color-farm-soil-umber: #704214;
-      --color-retreat-mineral-spring: #7BA3A8;
-      --color-venue-ember-glow: #C65D3B;
-      --color-community-hearth-clay: #B5651D;
+      --color-charcoal: #0F1520;
+      --color-accent-copper: #C47D3B;
+      --color-accent-moss: #5A8268;
+      --color-farm-soil-umber: #5A360E;
+      --color-retreat-mineral-spring: #4A9199;
+      --color-venue-ember-glow: #D64527;
+      --color-community-hearth-clay: #C45A15;
     }
 
     *, *::before, *::after {
@@ -75,15 +75,16 @@
       padding: 0.75rem 1.25rem;
       background: white;
       border-radius: 4px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
       font-size: 0.85rem;
       font-weight: 500;
       color: var(--color-slate-dark);
-      transition: box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .back-link:hover {
-      box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 35px rgba(0,0,0,0.18);
+      transform: translateY(-2px);
     }
 
     .back-link svg {
@@ -379,6 +380,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
@@ -388,12 +390,12 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 5px;
     }
 
     .platform-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
     }
 
     .platform-card--farm::before { background: var(--color-farm-soil-umber); }
@@ -605,19 +607,22 @@
       font-weight: 600;
       font-size: 0.9rem;
       letter-spacing: 0.05em;
-      transition: background 0.3s ease;
+      box-shadow: 0 6px 25px rgba(30, 45, 61, 0.3);
+      transition: all 0.3s ease;
     }
 
     .btn-primary:hover {
       background: var(--color-charcoal);
       color: white;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(30, 45, 61, 0.45);
     }
 
     .btn-secondary {
       padding: 1.25rem 2.5rem;
       background: transparent;
       color: var(--color-slate-dark);
-      border: 1px solid var(--color-slate-dark);
+      border: 2px solid var(--color-slate-dark);
       font-weight: 600;
       font-size: 0.9rem;
       letter-spacing: 0.05em;
@@ -627,6 +632,8 @@
     .btn-secondary:hover {
       background: var(--color-slate-dark);
       color: white;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(30, 45, 61, 0.3);
     }
 
     /* Newsletter Section */
