@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Sanctuaries | Living Clay</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Terracotta & Clay - warm living earth */
+      --color-terracotta: #C67B5C;
+      --color-terracotta-deep: #A65D3F;
+      --color-clay: #D4A574;
+      --color-clay-light: #E8D4BC;
+      --color-earth-dark: #5D4037;
+      --color-adobe: #B87356;
+
+      /* Mycelial earth greens */
+      --color-mycelium: #6B8E7A;
+      --color-living-green: #5C7C5E;
+      --color-forest-floor: #2D3A2E;
+      --color-sage: #7D9878;
+
+      /* Warm neutrals */
+      --color-cream: #FDF8F3;
+      --color-warm-white: #FFFBF7;
+      --color-soft-sand: #F5EDE3;
+      --color-charcoal: #2D2926;
+
+      /* Platform colors */
+      --color-farm-soil-umber: #704214;
+      --color-retreat-mineral-spring: #7BA3A8;
+      --color-venue-ember-glow: #C65D3B;
+      --color-community-hearth-clay: #B5651D;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', -apple-system, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-charcoal);
+      background-color: var(--color-cream);
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--color-earth-dark);
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+      max-width: 60ch;
+    }
+
+    a {
+      color: var(--color-terracotta);
+      text-decoration: none;
+    }
+
+    /* Back Link */
+    .back-link {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--color-warm-white);
+      border-radius: 24px;
+      box-shadow: 0 2px 20px rgba(93, 64, 55, 0.1);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-earth-dark);
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      box-shadow: 0 4px 30px rgba(93, 64, 55, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 4rem;
+      background: var(--color-cream);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--color-earth-dark);
+    }
+
+    .nav-logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-charcoal);
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-terracotta), var(--color-mycelium));
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(145deg, var(--color-earth-dark) 0%, var(--color-terracotta-deep) 50%, var(--color-forest-floor) 100%);
+    }
+
+    /* Mycelial Network Background */
+    .mycelial-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .mycelial-bg svg {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -25%;
+      left: -25%;
+      animation: networkFloat 35s ease-in-out infinite;
+    }
+
+    @keyframes networkFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(1%, 2%) rotate(0.5deg); }
+      66% { transform: translate(-1%, 1%) rotate(-0.3deg); }
+    }
+
+    /* Organic clay shapes */
+    .clay-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+
+    .clay-shape-1 {
+      width: 600px;
+      height: 600px;
+      background: var(--color-terracotta);
+      top: -200px;
+      right: -150px;
+      opacity: 0.25;
+      animation: clayPulse 12s ease-in-out infinite;
+    }
+
+    .clay-shape-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--color-mycelium);
+      bottom: -100px;
+      left: -100px;
+      opacity: 0.2;
+      animation: clayPulse 12s ease-in-out infinite;
+      animation-delay: -4s;
+    }
+
+    .clay-shape-3 {
+      width: 350px;
+      height: 350px;
+      background: var(--color-clay);
+      top: 50%;
+      left: 40%;
+      opacity: 0.15;
+      animation: clayPulse 12s ease-in-out infinite;
+      animation-delay: -8s;
+    }
+
+    @keyframes clayPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 4rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      color: var(--color-cream);
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-clay);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--color-cream);
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-clay);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-earth-dark);
+      background: linear-gradient(135deg, var(--color-clay), var(--color-sage));
+      padding: 1.25rem 2rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(212, 165, 116, 0.4);
+      color: var(--color-earth-dark);
+    }
+
+    .hero-cta svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Hero Visual - Living Clay Vessel */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .living-vessel {
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+    }
+
+    .living-vessel svg {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Mycelial threads animation */
+    .mycelial-thread {
+      stroke-dasharray: 5, 3;
+      animation: threadGrow 3s ease-in-out infinite;
+    }
+
+    @keyframes threadGrow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -8; }
+    }
+
+    /* Network Circle Section */
+    .network-section {
+      padding: 10rem 4rem;
+      background: var(--color-cream);
+      position: relative;
+    }
+
+    .network-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 5rem;
+    }
+
+    .network-header h2 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .network-header p {
+      font-size: 1.15rem;
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+    }
+
+    .network-circle {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+
+    /* Central clay vessel */
+    .network-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 140px;
+      background: linear-gradient(145deg, var(--color-terracotta), var(--color-terracotta-deep));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 10px 40px rgba(166, 93, 63, 0.3);
+    }
+
+    .network-center-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--color-cream);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* Organic connection rings */
+    .network-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+
+    .ring-inner {
+      top: 28%;
+      left: 28%;
+      width: 44%;
+      height: 44%;
+      border-color: var(--color-clay-light);
+      border-style: dashed;
+    }
+
+    .ring-middle {
+      top: 15%;
+      left: 15%;
+      width: 70%;
+      height: 70%;
+      border-color: var(--color-mycelium);
+      opacity: 0.5;
+    }
+
+    .ring-outer {
+      top: 2%;
+      left: 2%;
+      width: 96%;
+      height: 96%;
+      border-color: var(--color-clay);
+      opacity: 0.3;
+    }
+
+    /* Platform nodes on the circle */
+    .network-node {
+      position: absolute;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .network-node-icon {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 8px 30px rgba(93, 64, 55, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .network-node:hover .network-node-icon {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(93, 64, 55, 0.25);
+    }
+
+    .network-node-icon svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .network-node-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-earth-dark);
+    }
+
+    .node-farm { top: 5%; left: 50%; }
+    .node-retreat { top: 50%; left: 95%; }
+    .node-venue { top: 95%; left: 50%; }
+    .node-community { top: 50%; left: 5%; }
+
+    /* Mycelial connection lines */
+    .network-connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .network-connections svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      padding: 8rem 4rem;
+      background: var(--color-soft-sand);
+    }
+
+    .mission-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .mission-text h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 2rem;
+    }
+
+    .mission-text p {
+      font-size: 1.15rem;
+      color: var(--color-earth-dark);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 2;
+    }
+
+    .mission-visual {
+      position: relative;
+    }
+
+    .clay-roots {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(165deg, var(--color-terracotta) 0%, var(--color-clay) 40%, var(--color-mycelium) 100%);
+      border-radius: 60% 40% 55% 45% / 55% 45% 50% 50%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .clay-roots::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      bottom: 10%;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 55% 45% 50% 50% / 50% 50% 45% 55%;
+    }
+
+    .clay-roots::after {
+      content: 'Rooted & growing';
+      position: absolute;
+      bottom: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: white;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+
+    /* Platforms Section */
+    .platforms-section {
+      padding: 6rem 4rem 10rem;
+      background: var(--color-cream);
+    }
+
+    .platforms-header {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .platforms-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      margin-bottom: 1rem;
+    }
+
+    .platforms-header p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .platform-card {
+      background: var(--color-warm-white);
+      padding: 2.5rem 2rem;
+      border-radius: 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 1px solid rgba(212, 165, 116, 0.15);
+    }
+
+    .platform-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(93, 64, 55, 0.12);
+    }
+
+    .platform-card--farm::before { background: linear-gradient(90deg, var(--color-farm-soil-umber), var(--color-mycelium)); }
+    .platform-card--retreat::before { background: linear-gradient(90deg, var(--color-retreat-mineral-spring), var(--color-clay)); }
+    .platform-card--venue::before { background: linear-gradient(90deg, var(--color-venue-ember-glow), var(--color-terracotta)); }
+    .platform-card--community::before { background: linear-gradient(90deg, var(--color-community-hearth-clay), var(--color-sage)); }
+
+    .platform-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .platform-card h3 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .platform-card p {
+      font-size: 0.9rem;
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 8rem 4rem;
+      background: linear-gradient(160deg, var(--color-earth-dark) 0%, var(--color-terracotta-deep) 100%);
+      color: var(--color-cream);
+    }
+
+    .values-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .values-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--color-cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .values-header p {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    .values-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .value-item {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border-left: 4px solid var(--color-clay);
+      transition: all 0.3s ease;
+    }
+
+    .value-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(8px);
+    }
+
+    .value-item h4 {
+      font-size: 1rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-clay);
+    }
+
+    .value-item p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Quote Section */
+    .quote-section {
+      padding: 8rem 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-mycelium) 100%);
+      position: relative;
+    }
+
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='2' fill='rgba(255,255,255,0.1)'/%3E%3Cpath d='M30 30 L45 15 M30 30 L15 45 M30 30 L50 35 M30 30 L10 25' stroke='rgba(255,255,255,0.05)' stroke-width='0.5'/%3E%3C/svg%3E") repeat;
+      background-size: 60px;
+    }
+
+    .quote-section blockquote {
+      position: relative;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-cream);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    .quote-section cite {
+      position: relative;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.85rem;
+      color: var(--color-clay-light);
+      font-style: normal;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 8rem 4rem;
+      text-align: center;
+      background: var(--color-warm-white);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0 auto 3rem;
+      font-size: 1.15rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 1.25rem 2.5rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-mycelium));
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(166, 93, 63, 0.35);
+      color: white;
+    }
+
+    .btn-secondary {
+      padding: 1.25rem 2.5rem;
+      background: transparent;
+      color: var(--color-terracotta);
+      border: 2px solid var(--color-terracotta);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-terracotta);
+      color: white;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      padding: 5rem 4rem;
+      background: var(--color-cream);
+      border-top: 1px solid var(--color-clay-light);
+    }
+
+    .newsletter-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 3rem;
+    }
+
+    .newsletter-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-text p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form input {
+      padding: 1rem 1.5rem;
+      border: 2px solid var(--color-clay-light);
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      width: 280px;
+      background: white;
+    }
+
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: var(--color-terracotta);
+    }
+
+    .newsletter-form button {
+      padding: 1rem 1.5rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-mycelium));
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(166, 93, 63, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(160deg, var(--color-earth-dark) 0%, var(--color-forest-floor) 100%);
+      color: var(--color-cream);
+      padding: 5rem 4rem 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .footer-brand p {
+      opacity: 0.7;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--color-clay);
+      opacity: 0.8;
+      font-size: 0.95rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .hero-cta {
+        margin: 0 auto;
+      }
+
+      .living-vessel {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .network-circle {
+        max-width: 500px;
+      }
+
+      .network-node-icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .network-node-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .mission-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .mission-visual {
+        order: -1;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        padding: 1.5rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .network-circle {
+        max-width: 350px;
+      }
+
+      .network-center {
+        width: 100px;
+        height: 100px;
+      }
+
+      .network-center-text {
+        font-size: 0.9rem;
+      }
+
+      .network-node-icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      .network-node-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .network-node-label {
+        font-size: 0.75rem;
+      }
+
+      .platforms-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-list {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .newsletter-form input {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .back-link {
+        top: 1rem;
+        left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Selection -->
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    All Designs
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1" fill="none"/>
+        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+        <circle cx="20" cy="8" r="3.5" fill="#704214"/>
+        <circle cx="8" cy="20" r="3.5" fill="#7BA3A8"/>
+        <circle cx="32" cy="20" r="3.5" fill="#C65D3B"/>
+        <circle cx="20" cy="32" r="3.5" fill="#B5651D"/>
+        <path d="M20 11.5 L20 17 M11.5 20 L17 20 M20 28.5 L20 23 M28.5 20 L23 20" stroke="currentColor" stroke-width="0.75"/>
+      </svg>
+      <span class="nav-logo-text">Unified Sanctuaries</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link">Vision</a></li>
+      <li><a href="#" class="nav-link">Governance</a></li>
+      <li><a href="#" class="nav-link">Get Involved</a></li>
+      <li><a href="#" class="nav-link">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <!-- Mycelial Network Background -->
+    <div class="mycelial-bg">
+      <svg viewBox="0 0 1000 1000" fill="none">
+        <g stroke="rgba(212, 165, 116, 0.35)" stroke-width="1.5">
+          <path d="M100,500 Q250,420 400,500 T700,460 T950,500" class="mycelial-thread"/>
+          <path d="M50,320 Q200,370 350,320 T650,370 T900,320" class="mycelial-thread"/>
+          <path d="M150,680 Q300,640 450,680 T750,640 T950,680" class="mycelial-thread"/>
+          <path d="M500,100 Q460,250 500,400 T460,700 T500,900" class="mycelial-thread"/>
+          <path d="M300,150 Q340,300 300,450 T340,700 T300,850" class="mycelial-thread"/>
+          <path d="M700,150 Q660,300 700,450 T660,700 T700,850" class="mycelial-thread"/>
+        </g>
+        <!-- Node points -->
+        <circle cx="200" cy="320" r="8" fill="rgba(107, 142, 122, 0.5)"/>
+        <circle cx="500" cy="200" r="10" fill="rgba(212, 165, 116, 0.5)"/>
+        <circle cx="800" cy="370" r="8" fill="rgba(107, 142, 122, 0.5)"/>
+        <circle cx="150" cy="600" r="7" fill="rgba(212, 165, 116, 0.5)"/>
+        <circle cx="850" cy="640" r="9" fill="rgba(107, 142, 122, 0.5)"/>
+        <circle cx="500" cy="800" r="10" fill="rgba(212, 165, 116, 0.5)"/>
+      </svg>
+    </div>
+
+    <!-- Organic clay shapes -->
+    <div class="clay-shape clay-shape-1"></div>
+    <div class="clay-shape clay-shape-2"></div>
+    <div class="clay-shape clay-shape-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-label">Southern Vermont</p>
+        <h1 class="hero-title">Where <em>Living Clay</em> Takes Root</h1>
+        <p class="hero-subtitle">Like clay that remembers every touch and mycelium that never forgets a connection, our community grows through relationship. The earth shapes us as we shape it.</p>
+        <a href="#" class="hero-cta">
+          Begin Growing
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="living-vessel">
+          <svg viewBox="0 0 300 400" fill="none">
+            <defs>
+              <linearGradient id="livingClayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D4A574"/>
+                <stop offset="45%" stop-color="#C67B5C"/>
+                <stop offset="100%" stop-color="#6B8E7A"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Mycelial roots extending from vessel -->
+            <g stroke="#6B8E7A" stroke-width="2" opacity="0.6">
+              <path d="M80 300 Q60 340 40 380" class="mycelial-thread"/>
+              <path d="M100 310 Q85 350 70 400" class="mycelial-thread"/>
+              <path d="M220 300 Q240 340 260 380" class="mycelial-thread"/>
+              <path d="M200 310 Q215 350 230 400" class="mycelial-thread"/>
+              <path d="M150 320 Q150 360 150 400" class="mycelial-thread"/>
+              <path d="M120 315 Q100 370 90 400" class="mycelial-thread"/>
+              <path d="M180 315 Q200 370 210 400" class="mycelial-thread"/>
+            </g>
+
+            <!-- Root nodes -->
+            <circle cx="40" cy="380" r="5" fill="#6B8E7A" opacity="0.7"/>
+            <circle cx="70" cy="395" r="4" fill="#6B8E7A" opacity="0.6"/>
+            <circle cx="260" cy="380" r="5" fill="#6B8E7A" opacity="0.7"/>
+            <circle cx="230" cy="395" r="4" fill="#6B8E7A" opacity="0.6"/>
+            <circle cx="150" cy="395" r="6" fill="#6B8E7A" opacity="0.8"/>
+            <circle cx="90" cy="395" r="4" fill="#6B8E7A" opacity="0.6"/>
+            <circle cx="210" cy="395" r="4" fill="#6B8E7A" opacity="0.6"/>
+
+            <!-- Vessel body -->
+            <path d="M75 100 Q50 150 60 220 Q70 290 150 310 Q230 290 240 220 Q250 150 225 100 Q200 60 150 50 Q100 60 75 100 Z"
+                  fill="url(#livingClayGrad)" />
+
+            <!-- Vessel rim -->
+            <ellipse cx="150" cy="55" rx="75" ry="15" fill="#A65D3F"/>
+            <ellipse cx="150" cy="55" rx="60" ry="10" fill="#5D4037"/>
+
+            <!-- Decorative bands -->
+            <path d="M65 150 Q150 140 235 150" stroke="#E8D4BC" stroke-width="2.5" fill="none" opacity="0.5"/>
+            <path d="M60 200 Q150 190 240 200" stroke="#E8D4BC" stroke-width="2" fill="none" opacity="0.4"/>
+            <path d="M70 250 Q150 240 230 250" stroke="#E8D4BC" stroke-width="1.5" fill="none" opacity="0.3"/>
+
+            <!-- Highlight -->
+            <path d="M95 115 Q100 175 105 250" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.12"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Network Circle Section -->
+  <section class="network-section">
+    <header class="network-header">
+      <h2>Four Roots, One Living System</h2>
+      <p>Connected through invisible threads, each platform nourishes the whole</p>
+    </header>
+
+    <div class="network-circle">
+      <!-- Connection lines -->
+      <div class="network-connections">
+        <svg viewBox="0 0 100 100" fill="none">
+          <g stroke="url(#connectionGrad)" stroke-width="0.8" opacity="0.5">
+            <path d="M50 12 L50 42" class="mycelial-thread"/>
+            <path d="M88 50 L58 50" class="mycelial-thread"/>
+            <path d="M50 88 L50 58" class="mycelial-thread"/>
+            <path d="M12 50 L42 50" class="mycelial-thread"/>
+            <path d="M50 12 Q75 30 88 50" class="mycelial-thread"/>
+            <path d="M88 50 Q70 75 50 88" class="mycelial-thread"/>
+            <path d="M50 88 Q25 70 12 50" class="mycelial-thread"/>
+            <path d="M12 50 Q30 25 50 12" class="mycelial-thread"/>
+          </g>
+          <defs>
+            <linearGradient id="connectionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C67B5C"/>
+              <stop offset="100%" stop-color="#6B8E7A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- Rings -->
+      <div class="network-ring ring-outer"></div>
+      <div class="network-ring ring-middle"></div>
+      <div class="network-ring ring-inner"></div>
+
+      <!-- Center -->
+      <div class="network-center">
+        <div class="network-center-text">Unified<br>Living</div>
+      </div>
+
+      <!-- Platform nodes -->
+      <div class="network-node node-farm">
+        <div class="network-node-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M32 48 L32 24" stroke="#704214" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M32 36 Q24 32 20 24 Q24 28 32 32" fill="#5C7C5E"/>
+            <path d="M32 32 Q40 28 44 20 Q40 24 32 28" fill="#5C7C5E"/>
+            <circle cx="32" cy="12" r="4" fill="#5C7C5E"/>
+          </svg>
+        </div>
+        <div class="network-node-label">Farm</div>
+      </div>
+
+      <div class="network-node node-retreat">
+        <div class="network-node-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M32 8 Q44 24 44 34 Q44 44 32 44 Q20 44 20 34 Q20 24 32 8 Z" fill="#7BA3A8"/>
+            <ellipse cx="32" cy="44" rx="12" ry="4" fill="none" stroke="#7BA3A8" stroke-width="2" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="network-node-label">Retreat</div>
+      </div>
+
+      <div class="network-node node-venue">
+        <div class="network-node-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M32 14 Q40 26 38 34 Q36 40 32 42 Q28 40 26 34 Q24 26 32 14" fill="#C65D3B"/>
+            <path d="M16 44 Q16 52 24 54 L40 54 Q48 52 48 44" fill="none" stroke="#8B7355" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="network-node-label">Venue</div>
+      </div>
+
+      <div class="network-node node-community">
+        <div class="network-node-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M32 18 L42 28 L42 44 L22 44 L22 28 Z" fill="#B5651D"/>
+            <rect x="29" y="34" width="6" height="10" fill="#704214"/>
+            <path d="M14 30 L20 24 L26 30 L26 44 L14 44 Z" fill="#B5651D" opacity="0.7"/>
+            <path d="M38 30 L44 24 L50 30 L50 44 L38 44 Z" fill="#B5651D" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="network-node-label">Community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="mission-content">
+      <div class="mission-text">
+        <h2>Where Land and People Heal Together</h2>
+        <p>Unified Sanctuaries is a regenerative, land-based community committed to solving for each other's basic needs of food, housing, and community within a supportive, earth-friendly environment.</p>
+        <p>Like clay that holds the imprint of every hand and mycelium that connects every root, we remember every relationship. Each connection makes us stronger, more resilient, more alive.</p>
+      </div>
+      <div class="mission-visual">
+        <div class="clay-roots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms Section -->
+  <section class="platforms-section">
+    <header class="platforms-header">
+      <h2>The Four Platforms</h2>
+      <p>Four pillars, one interconnected living system</p>
+    </header>
+
+    <div class="platforms-grid">
+      <article class="platform-card platform-card--farm">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 48 L32 24" stroke="#704214" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M32 36 Q24 32 20 24 Q24 28 32 32" fill="#5C7C5E"/>
+          <path d="M32 32 Q40 28 44 20 Q40 24 32 28" fill="#5C7C5E"/>
+          <circle cx="32" cy="12" r="4" fill="#5C7C5E"/>
+          <circle cx="28" cy="16" r="2.5" fill="#6B8E7A"/>
+          <circle cx="36" cy="16" r="2.5" fill="#6B8E7A"/>
+        </svg>
+        <h3>Permaculture Farm</h3>
+        <p>Regenerative agriculture, food sovereignty, hands-on learning.</p>
+      </article>
+
+      <article class="platform-card platform-card--retreat">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <ellipse cx="32" cy="46" rx="14" ry="4" fill="none" stroke="#7BA3A8" stroke-width="2" opacity="0.6"/>
+          <path d="M32 8 Q44 24 44 34 Q44 44 32 44 Q20 44 20 34 Q20 24 32 8 Z" fill="#7BA3A8"/>
+          <path d="M26 28 Q28 22 32 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <h3>Retreat & Healing</h3>
+        <p>Immersive wellness, somatic healing, sanctuary.</p>
+      </article>
+
+      <article class="platform-card platform-card--venue">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M16 44 Q16 52 24 54 L40 54 Q48 52 48 44" fill="none" stroke="#8B7355" stroke-width="2.5"/>
+          <path d="M32 14 Q40 26 38 34 Q36 40 32 42 Q28 40 26 34 Q24 26 32 14" fill="#C65D3B"/>
+          <path d="M32 22 Q36 30 34 36" fill="#E8A84C" opacity="0.6"/>
+        </svg>
+        <h3>Event Venue</h3>
+        <p>Festivals, gatherings, markets, celebrations.</p>
+      </article>
+
+      <article class="platform-card platform-card--community">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 18 L42 28 L42 44 L22 44 L22 28 Z" fill="#B5651D"/>
+          <rect x="29" y="34" width="6" height="10" fill="#704214"/>
+          <path d="M14 30 L20 24 L26 30 L26 44 L14 44 Z" fill="#B5651D" opacity="0.7"/>
+          <path d="M38 30 L44 24 L50 30 L50 44 L38 44 Z" fill="#B5651D" opacity="0.7"/>
+        </svg>
+        <h3>Community Living</h3>
+        <p>20+ homes woven in shared purpose.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="values-content">
+      <div class="values-header">
+        <h2>Rooted in Values</h2>
+        <p>The principles that guide everything we grow and every decision we make together.</p>
+      </div>
+      <div class="values-list">
+        <div class="value-item">
+          <h4>Regeneration</h4>
+          <p>We actively heal rather than merely sustain. Every action leaves the land better.</p>
+        </div>
+        <div class="value-item">
+          <h4>Non-Speculative Stewardship</h4>
+          <p>Land is held in perpetual trust, removed from market speculation forever.</p>
+        </div>
+        <div class="value-item">
+          <h4>Equity Through Contribution</h4>
+          <p>Members earn ownership through participation, creating true skin in the game.</p>
+        </div>
+        <div class="value-item">
+          <h4>Participatory Governance</h4>
+          <p>Decisions flow from circles of consent, not hierarchy or majority rule.</p>
+        </div>
+        <div class="value-item">
+          <h4>Open-Source Sharing</h4>
+          <p>Our model becomes a blueprint others can adapt and replicate.</p>
+        </div>
+        <div class="value-item">
+          <h4>Indigenous Wisdom Honored</h4>
+          <p>We acknowledge Abenaki stewardship and commit to reciprocity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <blockquote>"We are the clay. We are the mycelium. We remember every touch, every connection. This is how we grow."</blockquote>
+    <cite>The Unified Sanctuaries Ethos</cite>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Take Root With Us</h2>
+    <p>Whether you're ready to grow or just curious to witness, there's a place for you in this living network.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">Get Involved</a>
+      <a href="#" class="btn-secondary">Support the Vision</a>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <div class="newsletter-text">
+        <h3>Stay Connected</h3>
+        <p>Monthly updates on our land search, gatherings, and journey ahead.</p>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-heading">Unified Sanctuaries</h4>
+        <p>A living blueprint for regenerative living & community resilience. Growing community from the ground up in Southern Vermont.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Vision</a></li>
+          <li><a href="#">Governance</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Participate</h4>
+        <ul class="footer-links">
+          <li><a href="#">Memberships</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Partner</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:unifiedsanctuaries@gmail.com">Email</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2026 Unified Sanctuaries</p>
+      <p>Where living clay takes root</p>
+    </div>
+  </footer>
+
+</body>
+</html>
