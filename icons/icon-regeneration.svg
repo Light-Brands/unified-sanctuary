@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Regeneration Over Extraction Icon - Circular growth/renewal cycle -->
+  <defs>
+    <linearGradient id="regenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5C7C5E"/>
+      <stop offset="100%" stop-color="#6B8E7A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular arrows representing cycle -->
+  <path d="M32 12 C44 12 52 22 52 32" stroke="#5C7C5E" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M52 32 C52 44 42 52 32 52" stroke="#6B8E7A" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M32 52 C20 52 12 42 12 32" stroke="#5C7C5E" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M12 32 C12 20 22 12 32 12" stroke="#6B8E7A" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Arrow heads -->
+  <path d="M48 14 L52 12 L50 18" stroke="#5C7C5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M50 48 L52 52 L46 50" stroke="#6B8E7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Central sprout/growth -->
+  <path d="M32 40 L32 28" stroke="#704214" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 32 Q26 28 24 22 Q28 26 32 28" fill="#5C7C5E"/>
+  <path d="M32 28 Q38 24 40 18 Q36 22 32 24" fill="#6B8E7A"/>
+  <circle cx="32" cy="20" r="3" fill="#5C7C5E"/>
+</svg>

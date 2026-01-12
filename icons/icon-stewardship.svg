@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Non-Speculative Stewardship Icon - House rooted in land -->
+  <defs>
+    <linearGradient id="stewardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B5651D"/>
+      <stop offset="100%" stop-color="#8B4513"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Earth/land base -->
+  <ellipse cx="32" cy="52" rx="24" ry="6" fill="#704214" opacity="0.3"/>
+
+  <!-- House structure -->
+  <path d="M32 14 L48 28 L48 46 L16 46 L16 28 Z" fill="url(#stewardGradient)"/>
+  <rect x="27" y="34" width="10" height="12" fill="#704214"/>
+  <rect x="19" y="30" width="6" height="6" fill="#F5F0E8" opacity="0.6"/>
+  <rect x="39" y="30" width="6" height="6" fill="#F5F0E8" opacity="0.6"/>
+
+  <!-- Roots extending from house into earth -->
+  <path d="M24 46 Q20 50 16 56" stroke="#704214" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 46 L32 58" stroke="#704214" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M40 46 Q44 50 48 56" stroke="#704214" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Small root branches -->
+  <path d="M18 54 Q16 56 12 58" stroke="#704214" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M46 54 Q48 56 52 58" stroke="#704214" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+</svg>

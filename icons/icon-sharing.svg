@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Open-Source Sharing Icon - Open book with flowing knowledge -->
+  <defs>
+    <linearGradient id="shareGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C7C5E"/>
+      <stop offset="100%" stop-color="#704214"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Book spine -->
+  <path d="M32 16 L32 52" stroke="#704214" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Left page -->
+  <path d="M32 18 Q22 16 12 20 L12 48 Q22 44 32 48" fill="#F5F0E8" stroke="#8B7355" stroke-width="2"/>
+
+  <!-- Right page -->
+  <path d="M32 18 Q42 16 52 20 L52 48 Q42 44 32 48" fill="#F5F0E8" stroke="#8B7355" stroke-width="2"/>
+
+  <!-- Text lines on left page -->
+  <path d="M16 26 L28 26" stroke="#C9B896" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M16 32 L26 32" stroke="#C9B896" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M16 38 L28 38" stroke="#C9B896" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Text lines on right page -->
+  <path d="M36 26 L48 26" stroke="#C9B896" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M38 32 L48 32" stroke="#C9B896" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M36 38 L48 38" stroke="#C9B896" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Flowing seeds/ideas from book -->
+  <circle cx="24" cy="10" r="3" fill="#5C7C5E" opacity="0.7"/>
+  <circle cx="32" cy="6" r="2.5" fill="#6B8E7A" opacity="0.8"/>
+  <circle cx="40" cy="10" r="3" fill="#5C7C5E" opacity="0.7"/>
+  <circle cx="18" cy="8" r="2" fill="#7BA3A8" opacity="0.6"/>
+  <circle cx="46" cy="8" r="2" fill="#7BA3A8" opacity="0.6"/>
+</svg>
