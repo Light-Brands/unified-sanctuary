@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Sanctuaries | Clay & Current</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Terracotta & Clay - warm foundation */
+      --color-terracotta: #C67B5C;
+      --color-terracotta-deep: #A65D3F;
+      --color-clay: #D4A574;
+      --color-clay-light: #E8D4BC;
+      --color-earth-dark: #5D4037;
+
+      /* River & Water - flowing accents */
+      --color-river-deep: #1E3A4C;
+      --color-river-blue: #3D6B7D;
+      --color-river-mist: #7BA3A8;
+
+      /* Neutrals */
+      --color-cream: #FDF8F3;
+      --color-warm-white: #FFFBF7;
+      --color-charcoal: #2D2926;
+
+      /* Platform colors */
+      --color-farm-soil-umber: #704214;
+      --color-retreat-mineral-spring: #7BA3A8;
+      --color-venue-ember-glow: #C65D3B;
+      --color-community-hearth-clay: #B5651D;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', -apple-system, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-charcoal);
+      background-color: var(--color-cream);
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--color-earth-dark);
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+      max-width: 60ch;
+    }
+
+    a {
+      color: var(--color-terracotta);
+      text-decoration: none;
+    }
+
+    /* Back Link */
+    .back-link {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--color-warm-white);
+      border-radius: 24px;
+      box-shadow: 0 2px 20px rgba(93, 64, 55, 0.1);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-earth-dark);
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      box-shadow: 0 4px 30px rgba(93, 64, 55, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 4rem;
+      background: var(--color-cream);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--color-earth-dark);
+    }
+
+    .nav-logo svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-charcoal);
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-terracotta), var(--color-river-blue));
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 95vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 4rem;
+      overflow: hidden;
+      background: var(--color-cream);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(61, 107, 125, 0.08), transparent);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-river-blue);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-river-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--color-earth-dark);
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-white);
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-river-blue));
+      padding: 1.25rem 2rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(166, 93, 63, 0.3);
+      color: var(--color-warm-white);
+    }
+
+    .hero-cta svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Hero Visual - Clay vessel with flowing water */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .vessel-container {
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    .vessel-svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .water-flow {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 70%;
+      overflow: hidden;
+    }
+
+    .water-stream {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(123, 163, 168, 0.2) 20%,
+        rgba(61, 107, 125, 0.3) 50%,
+        rgba(123, 163, 168, 0.2) 80%,
+        transparent 100%);
+      animation: flowDown 3s ease-in-out infinite;
+    }
+
+    @keyframes flowDown {
+      0%, 100% { transform: translateY(-20%); opacity: 0.6; }
+      50% { transform: translateY(10%); opacity: 1; }
+    }
+
+    /* River Flow Section */
+    .flow-section {
+      padding: 8rem 4rem;
+      background: var(--color-warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-terracotta), var(--color-river-blue), var(--color-terracotta));
+    }
+
+    .flow-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .flow-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      margin-bottom: 1rem;
+    }
+
+    .flow-header p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .flow-diagram {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .flow-river {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 8px;
+      background: linear-gradient(90deg,
+        var(--color-river-mist),
+        var(--color-river-blue),
+        var(--color-river-deep),
+        var(--color-river-blue),
+        var(--color-river-mist));
+      border-radius: 4px;
+      transform: translateY(-50%);
+    }
+
+    .flow-river::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 0;
+      right: 0;
+      height: 16px;
+      background: linear-gradient(90deg,
+        transparent,
+        rgba(255,255,255,0.4) 20%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0.4) 80%,
+        transparent);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+    }
+
+    .flow-nodes {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .flow-node {
+      text-align: center;
+      flex: 1;
+      max-width: 220px;
+    }
+
+    .flow-node-vessel {
+      width: 110px;
+      height: 130px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .flow-node-vessel svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .flow-node h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Source Sans Pro', sans-serif;
+      margin-bottom: 0.5rem;
+      color: var(--color-earth-dark);
+    }
+
+    .flow-node p {
+      font-size: 0.9rem;
+      color: var(--color-charcoal);
+      opacity: 0.7;
+      margin: 0 auto;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      padding: 10rem 4rem;
+      background: var(--color-cream);
+      position: relative;
+    }
+
+    .mission-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .mission-visual {
+      position: relative;
+    }
+
+    .clay-river {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(165deg,
+        var(--color-clay) 0%,
+        var(--color-terracotta) 40%,
+        var(--color-river-mist) 60%,
+        var(--color-river-blue) 100%);
+      border-radius: 200px 200px 100px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .clay-river::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 80%, rgba(30, 58, 76, 0.3) 0%, transparent 40%);
+    }
+
+    .clay-river::after {
+      content: 'Where clay meets water';
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: white;
+      opacity: 0.9;
+      white-space: nowrap;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .mission-text h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 2rem;
+    }
+
+    .mission-text p {
+      font-size: 1.15rem;
+      color: var(--color-earth-dark);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 2;
+    }
+
+    /* Platforms Section */
+    .platforms-section {
+      padding: 6rem 4rem 10rem;
+      background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 100%);
+    }
+
+    .platforms-header {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .platforms-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      margin-bottom: 1rem;
+    }
+
+    .platforms-header p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .platform-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .platform-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+    }
+
+    .platform-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      opacity: 0.1;
+      transform: translate(30%, 30%);
+    }
+
+    .platform-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(93, 64, 55, 0.12);
+    }
+
+    .platform-card--farm::before { background: linear-gradient(90deg, var(--color-farm-soil-umber), var(--color-river-mist)); }
+    .platform-card--farm::after { background: var(--color-farm-soil-umber); }
+
+    .platform-card--retreat::before { background: linear-gradient(90deg, var(--color-retreat-mineral-spring), var(--color-terracotta)); }
+    .platform-card--retreat::after { background: var(--color-retreat-mineral-spring); }
+
+    .platform-card--venue::before { background: linear-gradient(90deg, var(--color-venue-ember-glow), var(--color-river-blue)); }
+    .platform-card--venue::after { background: var(--color-venue-ember-glow); }
+
+    .platform-card--community::before { background: linear-gradient(90deg, var(--color-community-hearth-clay), var(--color-river-deep)); }
+    .platform-card--community::after { background: var(--color-community-hearth-clay); }
+
+    .platform-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-card h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .platform-card p {
+      font-size: 1rem;
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 8rem 4rem;
+      background: linear-gradient(135deg, var(--color-earth-dark) 0%, var(--color-river-deep) 100%);
+      color: var(--color-cream);
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .values-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--color-cream);
+      margin-bottom: 1rem;
+    }
+
+    .values-header p {
+      opacity: 0.7;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .values-stream {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .value-pill {
+      padding: 1rem 1.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-cream);
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .value-pill:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .value-pill:nth-child(odd) {
+      border-color: var(--color-terracotta);
+    }
+
+    .value-pill:nth-child(even) {
+      border-color: var(--color-river-mist);
+    }
+
+    /* Quote Section */
+    .quote-section {
+      padding: 8rem 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-river-blue) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 Q25 0 50 10 T100 10' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1'/%3E%3C/svg%3E") repeat-x;
+      background-size: 200px 40px;
+      animation: wavePattern 10s linear infinite;
+    }
+
+    @keyframes wavePattern {
+      0% { background-position: 0 0; }
+      100% { background-position: 200px 0; }
+    }
+
+    .quote-section blockquote {
+      position: relative;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-cream);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    .quote-section cite {
+      position: relative;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.85rem;
+      color: var(--color-clay-light);
+      font-style: normal;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 8rem 4rem;
+      text-align: center;
+      background: var(--color-warm-white);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0 auto 3rem;
+      font-size: 1.15rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      padding: 1.25rem 2.5rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-river-blue));
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(166, 93, 63, 0.3);
+      color: white;
+    }
+
+    .btn-secondary {
+      padding: 1.25rem 2.5rem;
+      background: transparent;
+      color: var(--color-terracotta);
+      border: 2px solid var(--color-terracotta);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-terracotta);
+      color: white;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      padding: 5rem 4rem;
+      background: var(--color-cream);
+      border-top: 1px solid var(--color-clay-light);
+    }
+
+    .newsletter-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 3rem;
+    }
+
+    .newsletter-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-text p {
+      color: var(--color-earth-dark);
+      opacity: 0.7;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form input {
+      padding: 1rem 1.5rem;
+      border: 2px solid var(--color-clay-light);
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      width: 280px;
+      background: white;
+    }
+
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: var(--color-river-blue);
+    }
+
+    .newsletter-form button {
+      padding: 1rem 1.5rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-river-blue));
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(166, 93, 63, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--color-earth-dark) 0%, var(--color-river-deep) 100%);
+      color: var(--color-cream);
+      padding: 5rem 4rem 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .footer-brand p {
+      opacity: 0.7;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0.6;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--color-cream);
+      opacity: 0.8;
+      font-size: 0.95rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem;
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .hero-cta {
+        margin: 0 auto;
+      }
+
+      .vessel-container {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .flow-nodes {
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+
+      .flow-node {
+        flex: 0 0 45%;
+      }
+
+      .flow-river {
+        display: none;
+      }
+
+      .mission-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .mission-visual {
+        order: -1;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .platforms-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        padding: 1.5rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .flow-node {
+        flex: 0 0 100%;
+      }
+
+      .values-stream {
+        gap: 0.75rem;
+      }
+
+      .value-pill {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+      }
+
+      .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .newsletter-form input {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .back-link {
+        top: 1rem;
+        left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Selection -->
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    All Designs
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1" fill="none"/>
+        <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
+        <circle cx="20" cy="8" r="3" fill="#704214"/>
+        <circle cx="8" cy="20" r="3" fill="#7BA3A8"/>
+        <circle cx="32" cy="20" r="3" fill="#C65D3B"/>
+        <circle cx="20" cy="32" r="3" fill="#B5651D"/>
+        <path d="M20 11 L20 17.5 M11 20 L17.5 20 M20 29 L20 22.5 M29 20 L22.5 20" stroke="currentColor" stroke-width="0.75"/>
+      </svg>
+      <span class="nav-logo-text">Unified Sanctuaries</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link">Vision</a></li>
+      <li><a href="#" class="nav-link">Governance</a></li>
+      <li><a href="#" class="nav-link">Get Involved</a></li>
+      <li><a href="#" class="nav-link">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-label">Southern Vermont</p>
+      <h1 class="hero-title">Shaped by <em>Clay & Current</em></h1>
+      <p class="hero-subtitle">Like a vessel formed by hands and filled by flowing water, our community takes shape through patient craft and natural abundance. The clay holds. The water nourishes.</p>
+      <a href="#" class="hero-cta">
+        Begin the Journey
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="vessel-container">
+        <svg class="vessel-svg" viewBox="0 0 300 380" fill="none">
+          <!-- Vessel body with gradient from clay to water colors -->
+          <defs>
+            <linearGradient id="vesselBlend" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#D4A574"/>
+              <stop offset="40%" stop-color="#C67B5C"/>
+              <stop offset="60%" stop-color="#7BA3A8"/>
+              <stop offset="100%" stop-color="#3D6B7D"/>
+            </linearGradient>
+            <linearGradient id="waterFill" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#7BA3A8" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#3D6B7D" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Vessel body -->
+          <path d="M75 100 Q50 150 60 230 Q70 310 150 320 Q230 310 240 230 Q250 150 225 100 Q200 60 150 50 Q100 60 75 100 Z"
+                fill="url(#vesselBlend)" />
+
+          <!-- Water inside vessel -->
+          <path d="M85 160 Q70 200 80 260 Q90 300 150 305 Q210 300 220 260 Q230 200 215 160 Q200 140 150 135 Q100 140 85 160 Z"
+                fill="url(#waterFill)" opacity="0.7"/>
+
+          <!-- Water ripples -->
+          <ellipse cx="150" cy="145" rx="55" ry="12" fill="none" stroke="#7BA3A8" stroke-width="1.5" opacity="0.5"/>
+          <ellipse cx="150" cy="155" rx="45" ry="8" fill="none" stroke="#3D6B7D" stroke-width="1" opacity="0.4"/>
+
+          <!-- Vessel rim -->
+          <ellipse cx="150" cy="55" rx="75" ry="15" fill="#A65D3F"/>
+          <ellipse cx="150" cy="55" rx="60" ry="10" fill="#5D4037"/>
+
+          <!-- Decorative clay bands -->
+          <path d="M65 180 Q150 170 235 180" stroke="#E8D4BC" stroke-width="2" fill="none" opacity="0.4"/>
+          <path d="M70 250 Q150 240 230 250" stroke="#E8D4BC" stroke-width="2" fill="none" opacity="0.4"/>
+
+          <!-- Highlight -->
+          <path d="M95 120 Q100 180 105 260" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- River Flow Section -->
+  <section class="flow-section">
+    <header class="flow-header">
+      <h2>Four Vessels, One Living Stream</h2>
+      <p>Resources and wisdom flow between interconnected platforms</p>
+    </header>
+
+    <div class="flow-diagram">
+      <div class="flow-river"></div>
+      <div class="flow-nodes">
+        <div class="flow-node">
+          <div class="flow-node-vessel">
+            <svg viewBox="0 0 80 100" fill="none">
+              <path d="M20 30 Q15 45 18 65 Q22 85 40 88 Q58 85 62 65 Q65 45 60 30 Q52 18 40 15 Q28 18 20 30 Z" fill="#704214"/>
+              <ellipse cx="40" cy="17" rx="20" ry="5" fill="#5C4014"/>
+              <path d="M40 45 L40 25" stroke="#5C7C5E" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="40" cy="22" r="3" fill="#5C7C5E"/>
+              <path d="M40 38 Q35 35 32 28" stroke="#5C7C5E" stroke-width="1.5" fill="none"/>
+              <path d="M40 38 Q45 35 48 28" stroke="#5C7C5E" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h4>Farm</h4>
+          <p>Nourishment from soil to table</p>
+        </div>
+
+        <div class="flow-node">
+          <div class="flow-node-vessel">
+            <svg viewBox="0 0 80 100" fill="none">
+              <path d="M20 30 Q15 45 18 65 Q22 85 40 88 Q58 85 62 65 Q65 45 60 30 Q52 18 40 15 Q28 18 20 30 Z" fill="#7BA3A8"/>
+              <ellipse cx="40" cy="17" rx="20" ry="5" fill="#5C8A8F"/>
+              <path d="M40 25 Q48 38 48 48 Q48 58 40 58 Q32 58 32 48 Q32 38 40 25 Z" fill="white" opacity="0.4"/>
+              <ellipse cx="40" cy="58" rx="8" ry="3" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <h4>Retreat</h4>
+          <p>Healing waters for restoration</p>
+        </div>
+
+        <div class="flow-node">
+          <div class="flow-node-vessel">
+            <svg viewBox="0 0 80 100" fill="none">
+              <path d="M20 35 Q15 50 18 68 Q22 85 40 88 Q58 85 62 68 Q65 50 60 35 Q52 25 40 22 Q28 25 20 35 Z" fill="#C65D3B"/>
+              <ellipse cx="40" cy="24" rx="20" ry="5" fill="#A84832"/>
+              <path d="M40 35 Q46 45 44 52 Q42 58 40 60 Q38 58 36 52 Q34 45 40 35" fill="#E8A84C" opacity="0.7"/>
+              <circle cx="35" cy="40" r="1.5" fill="#E8A84C" opacity="0.5"/>
+              <circle cx="46" cy="38" r="1" fill="#E8A84C" opacity="0.5"/>
+            </svg>
+          </div>
+          <h4>Venue</h4>
+          <p>Gathering flame and celebration</p>
+        </div>
+
+        <div class="flow-node">
+          <div class="flow-node-vessel">
+            <svg viewBox="0 0 80 100" fill="none">
+              <path d="M20 30 Q15 45 18 65 Q22 85 40 88 Q58 85 62 65 Q65 45 60 30 Q52 18 40 15 Q28 18 20 30 Z" fill="#B5651D"/>
+              <ellipse cx="40" cy="17" rx="20" ry="5" fill="#8B4513"/>
+              <path d="M40 35 L46 42 L46 55 L34 55 L34 42 Z" fill="#704214"/>
+              <rect x="38" y="48" width="4" height="7" fill="#5D4037"/>
+              <path d="M28 44 L32 40 L36 44 L36 55 L28 55 Z" fill="#704214" opacity="0.7"/>
+              <path d="M44 44 L48 40 L52 44 L52 55 L44 55 Z" fill="#704214" opacity="0.7"/>
+            </svg>
+          </div>
+          <h4>Community</h4>
+          <p>Homes woven in shared purpose</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="mission-content">
+      <div class="mission-visual">
+        <div class="clay-river"></div>
+      </div>
+      <div class="mission-text">
+        <h2>Where Land and People Heal Together</h2>
+        <p>Unified Sanctuaries is a regenerative, land-based community committed to solving for each other's basic needs of food, housing, and community within a supportive, earth-friendly environment.</p>
+        <p>Like clay shaped by patient hands and filled with life-giving water, we are formed by intention and sustained by flow. The vessel holds what the river brings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms Section -->
+  <section class="platforms-section">
+    <header class="platforms-header">
+      <h2>The Four Platforms</h2>
+      <p>Four vessels, each holding a different gift for the whole</p>
+    </header>
+
+    <div class="platforms-grid">
+      <article class="platform-card platform-card--farm">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M8 42 Q32 38 56 42 L56 52 Q32 56 8 52 Z" fill="#704214" opacity="0.3"/>
+          <path d="M32 48 L32 24" stroke="#704214" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M32 36 Q24 32 20 24 Q24 28 32 32" fill="#5C7C5E"/>
+          <path d="M32 32 Q40 28 44 20 Q40 24 32 28" fill="#5C7C5E"/>
+          <circle cx="32" cy="12" r="4" fill="#5C7C5E"/>
+          <circle cx="28" cy="16" r="2.5" fill="#6B8E7A"/>
+          <circle cx="36" cy="16" r="2.5" fill="#6B8E7A"/>
+        </svg>
+        <h3>Permaculture Farm & Education</h3>
+        <p>Regenerative agriculture, food sovereignty, and hands-on learning. From soil to table to community.</p>
+      </article>
+
+      <article class="platform-card platform-card--retreat">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <ellipse cx="32" cy="48" rx="20" ry="6" fill="none" stroke="#7BA3A8" stroke-width="1.5" opacity="0.5"/>
+          <ellipse cx="32" cy="46" rx="14" ry="4" fill="none" stroke="#7BA3A8" stroke-width="2" opacity="0.7"/>
+          <path d="M32 8 Q44 24 44 34 Q44 44 32 44 Q20 44 20 34 Q20 24 32 8 Z" fill="#7BA3A8"/>
+          <path d="M26 28 Q28 22 32 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <h3>Retreat & Healing Arts</h3>
+        <p>Immersive wellness, somatic healing, bathhouse sanctuary. A place to return to wholeness.</p>
+      </article>
+
+      <article class="platform-card platform-card--venue">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M16 44 Q16 52 24 54 L40 54 Q48 52 48 44" fill="none" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M20 54 L20 58 M44 54 L44 58" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M16 58 L48 58" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M32 14 Q40 26 38 34 Q36 40 32 42 Q28 40 26 34 Q24 26 32 14" fill="#C65D3B"/>
+          <path d="M32 22 Q36 30 34 36" fill="#E8A84C" opacity="0.6"/>
+        </svg>
+        <h3>Event Venue</h3>
+        <p>Festivals, gatherings, markets, and celebrations. Where community comes alive.</p>
+      </article>
+
+      <article class="platform-card platform-card--community">
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 18 L42 28 L42 44 L22 44 L22 28 Z" fill="#B5651D"/>
+          <rect x="29" y="34" width="6" height="10" fill="#704214"/>
+          <path d="M14 30 L20 24 L26 30 L26 44 L14 44 Z" fill="#B5651D" opacity="0.7"/>
+          <path d="M38 30 L44 24 L50 30 L50 44 L38 44 Z" fill="#B5651D" opacity="0.7"/>
+          <path d="M20 48 Q32 45 44 48" stroke="#C9B896" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <h3>Community Living</h3>
+        <p>20+ homes woven together. Shared resources, earned equity, a place in the web.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <header class="values-header">
+      <h2>Rooted in Values</h2>
+      <p>The principles that guide everything we grow</p>
+    </header>
+    <div class="values-stream">
+      <span class="value-pill">Regeneration over extraction</span>
+      <span class="value-pill">Non-speculative land stewardship</span>
+      <span class="value-pill">Equity through contribution</span>
+      <span class="value-pill">Participatory governance</span>
+      <span class="value-pill">Open-source sharing</span>
+      <span class="value-pill">Indigenous wisdom honored</span>
+      <span class="value-pill">Joy as medicine</span>
+      <span class="value-pill">Flexibility & resilience</span>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <blockquote>"The vessel is shaped by hands. The water finds its way. Together, they hold abundance."</blockquote>
+    <cite>The Unified Sanctuaries Ethos</cite>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Join the Flow</h2>
+    <p>Whether you're ready to shape or just curious to witness, there's a place for you here.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">Get Involved</a>
+      <a href="#" class="btn-secondary">Support the Vision</a>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <div class="newsletter-text">
+        <h3>Stay Connected</h3>
+        <p>Monthly updates on our land search, gatherings, and journey ahead.</p>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0;">Unified Sanctuaries</h4>
+        <p>A living blueprint for regenerative living & community resilience. Growing community from the ground up in Southern Vermont.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Vision</a></li>
+          <li><a href="#">Governance</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Participate</h4>
+        <ul class="footer-links">
+          <li><a href="#">Memberships</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Partner</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:unifiedsanctuaries@gmail.com">Email</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2026 Unified Sanctuaries</p>
+      <p>Shaped by clay & current</p>
+    </div>
+  </footer>
+
+</body>
+</html>

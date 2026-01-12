@@ -486,6 +486,221 @@
       margin-top: 0.5rem;
     }
 
+    /* Version G - Clay & Current Preview */
+    .preview-g {
+      background: linear-gradient(145deg, #FDF8F3 0%, #E8D4BC 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .preview-g::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35%;
+      background: linear-gradient(180deg, transparent, rgba(61, 107, 125, 0.2));
+    }
+
+    .preview-g .vessel-water {
+      width: 100px;
+      height: 130px;
+      position: relative;
+    }
+
+    .preview-g .vessel-water svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-g .preview-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #5D4037;
+    }
+
+    .preview-g .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #C67B5C, #3D6B7D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 0.5rem;
+    }
+
+    /* Version H - Mycelial Waters Preview */
+    .preview-h {
+      background: linear-gradient(160deg, #2D3A2E 0%, #1E3A4C 50%, #4A5D4A 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-h .network-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.4;
+    }
+
+    .preview-h .network-bg::before,
+    .preview-h .network-bg::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(123, 163, 168, 0.4);
+    }
+
+    .preview-h .network-bg::before {
+      width: 200px;
+      height: 200px;
+      top: -50px;
+      right: -50px;
+    }
+
+    .preview-h .network-bg::after {
+      width: 150px;
+      height: 150px;
+      bottom: -30px;
+      left: -30px;
+    }
+
+    .preview-h .flow-dots {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .preview-h .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(123, 163, 168, 0.6);
+    }
+
+    .preview-h .dot-1 { width: 12px; height: 12px; top: -40px; left: -30px; }
+    .preview-h .dot-2 { width: 8px; height: 8px; top: -20px; left: 40px; }
+    .preview-h .dot-3 { width: 10px; height: 10px; top: 30px; left: -50px; }
+    .preview-h .dot-4 { width: 14px; height: 14px; top: 20px; left: 30px; }
+
+    .preview-h .preview-text {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #F5F3EF;
+      text-align: center;
+    }
+
+    .preview-h .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7BA3A8;
+      margin-top: 0.5rem;
+    }
+
+    /* Version I - Living Clay Preview */
+    .preview-i {
+      background: linear-gradient(145deg, #5D4037 0%, #A65D3F 50%, #2D3A2E 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-i .mycelial-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.3;
+    }
+
+    .preview-i .mycelial-lines::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: -10%;
+      right: -10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #D4A574, transparent);
+      transform: rotate(-15deg);
+    }
+
+    .preview-i .mycelial-lines::after {
+      content: '';
+      position: absolute;
+      bottom: 30%;
+      left: -10%;
+      right: -10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #6B8E7A, transparent);
+      transform: rotate(10deg);
+    }
+
+    .preview-i .clay-vessel {
+      width: 80px;
+      height: 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-i .clay-vessel svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-i .root-lines {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 40px;
+    }
+
+    .preview-i .root-lines svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-i .preview-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #FDF8F3;
+    }
+
+    .preview-i .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D4A574;
+      margin-top: 0.5rem;
+    }
+
     /* Card Body */
     .design-body {
       padding: 2rem;
@@ -608,7 +823,7 @@
       </svg>
     </div>
     <h1>Choose Your Direction</h1>
-    <p>Six unique homepage designs for Unified Sanctuaries. Each embodies our brand essence in a distinct way. Explore them and choose the one that feels right.</p>
+    <p>Nine unique homepage designs for Unified Sanctuaries. Each embodies our brand essence in a distinct way. Explore them and choose the one that feels right.</p>
   </header>
 
   <main class="design-grid">
@@ -822,6 +1037,146 @@
           <li>Pebble-shaped statistics displays</li>
         </ul>
         <a href="version-f.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version G: Clay & Current -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-g">
+          <div class="vessel-water">
+            <svg viewBox="0 0 80 110" fill="none">
+              <defs>
+                <linearGradient id="vesselBlendG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#D4A574"/>
+                  <stop offset="40%" stop-color="#C67B5C"/>
+                  <stop offset="60%" stop-color="#7BA3A8"/>
+                  <stop offset="100%" stop-color="#3D6B7D"/>
+                </linearGradient>
+              </defs>
+              <path d="M20 30 Q12 45 16 70 Q20 95 40 98 Q60 95 64 70 Q68 45 60 30 Q52 18 40 15 Q28 18 20 30 Z" fill="url(#vesselBlendG)"/>
+              <ellipse cx="40" cy="17" rx="20" ry="5" fill="#A65D3F"/>
+              <ellipse cx="40" cy="17" rx="15" ry="3" fill="#5D4037"/>
+              <path d="M18 50 Q40 45 62 50" stroke="#E8D4BC" stroke-width="1.5" fill="none" opacity="0.5"/>
+              <path d="M17 70 Q40 65 63 70" stroke="#E8D4BC" stroke-width="1" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="preview-text">
+            Clay & Current
+            <span>Warm & Flowing</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version G</span>
+        <h2 class="design-title">Clay & Current</h2>
+        <p class="design-description">A harmonious blend of terracotta warmth and flowing water elements. The vessel holds, the water nourishes—together they create abundance.</p>
+        <ul class="design-features">
+          <li>Terracotta and river blue gradient palette</li>
+          <li>Clay vessel with flowing water imagery</li>
+          <li>Warm professional aesthetic</li>
+          <li>River flow infographic elements</li>
+        </ul>
+        <a href="version-g.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version H: Mycelial Waters -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-h">
+          <div class="network-bg"></div>
+          <div class="flow-dots">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+            <div class="dot dot-4"></div>
+          </div>
+          <div class="preview-text">
+            Mycelial Waters
+            <span>Connected & Flowing</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version H</span>
+        <h2 class="design-title">Mycelial Waters</h2>
+        <p class="design-description">Water flows like mycelium networks—underground streams connecting like fungal threads. Nature's oldest language of connection brought to life.</p>
+        <ul class="design-features">
+          <li>Animated mycelial network patterns</li>
+          <li>River and forest color fusion</li>
+          <li>Organic flowing animations</li>
+          <li>Immersive network visualizations</li>
+        </ul>
+        <a href="version-h.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version I: Living Clay -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-i">
+          <div class="mycelial-lines"></div>
+          <div class="clay-vessel">
+            <svg viewBox="0 0 60 80" fill="none">
+              <defs>
+                <linearGradient id="livingClayG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#D4A574"/>
+                  <stop offset="50%" stop-color="#C67B5C"/>
+                  <stop offset="100%" stop-color="#6B8E7A"/>
+                </linearGradient>
+              </defs>
+              <path d="M15 22 Q8 35 12 52 Q16 68 30 72 Q44 68 48 52 Q52 35 45 22 Q40 12 30 10 Q20 12 15 22 Z" fill="url(#livingClayG)"/>
+              <ellipse cx="30" cy="12" rx="15" ry="4" fill="#A65D3F"/>
+              <ellipse cx="30" cy="12" rx="11" ry="2.5" fill="#5D4037"/>
+            </svg>
+          </div>
+          <div class="root-lines">
+            <svg viewBox="0 0 100 35" fill="none">
+              <path d="M50 0 Q45 15 35 30" stroke="#6B8E7A" stroke-width="1.5" opacity="0.6"/>
+              <path d="M50 0 Q55 15 65 30" stroke="#6B8E7A" stroke-width="1.5" opacity="0.6"/>
+              <path d="M50 0 L50 32" stroke="#6B8E7A" stroke-width="1.5" opacity="0.6"/>
+              <path d="M50 0 Q40 12 25 25" stroke="#6B8E7A" stroke-width="1" opacity="0.4"/>
+              <path d="M50 0 Q60 12 75 25" stroke="#6B8E7A" stroke-width="1" opacity="0.4"/>
+              <circle cx="35" cy="30" r="3" fill="#6B8E7A" opacity="0.6"/>
+              <circle cx="65" cy="30" r="3" fill="#6B8E7A" opacity="0.6"/>
+              <circle cx="50" cy="32" r="4" fill="#6B8E7A" opacity="0.7"/>
+              <circle cx="25" cy="25" r="2" fill="#6B8E7A" opacity="0.5"/>
+              <circle cx="75" cy="25" r="2" fill="#6B8E7A" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="preview-text">
+            Living Clay
+            <span>Rooted & Growing</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version I</span>
+        <h2 class="design-title">Living Clay</h2>
+        <p class="design-description">Terracotta vessels with mycelial roots—clay that remembers every touch, networks that never forget a connection. The earth shapes us as we shape it.</p>
+        <ul class="design-features">
+          <li>Terracotta with mycelial network accents</li>
+          <li>Clay vessel with root visualizations</li>
+          <li>Warm earth tones meet organic greens</li>
+          <li>Living, breathing design elements</li>
+        </ul>
+        <a href="version-i.html" class="design-cta">
           Explore This Design
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
