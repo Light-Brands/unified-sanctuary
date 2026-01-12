@@ -12,19 +12,19 @@
 
   <style>
     :root {
-      --color-terracotta: #C67B5C;
-      --color-terracotta-deep: #A65D3F;
-      --color-clay: #D4A574;
-      --color-clay-light: #E8D4BC;
-      --color-earth-dark: #5D4037;
-      --color-cream: #FDF8F3;
-      --color-warm-white: #FFFBF7;
-      --color-charcoal: #2D2926;
-      --color-sage: #7D9878;
-      --color-farm-soil-umber: #704214;
-      --color-retreat-mineral-spring: #7BA3A8;
-      --color-venue-ember-glow: #C65D3B;
-      --color-community-hearth-clay: #B5651D;
+      --color-terracotta: #D47850;
+      --color-terracotta-deep: #B85A35;
+      --color-clay: #E0A568;
+      --color-clay-light: #F0DCC4;
+      --color-earth-dark: #4A3028;
+      --color-cream: #FFF9F4;
+      --color-warm-white: #FFFCF8;
+      --color-charcoal: #201A17;
+      --color-sage: #6D8A68;
+      --color-farm-soil-umber: #5A360E;
+      --color-retreat-mineral-spring: #4A9199;
+      --color-venue-ember-glow: #D64527;
+      --color-community-hearth-clay: #C45A15;
     }
 
     *, *::before, *::after {
@@ -75,15 +75,16 @@
       padding: 0.75rem 1.25rem;
       background: var(--color-warm-white);
       border-radius: 24px;
-      box-shadow: 0 2px 20px rgba(93, 64, 55, 0.1);
+      box-shadow: 0 4px 25px rgba(74, 48, 40, 0.12);
       font-size: 0.85rem;
       font-weight: 500;
       color: var(--color-earth-dark);
-      transition: box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .back-link:hover {
-      box-shadow: 0 4px 30px rgba(93, 64, 55, 0.15);
+      box-shadow: 0 8px 35px rgba(74, 48, 40, 0.2);
+      transform: translateY(-2px);
     }
 
     .back-link svg {
@@ -210,13 +211,15 @@
       background: var(--color-terracotta);
       padding: 1.25rem 2rem;
       border-radius: 30px;
+      box-shadow: 0 6px 25px rgba(212, 120, 80, 0.35);
       transition: all 0.3s ease;
       width: fit-content;
     }
 
     .hero-cta:hover {
       background: var(--color-terracotta-deep);
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(212, 120, 80, 0.5);
       color: var(--color-warm-white);
     }
 
@@ -463,6 +466,7 @@
       border-radius: 24px;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(74, 48, 40, 0.06);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
@@ -477,8 +481,8 @@
     }
 
     .platform-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(93, 64, 55, 0.12);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(74, 48, 40, 0.18);
     }
 
     .platform-card--farm::before { background: var(--color-farm-soil-umber); }
@@ -707,13 +711,15 @@
       font-size: 0.9rem;
       letter-spacing: 0.05em;
       border-radius: 30px;
+      box-shadow: 0 6px 25px rgba(212, 120, 80, 0.35);
       transition: all 0.3s ease;
     }
 
     .btn-primary:hover {
       background: var(--color-terracotta-deep);
       color: white;
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(212, 120, 80, 0.5);
     }
 
     .btn-secondary {
@@ -731,6 +737,8 @@
     .btn-secondary:hover {
       background: var(--color-terracotta);
       color: white;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(212, 120, 80, 0.35);
     }
 
     /* Newsletter Section */

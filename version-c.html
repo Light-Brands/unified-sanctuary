@@ -12,19 +12,19 @@
 
   <style>
     :root {
-      --color-forest-floor: #2D3A2E;
-      --color-living-green: #5C7C5E;
-      --color-rich-earth: #8B7355;
-      --color-cream-canvas: #F5F0E8;
-      --color-charcoal-root: #1A1A1A;
-      --color-sage-mist: #6B8E7A;
-      --color-sand-path: #C9B896;
-      --color-deep-moss: #4A5D4A;
-      --color-goldenrod: #B8860B;
-      --color-farm-soil-umber: #704214;
-      --color-retreat-mineral-spring: #7BA3A8;
-      --color-venue-ember-glow: #C65D3B;
-      --color-community-hearth-clay: #B5651D;
+      --color-forest-floor: #1E2D1F;
+      --color-living-green: #4A7050;
+      --color-rich-earth: #7A5A40;
+      --color-cream-canvas: #F8F4EC;
+      --color-charcoal-root: #0D0D0D;
+      --color-sage-mist: #5A8268;
+      --color-sand-path: #D4C49A;
+      --color-deep-moss: #3A4D3C;
+      --color-goldenrod: #D4A017;
+      --color-farm-soil-umber: #5A360E;
+      --color-retreat-mineral-spring: #4A9199;
+      --color-venue-ember-glow: #D64527;
+      --color-community-hearth-clay: #C45A15;
     }
 
     *, *::before, *::after {
@@ -77,12 +77,15 @@
       font-size: 0.85rem;
       font-weight: 600;
       color: white;
-      transition: background 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
     }
 
     .back-link:hover {
       background: var(--color-charcoal-root);
       color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
     }
 
     .back-link svg {
@@ -232,12 +235,14 @@
       color: white;
       border-radius: 50px;
       font-weight: 600;
+      box-shadow: 0 6px 25px rgba(214, 69, 39, 0.35);
       transition: all 0.3s ease;
     }
 
     .btn-primary:hover {
-      background: #A84832;
-      transform: translateY(-2px);
+      background: #B83A20;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(214, 69, 39, 0.5);
       color: white;
     }
 
@@ -257,6 +262,8 @@
     .btn-secondary:hover {
       background: var(--color-forest-floor);
       color: white;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(30, 45, 31, 0.3);
     }
 
     /* Hero Visual Grid */
@@ -411,11 +418,12 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
     .platform-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     }
 
     .platform-card::before {
@@ -665,12 +673,13 @@
       color: var(--color-venue-ember-glow);
       border-radius: 50px;
       font-weight: 600;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       transition: all 0.3s ease;
     }
 
     .btn-light:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
       color: var(--color-venue-ember-glow);
     }
 
@@ -687,6 +696,8 @@
     .btn-outline-light:hover {
       background: white;
       color: var(--color-venue-ember-glow);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(255,255,255,0.2);
     }
 
     /* Newsletter Section */
