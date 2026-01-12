@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Sanctuaries | Underground River</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Deep Mycelial Waters */
+      --color-abyss: #0D1A1F;
+      --color-river-deep: #15303F;
+      --color-river-blue: #2E5A6A;
+      --color-river-mist: #5E9AA2;
+      --color-spring: #8FBABF;
+      --color-forest-floor: #1E2B1F;
+      --color-deep-moss: #2A3F2E;
+      --color-sage-mist: #5A8A6A;
+
+      /* Warm Vessel Glow */
+      --color-terracotta: #D47850;
+      --color-terracotta-glow: #E89070;
+      --color-clay: #E0A568;
+      --color-ember: #C65D3B;
+
+      /* Neutrals */
+      --color-cream: #F8F6F2;
+      --color-mist: rgba(248, 246, 242, 0.9);
+      --color-charcoal: #1A1A18;
+
+      /* Platform colors */
+      --color-farm: #5A360E;
+      --color-retreat: #4A9199;
+      --color-venue: #D64527;
+      --color-community: #C45A15;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', -apple-system, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-cream);
+      background-color: var(--color-abyss);
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+      max-width: 60ch;
+    }
+
+    a {
+      color: var(--color-terracotta);
+      text-decoration: none;
+    }
+
+    /* Back Link */
+    .back-link {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(30, 43, 31, 0.9);
+      border: 1px solid rgba(94, 154, 162, 0.3);
+      border-radius: 24px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-cream);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .back-link:hover {
+      background: rgba(212, 120, 80, 0.2);
+      border-color: var(--color-terracotta);
+      transform: translateY(-3px);
+    }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background: transparent;
+      transition: all 0.4s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(13, 26, 31, 0.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(94, 154, 162, 0.1);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--color-cream);
+    }
+
+    .nav-logo svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--color-river-mist);
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-terracotta);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--color-abyss) 0%, var(--color-river-deep) 50%, var(--color-forest-floor) 100%);
+    }
+
+    /* Underground River Network */
+    .underground-network {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .underground-network svg {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      animation: networkFloat 60s ease-in-out infinite;
+    }
+
+    @keyframes networkFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(1%, 0.5%) rotate(0.2deg); }
+      66% { transform: translate(-0.5%, 1%) rotate(-0.2deg); }
+    }
+
+    .underground-flow {
+      stroke-dasharray: 15 8;
+      animation: undergroundFlow 3s linear infinite;
+    }
+
+    @keyframes undergroundFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -23; }
+    }
+
+    /* Glowing vessel nodes */
+    .vessel-glow-node {
+      animation: vesselGlow 4s ease-in-out infinite;
+    }
+
+    .vessel-glow-node:nth-child(2) { animation-delay: 1s; }
+    .vessel-glow-node:nth-child(3) { animation-delay: 2s; }
+    .vessel-glow-node:nth-child(4) { animation-delay: 3s; }
+
+    @keyframes vesselGlow {
+      0%, 100% { opacity: 0.4; filter: blur(0px); }
+      50% { opacity: 0.8; filter: blur(2px); }
+    }
+
+    /* Ambient glow shapes */
+    .glow-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+
+    .glow-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--color-river-mist);
+      top: 10%;
+      right: 10%;
+      opacity: 0.08;
+    }
+
+    .glow-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--color-terracotta);
+      bottom: 20%;
+      left: 5%;
+      opacity: 0.1;
+      animation-delay: -3s;
+    }
+
+    .glow-3 {
+      width: 300px;
+      height: 300px;
+      background: var(--color-sage-mist);
+      top: 50%;
+      left: 40%;
+      opacity: 0.06;
+      animation-delay: -6s;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { transform: scale(1); opacity: 0.08; }
+      50% { transform: scale(1.2); opacity: 0.15; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 850px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-terracotta);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 300;
+      color: var(--color-cream);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-terracotta-glow);
+      text-shadow: 0 0 40px rgba(212, 120, 80, 0.4);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--color-river-mist);
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.25rem 2.5rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-ember));
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 30px rgba(212, 120, 80, 0.3);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 50px rgba(212, 120, 80, 0.5);
+      color: white;
+    }
+
+    .hero-cta svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-river-mist);
+      opacity: 0.5;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .scroll-indicator .line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--color-river-mist), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.5); opacity: 0.3; }
+    }
+
+    /* Underground Map Section */
+    .map-section {
+      padding: 8rem 3rem;
+      background: linear-gradient(180deg, var(--color-forest-floor) 0%, var(--color-abyss) 100%);
+      position: relative;
+    }
+
+    .map-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 5rem;
+    }
+
+    .map-header h2 {
+      font-size: clamp(2.25rem, 4.5vw, 3rem);
+      color: var(--color-cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .map-header p {
+      font-size: 1.1rem;
+      color: var(--color-river-mist);
+      opacity: 0.8;
+    }
+
+    /* Underground River Infographic */
+    .underground-map {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .underground-map svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .map-flow {
+      stroke-dasharray: 12 6;
+      animation: mapFlow 2.5s linear infinite;
+    }
+
+    @keyframes mapFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -18; }
+    }
+
+    .map-vessel {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .map-vessel:hover {
+      filter: brightness(1.2);
+      transform: scale(1.05);
+    }
+
+    .vessel-halo {
+      animation: haloGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes haloGlow {
+      0%, 100% { opacity: 0.3; r: 50; }
+      50% { opacity: 0.6; r: 55; }
+    }
+
+    /* Light Section - Cream Background */
+    .light-section {
+      padding: 8rem 3rem;
+      background: var(--color-cream);
+      color: var(--color-charcoal);
+    }
+
+    .light-section h2 {
+      color: var(--color-river-deep);
+    }
+
+    .light-section p {
+      color: var(--color-charcoal);
+    }
+
+    .mission-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      max-width: 1150px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .mission-text h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      margin-bottom: 2rem;
+    }
+
+    .mission-text p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+    }
+
+    .mission-visual {
+      position: relative;
+    }
+
+    .layered-vessel {
+      width: 100%;
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .layered-vessel svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Platforms Section - Dark */
+    .platforms-section {
+      padding: 8rem 3rem;
+      background: linear-gradient(180deg, var(--color-abyss) 0%, var(--color-river-deep) 100%);
+    }
+
+    .platforms-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 5rem;
+    }
+
+    .platforms-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--color-cream);
+      margin-bottom: 1rem;
+    }
+
+    .platforms-header p {
+      color: var(--color-river-mist);
+      font-size: 1.1rem;
+    }
+
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .platform-card {
+      background: rgba(30, 43, 31, 0.6);
+      border: 1px solid rgba(94, 154, 162, 0.15);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .platform-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      opacity: 0.8;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-terracotta);
+      box-shadow: 0 20px 60px rgba(212, 120, 80, 0.15);
+    }
+
+    .platform-card--farm::before { background: linear-gradient(90deg, var(--color-farm), var(--color-sage-mist)); }
+    .platform-card--retreat::before { background: linear-gradient(90deg, var(--color-retreat), var(--color-river-mist)); }
+    .platform-card--venue::before { background: linear-gradient(90deg, var(--color-venue), var(--color-terracotta)); }
+    .platform-card--community::before { background: linear-gradient(90deg, var(--color-community), var(--color-clay)); }
+
+    .platform-glow {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.15;
+    }
+
+    .platform-card--farm .platform-glow { background: var(--color-farm); }
+    .platform-card--retreat .platform-glow { background: var(--color-retreat); }
+    .platform-card--venue .platform-glow { background: var(--color-venue); }
+    .platform-card--community .platform-glow { background: var(--color-community); }
+
+    .platform-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-card h3 {
+      font-size: 1.4rem;
+      color: var(--color-cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .platform-card p {
+      font-size: 0.95rem;
+      color: var(--color-river-mist);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 7rem 3rem;
+      background: var(--color-forest-floor);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .values-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-terracotta), transparent);
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .values-header h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: var(--color-cream);
+      margin-bottom: 1rem;
+    }
+
+    .values-header p {
+      color: var(--color-river-mist);
+      font-size: 1.05rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .value-node {
+      background: rgba(21, 48, 63, 0.5);
+      border: 1px solid rgba(94, 154, 162, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .value-node:hover {
+      background: rgba(212, 120, 80, 0.15);
+      border-color: var(--color-terracotta);
+      transform: translateY(-4px);
+    }
+
+    .value-node h4 {
+      font-size: 0.9rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+      color: var(--color-terracotta);
+      margin-bottom: 0.5rem;
+    }
+
+    .value-node p {
+      font-size: 0.85rem;
+      color: var(--color-cream);
+      opacity: 0.7;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Quote Section */
+    .quote-section {
+      padding: 6rem 3rem;
+      background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-river-deep) 100%);
+      text-align: center;
+      position: relative;
+    }
+
+    .quote-content blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-style: italic;
+      color: var(--color-cream);
+      line-height: 1.4;
+      margin: 0 auto 2rem;
+      max-width: 800px;
+    }
+
+    .quote-content cite {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.85rem;
+      color: var(--color-clay);
+      font-style: normal;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* CTA Section - Light */
+    .cta-section {
+      padding: 8rem 3rem;
+      text-align: center;
+      background: var(--color-cream);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2.25rem, 4.5vw, 3rem);
+      color: var(--color-river-deep);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+      font-size: 1.15rem;
+      color: var(--color-charcoal);
+      opacity: 0.7;
+      margin: 0 auto 3rem;
+      max-width: 480px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 1.25rem 2.5rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-river-blue));
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(212, 120, 80, 0.3);
+      color: white;
+    }
+
+    .btn-secondary {
+      padding: 1.25rem 2.5rem;
+      background: transparent;
+      color: var(--color-river-deep);
+      border: 2px solid var(--color-river-deep);
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-river-deep);
+      color: white;
+    }
+
+    /* Newsletter - Dark */
+    .newsletter-section {
+      padding: 5rem 3rem;
+      background: var(--color-abyss);
+      border-top: 1px solid rgba(94, 154, 162, 0.1);
+    }
+
+    .newsletter-content {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .newsletter-content h3 {
+      font-size: 1.75rem;
+      color: var(--color-cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter-content > p {
+      color: var(--color-river-mist);
+      margin-bottom: 2rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem 1.5rem;
+      border: 1px solid rgba(94, 154, 162, 0.3);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: rgba(30, 43, 31, 0.5);
+      color: var(--color-cream);
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--color-river-mist);
+    }
+
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: var(--color-terracotta);
+    }
+
+    .newsletter-form button {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-ember));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 120, 80, 0.4);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-abyss);
+      color: var(--color-cream);
+      padding: 5rem 3rem 2rem;
+      border-top: 1px solid rgba(94, 154, 162, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 4rem;
+      max-width: 1150px;
+      margin: 0 auto 4rem;
+    }
+
+    .footer-brand p {
+      opacity: 0.6;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-terracotta);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--color-river-mist);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-cream);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(94, 154, 162, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .mission-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .mission-visual {
+        order: -1;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+
+      .platforms-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 1rem;
+      }
+
+      .map-section,
+      .light-section,
+      .platforms-section,
+      .values-section,
+      .cta-section {
+        padding: 5rem 1.5rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .back-link {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Selection -->
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    All Designs
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+        <circle cx="20" cy="8" r="4" fill="#D47850"/>
+        <circle cx="8" cy="20" r="4" fill="#5E9AA2"/>
+        <circle cx="32" cy="20" r="4" fill="#D47850"/>
+        <circle cx="20" cy="32" r="4" fill="#5E9AA2"/>
+        <path d="M20 12 L20 17 M12 20 L17 20 M20 28 L20 23 M28 20 L23 20" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="nav-logo-text">Unified Sanctuaries</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link">Vision</a></li>
+      <li><a href="#" class="nav-link">Governance</a></li>
+      <li><a href="#" class="nav-link">Get Involved</a></li>
+      <li><a href="#" class="nav-link">Support Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <!-- Underground River Network -->
+    <div class="underground-network">
+      <svg viewBox="0 0 2000 2000" fill="none">
+        <!-- Main river channels -->
+        <g stroke="rgba(94, 154, 162, 0.25)" stroke-width="3">
+          <path d="M200 1000 Q500 800 800 1000 T1400 900 T1800 1000" class="underground-flow"/>
+          <path d="M100 600 Q400 700 700 600 T1300 700 T1700 600" class="underground-flow"/>
+          <path d="M300 1400 Q600 1300 900 1400 T1500 1300 T1900 1400" class="underground-flow"/>
+          <path d="M1000 200 Q900 500 1000 800 T900 1400 T1000 1800" class="underground-flow"/>
+          <path d="M600 300 Q700 600 600 900 T700 1500 T600 1700" class="underground-flow"/>
+          <path d="M1400 300 Q1300 600 1400 900 T1300 1500 T1400 1700" class="underground-flow"/>
+        </g>
+
+        <!-- Vessel nodes - glowing -->
+        <g class="vessel-glow-node">
+          <circle cx="400" cy="650" r="25" fill="rgba(212, 120, 80, 0.6)"/>
+          <circle cx="400" cy="650" r="40" fill="rgba(212, 120, 80, 0.2)"/>
+        </g>
+        <g class="vessel-glow-node">
+          <circle cx="1000" cy="500" r="30" fill="rgba(212, 120, 80, 0.6)"/>
+          <circle cx="1000" cy="500" r="50" fill="rgba(212, 120, 80, 0.2)"/>
+        </g>
+        <g class="vessel-glow-node">
+          <circle cx="1600" cy="700" r="25" fill="rgba(212, 120, 80, 0.6)"/>
+          <circle cx="1600" cy="700" r="40" fill="rgba(212, 120, 80, 0.2)"/>
+        </g>
+        <g class="vessel-glow-node">
+          <circle cx="300" cy="1200" r="20" fill="rgba(224, 165, 104, 0.5)"/>
+          <circle cx="300" cy="1200" r="35" fill="rgba(224, 165, 104, 0.15)"/>
+        </g>
+        <g class="vessel-glow-node">
+          <circle cx="1700" cy="1300" r="25" fill="rgba(224, 165, 104, 0.5)"/>
+          <circle cx="1700" cy="1300" r="40" fill="rgba(224, 165, 104, 0.15)"/>
+        </g>
+        <g class="vessel-glow-node">
+          <circle cx="1000" cy="1500" r="30" fill="rgba(212, 120, 80, 0.6)"/>
+          <circle cx="1000" cy="1500" r="50" fill="rgba(212, 120, 80, 0.2)"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Ambient glows -->
+    <div class="glow-shape glow-1"></div>
+    <div class="glow-shape glow-2"></div>
+    <div class="glow-shape glow-3"></div>
+
+    <div class="hero-content">
+      <p class="hero-tagline">Regenerative Community in Vermont</p>
+      <h1 class="hero-title">The <em>Underground River</em></h1>
+      <p class="hero-subtitle">Beneath the surface, ancient waters flow through networks of stone and root. Like mycelium finding vessels in the dark earth, our community connects through invisible channels of shared purpose.</p>
+      <a href="#" class="hero-cta">
+        Dive Deeper
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <!-- Underground Map Section -->
+  <section class="map-section">
+    <header class="map-header">
+      <h2>The Hidden Watershed</h2>
+      <p>Four vessels positioned along the underground river. What nourishes one flows to strengthen all.</p>
+    </header>
+
+    <div class="underground-map">
+      <svg viewBox="0 0 900 450" fill="none">
+        <!-- Background glow -->
+        <defs>
+          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#D47850" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#D47850" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="riverGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#5E9AA2" stop-opacity="0.3"/>
+            <stop offset="50%" stop-color="#5E9AA2" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#5E9AA2" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+
+        <ellipse cx="450" cy="225" rx="300" ry="150" fill="url(#centerGlow)"/>
+
+        <!-- Main underground river -->
+        <path d="M50 225 Q200 150 350 225 Q500 300 650 225 Q800 150 850 225"
+              stroke="url(#riverGrad)" stroke-width="30" fill="none" opacity="0.3"/>
+        <path d="M50 225 Q200 150 350 225 Q500 300 650 225 Q800 150 850 225"
+              stroke="#5E9AA2" stroke-width="4" fill="none" class="map-flow"/>
+
+        <!-- Connecting streams -->
+        <path d="M150 225 Q150 120 150 50" stroke="#5E9AA2" stroke-width="2" fill="none" opacity="0.4" class="map-flow"/>
+        <path d="M350 225 Q350 330 350 400" stroke="#5E9AA2" stroke-width="2" fill="none" opacity="0.4" class="map-flow"/>
+        <path d="M550 225 Q550 120 550 50" stroke="#5E9AA2" stroke-width="2" fill="none" opacity="0.4" class="map-flow"/>
+        <path d="M750 225 Q750 330 750 400" stroke="#5E9AA2" stroke-width="2" fill="none" opacity="0.4" class="map-flow"/>
+
+        <!-- Center hub -->
+        <circle cx="450" cy="225" r="45" fill="#15303F"/>
+        <circle cx="450" cy="225" r="35" fill="#2E5A6A"/>
+        <circle cx="450" cy="225" r="18" fill="#D47850"/>
+        <circle cx="450" cy="225" r="8" fill="#E0A568"/>
+
+        <!-- Farm Vessel -->
+        <g class="map-vessel" transform="translate(100, 160)">
+          <circle class="vessel-halo" cx="50" cy="50" r="50" fill="none" stroke="#D47850" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="40" fill="#1E2B1F"/>
+          <circle cx="50" cy="50" r="35" fill="#2A3F2E"/>
+          <path d="M35 40 Q30 50 33 60 Q38 70 50 72 Q62 70 67 60 Q70 50 65 40 Q58 32 50 30 Q42 32 35 40 Z" fill="#5A360E"/>
+          <path d="M50 50 L50 40" stroke="#5C7C5E" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="50" cy="38" r="4" fill="#5C7C5E"/>
+        </g>
+        <text x="150" y="245" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" fill="#F8F6F2">Farm</text>
+
+        <!-- Retreat Vessel -->
+        <g class="map-vessel" transform="translate(300, 290)">
+          <circle class="vessel-halo" cx="50" cy="50" r="50" fill="none" stroke="#5E9AA2" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="40" fill="#15303F"/>
+          <circle cx="50" cy="50" r="35" fill="#2E5A6A"/>
+          <path d="M35 40 Q30 50 33 60 Q38 70 50 72 Q62 70 67 60 Q70 50 65 40 Q58 32 50 30 Q42 32 35 40 Z" fill="#4A9199"/>
+          <path d="M50 38 Q58 50 58 58 Q58 66 50 66 Q42 66 42 58 Q42 50 50 38 Z" fill="white" opacity="0.4"/>
+        </g>
+        <text x="350" y="385" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" fill="#F8F6F2">Retreat</text>
+
+        <!-- Venue Vessel -->
+        <g class="map-vessel" transform="translate(500, 30)">
+          <circle class="vessel-halo" cx="50" cy="50" r="50" fill="none" stroke="#D47850" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="40" fill="#1E2B1F"/>
+          <circle cx="50" cy="50" r="35" fill="#3A2520"/>
+          <path d="M35 45 Q30 55 33 65 Q38 75 50 77 Q62 75 67 65 Q70 55 65 45 Q58 36 50 33 Q42 36 35 45 Z" fill="#D64527"/>
+          <path d="M50 45 Q56 55 54 62 Q52 68 50 70 Q48 68 46 62 Q44 55 50 45" fill="#E8A84C" opacity="0.75"/>
+        </g>
+        <text x="550" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" fill="#F8F6F2">Venue</text>
+
+        <!-- Community Vessel -->
+        <g class="map-vessel" transform="translate(700, 290)">
+          <circle class="vessel-halo" cx="50" cy="50" r="50" fill="none" stroke="#E0A568" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="40" fill="#1E2B1F"/>
+          <circle cx="50" cy="50" r="35" fill="#2E3025"/>
+          <path d="M35 40 Q30 50 33 60 Q38 70 50 72 Q62 70 67 60 Q70 50 65 40 Q58 32 50 30 Q42 32 35 40 Z" fill="#C45A15"/>
+          <path d="M50 45 L56 51 L56 62 L44 62 L44 51 Z" fill="#8B4513"/>
+          <rect x="48" y="56" width="4" height="6" fill="#5D4037"/>
+        </g>
+        <text x="750" y="385" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" fill="#F8F6F2">Community</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Light Mission Section -->
+  <section class="light-section">
+    <div class="mission-content">
+      <div class="mission-text">
+        <h2>Land Heals People.<br>People Heal Land.</h2>
+        <p>Unified Sanctuaries is a regenerative, land-based community committed to solving for each other's basic needs of food, housing, and community within a supportive, earth-friendly environment.</p>
+        <p>Like underground rivers carving through stone over millennia, we trust the patient power of flow. The vessel holds what the water brings. What nourishes one, strengthens all.</p>
+      </div>
+      <div class="mission-visual">
+        <div class="layered-vessel">
+          <svg viewBox="0 0 400 400" fill="none">
+            <!-- Background layers -->
+            <ellipse cx="200" cy="350" rx="150" ry="30" fill="#2E5A6A" opacity="0.15"/>
+
+            <!-- Underground water glow -->
+            <ellipse cx="200" cy="320" rx="100" ry="60" fill="#5E9AA2" opacity="0.1"/>
+
+            <!-- Vessel -->
+            <defs>
+              <linearGradient id="missionVesselGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E0A568"/>
+                <stop offset="40%" stop-color="#D47850"/>
+                <stop offset="100%" stop-color="#B85A35"/>
+              </linearGradient>
+              <linearGradient id="missionWaterGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" stop-color="#5E9AA2"/>
+                <stop offset="100%" stop-color="#2E5A6A"/>
+              </linearGradient>
+            </defs>
+
+            <path d="M100 130 Q65 190 80 270 Q95 340 200 355 Q305 340 320 270 Q335 190 300 130 Q265 80 200 65 Q135 80 100 130 Z"
+                  fill="url(#missionVesselGrad)" />
+
+            <!-- Water inside -->
+            <path d="M115 185 Q90 235 105 295 Q120 335 200 345 Q280 335 295 295 Q310 235 285 185 Q260 155 200 145 Q140 155 115 185 Z"
+                  fill="url(#missionWaterGrad)" opacity="0.75"/>
+
+            <!-- Water surface -->
+            <ellipse cx="200" cy="165" rx="75" ry="15" fill="none" stroke="#5E9AA2" stroke-width="2" opacity="0.5"/>
+
+            <!-- Rim -->
+            <ellipse cx="200" cy="72" rx="100" ry="20" fill="#B85A35"/>
+            <ellipse cx="200" cy="72" rx="82" ry="14" fill="#8B4513"/>
+
+            <!-- Highlight -->
+            <path d="M125 150 Q130 220 135 300" stroke="white" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.12"/>
+
+            <!-- Underground flow lines -->
+            <g stroke="#5E9AA2" stroke-width="2" opacity="0.3">
+              <path d="M200 355 Q200 380 200 400" stroke-dasharray="6 4"/>
+              <path d="M130 320 Q80 350 40 370" stroke-dasharray="6 4"/>
+              <path d="M270 320 Q320 350 360 370" stroke-dasharray="6 4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms Section -->
+  <section class="platforms-section">
+    <header class="platforms-header">
+      <h2>Four Vessels in the Deep</h2>
+      <p>Each platform holds a gift, connected by underground waters.</p>
+    </header>
+
+    <div class="platforms-grid">
+      <article class="platform-card platform-card--farm">
+        <div class="platform-glow"></div>
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 48 L32 24" stroke="#5C7C5E" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M32 36 Q24 32 20 24 Q24 28 32 32" fill="#5C7C5E"/>
+          <path d="M32 32 Q40 28 44 20 Q40 24 32 28" fill="#5C7C5E"/>
+          <circle cx="32" cy="12" r="4" fill="#5C7C5E"/>
+        </svg>
+        <h3>Permaculture Farm</h3>
+        <p>Regenerative agriculture, food sovereignty, and hands-on learning from the earth.</p>
+      </article>
+
+      <article class="platform-card platform-card--retreat">
+        <div class="platform-glow"></div>
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 8 Q44 24 44 34 Q44 44 32 44 Q20 44 20 34 Q20 24 32 8 Z" fill="#5E9AA2"/>
+          <path d="M26 28 Q28 22 32 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <ellipse cx="32" cy="46" rx="12" ry="4" fill="none" stroke="#5E9AA2" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+        <h3>Retreat & Healing</h3>
+        <p>Immersive wellness, somatic healing, and sanctuary for returning to wholeness.</p>
+      </article>
+
+      <article class="platform-card platform-card--venue">
+        <div class="platform-glow"></div>
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 14 Q40 26 38 34 Q36 40 32 42 Q28 40 26 34 Q24 26 32 14" fill="#D64527"/>
+          <path d="M32 22 Q36 30 34 36" fill="#E8A84C" opacity="0.6"/>
+          <path d="M16 44 Q16 52 24 54 L40 54 Q48 52 48 44" fill="none" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Event Venue</h3>
+        <p>Festivals, gatherings, markets, and celebrations where community comes alive.</p>
+      </article>
+
+      <article class="platform-card platform-card--community">
+        <div class="platform-glow"></div>
+        <svg class="platform-icon" viewBox="0 0 64 64" fill="none">
+          <path d="M32 18 L42 28 L42 44 L22 44 L22 28 Z" fill="#C45A15"/>
+          <rect x="29" y="34" width="6" height="10" fill="#8B4513"/>
+          <path d="M14 30 L20 24 L26 30 L26 44 L14 44 Z" fill="#C45A15" opacity="0.7"/>
+          <path d="M38 30 L44 24 L50 30 L50 44 L38 44 Z" fill="#C45A15" opacity="0.7"/>
+        </svg>
+        <h3>Community Living</h3>
+        <p>20+ homes woven together with shared resources and earned equity.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <header class="values-header">
+      <h2>Rooted in Values</h2>
+      <p>The principles that flow through the underground river</p>
+    </header>
+    <div class="values-grid">
+      <div class="value-node">
+        <h4>Regeneration</h4>
+        <p>We actively heal the land</p>
+      </div>
+      <div class="value-node">
+        <h4>Non-Speculative Land</h4>
+        <p>Held in trust forever</p>
+      </div>
+      <div class="value-node">
+        <h4>Equity Through Work</h4>
+        <p>Ownership through participation</p>
+      </div>
+      <div class="value-node">
+        <h4>Participatory Governance</h4>
+        <p>Decisions by consent</p>
+      </div>
+      <div class="value-node">
+        <h4>Open-Source</h4>
+        <p>A blueprint for others</p>
+      </div>
+      <div class="value-node">
+        <h4>Indigenous Wisdom</h4>
+        <p>Honoring Abenaki stewardship</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <div class="quote-content">
+      <blockquote>"Like water finding vessels in the dark earth, connection flows through invisible channels."</blockquote>
+      <cite>The Unified Sanctuaries Ethos</cite>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Join the Underground</h2>
+    <p>Whether you're ready to dive deep or just curious to explore, there's a place for you here.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">Get Involved</a>
+      <a href="#" class="btn-secondary">Support the Vision</a>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <h3>Stay Connected</h3>
+      <p>Receive updates on our land search, gatherings, and the journey ahead.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-heading">Unified Sanctuaries</h4>
+        <p>A living blueprint for regenerative community in Southern Vermont. Where underground rivers meet clay vessels.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Vision</a></li>
+          <li><a href="#">Governance</a></li>
+          <li><a href="#">News & Updates</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Get Involved</h4>
+        <ul class="footer-links">
+          <li><a href="#">Memberships</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Partner With Us</a></li>
+          <li><a href="#">Support Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:unifiedsanctuaries@gmail.com">Email Us</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Unified Sanctuaries 2026. The underground river flows.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
