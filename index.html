@@ -701,6 +701,225 @@
       margin-top: 0.5rem;
     }
 
+    /* Version J - Vessel & Stream Preview */
+    .preview-j {
+      background: linear-gradient(160deg, #1E2B1F 0%, #15303F 50%, #3A4F3A 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-j .network-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.3;
+    }
+
+    .preview-j .network-lines::before,
+    .preview-j .network-lines::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #5E9AA2, transparent);
+    }
+
+    .preview-j .network-lines::before {
+      width: 150%;
+      top: 35%;
+      left: -25%;
+      transform: rotate(-8deg);
+    }
+
+    .preview-j .network-lines::after {
+      width: 150%;
+      bottom: 30%;
+      left: -25%;
+      transform: rotate(5deg);
+    }
+
+    .preview-j .vessel-icon {
+      width: 70px;
+      height: 90px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-j .vessel-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-j .preview-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #F5F3EF;
+    }
+
+    .preview-j .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D47850;
+      margin-top: 0.5rem;
+    }
+
+    /* Version K - Nourishing Waters Preview */
+    .preview-k {
+      background: #FAF8F5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-k::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: -20%;
+      width: 140%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #5E9AA2, transparent);
+      transform: rotate(-5deg);
+      opacity: 0.3;
+    }
+
+    .preview-k::after {
+      content: '';
+      position: absolute;
+      bottom: 25%;
+      left: -20%;
+      width: 140%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #5E9AA2, transparent);
+      transform: rotate(3deg);
+      opacity: 0.2;
+    }
+
+    .preview-k .pour-visual {
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-k .pour-visual svg {
+      width: 120px;
+      height: 140px;
+    }
+
+    .preview-k .preview-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #15303F;
+    }
+
+    .preview-k .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #D47850, #5E9AA2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 0.5rem;
+    }
+
+    /* Version L - Underground River Preview */
+    .preview-l {
+      background: linear-gradient(180deg, #0D1A1F 0%, #15303F 50%, #1E2B1F 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-l .glow-spots {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .preview-l .glow-spot {
+      position: absolute;
+      border-radius: 50%;
+      background: #D47850;
+      filter: blur(15px);
+    }
+
+    .preview-l .glow-spot-1 {
+      width: 30px;
+      height: 30px;
+      top: 25%;
+      left: 20%;
+      opacity: 0.4;
+    }
+
+    .preview-l .glow-spot-2 {
+      width: 40px;
+      height: 40px;
+      top: 40%;
+      right: 25%;
+      opacity: 0.5;
+    }
+
+    .preview-l .glow-spot-3 {
+      width: 25px;
+      height: 25px;
+      bottom: 35%;
+      left: 40%;
+      opacity: 0.35;
+    }
+
+    .preview-l .river-line {
+      position: absolute;
+      width: 150%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(94, 154, 162, 0.4), transparent);
+      left: -25%;
+    }
+
+    .preview-l .river-line-1 {
+      top: 40%;
+      transform: rotate(-10deg);
+    }
+
+    .preview-l .river-line-2 {
+      bottom: 35%;
+      transform: rotate(8deg);
+    }
+
+    .preview-l .preview-text {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #F8F6F2;
+      text-align: center;
+    }
+
+    .preview-l .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D47850;
+      margin-top: 0.5rem;
+    }
+
     /* Card Body */
     .design-body {
       padding: 2rem;
@@ -823,7 +1042,7 @@
       </svg>
     </div>
     <h1>Choose Your Direction</h1>
-    <p>Nine unique homepage designs for Unified Sanctuaries. Each embodies our brand essence in a distinct way. Explore them and choose the one that feels right.</p>
+    <p>Twelve unique homepage designs for Unified Sanctuaries. Each embodies our brand essence in a distinct way. Explore them and choose the one that feels right.</p>
   </header>
 
   <main class="design-grid">
@@ -1177,6 +1396,136 @@
           <li>Living, breathing design elements</li>
         </ul>
         <a href="version-i.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version J: Vessel & Stream -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-j">
+          <div class="network-lines"></div>
+          <div class="vessel-icon">
+            <svg viewBox="0 0 70 90" fill="none">
+              <defs>
+                <linearGradient id="vesselGradJ" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E0A568"/>
+                  <stop offset="50%" stop-color="#D47850"/>
+                  <stop offset="100%" stop-color="#B85A35"/>
+                </linearGradient>
+              </defs>
+              <path d="M15 25 Q8 40 12 58 Q18 75 35 78 Q52 75 58 58 Q62 40 55 25 Q48 14 35 10 Q22 14 15 25 Z" fill="url(#vesselGradJ)"/>
+              <ellipse cx="35" cy="12" rx="20" ry="5" fill="#B85A35"/>
+              <path d="M20 45 Q35 40 50 45" stroke="#F0DCC4" stroke-width="1.5" fill="none" opacity="0.4"/>
+              <path d="M35 78 Q35 85 35 92" stroke="#5E9AA2" stroke-width="2" opacity="0.5"/>
+              <path d="M12 58 Q5 65 0 75" stroke="#5E9AA2" stroke-width="1.5" opacity="0.4"/>
+              <path d="M58 58 Q65 65 70 75" stroke="#5E9AA2" stroke-width="1.5" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="preview-text">
+            Vessel & Stream
+            <span>Watershed Network</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version J</span>
+        <h2 class="design-title">Vessel & Stream</h2>
+        <p class="design-description">Mycelial waters background with clay vessel nodes positioned along flowing streams. The vessel holds, the stream nourishes, together they create the watershed.</p>
+        <ul class="design-features">
+          <li>Dark mycelial waters immersive hero</li>
+          <li>Watershed infographic with vessel nodes</li>
+          <li>Terracotta accents on blue-green flows</li>
+          <li>Network diagram with animated streams</li>
+        </ul>
+        <a href="version-j.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version K: Nourishing Waters -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-k">
+          <div class="pour-visual">
+            <svg viewBox="0 0 120 140" fill="none">
+              <defs>
+                <linearGradient id="vesselGradK" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E0A568"/>
+                  <stop offset="50%" stop-color="#D47850"/>
+                  <stop offset="100%" stop-color="#B85A35"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(25, 5) rotate(15, 35, 45)">
+                <path d="M15 25 Q8 38 12 52 Q18 65 35 68 Q52 65 58 52 Q62 38 55 25 Q48 15 35 12 Q22 15 15 25 Z" fill="url(#vesselGradK)"/>
+                <ellipse cx="35" cy="14" rx="20" ry="4" fill="#B85A35"/>
+              </g>
+              <path d="M85 45 Q95 70 90 95 Q85 110 60 125" stroke="#5E9AA2" stroke-width="6" fill="none" opacity="0.4" stroke-linecap="round"/>
+              <path d="M60 125 Q40 130 25 125" stroke="#5E9AA2" stroke-width="2" fill="none" opacity="0.3"/>
+              <path d="M60 125 Q80 130 95 125" stroke="#5E9AA2" stroke-width="2" fill="none" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="preview-text">
+            Nourishing Waters
+            <span>Pour & Connect</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version K</span>
+        <h2 class="design-title">Nourishing Waters</h2>
+        <p class="design-description">A vessel pouring into flowing network lines. Light cream background with beautiful circular infographics showing interconnected vessels.</p>
+        <ul class="design-features">
+          <li>Clean light aesthetic with subtle networks</li>
+          <li>Pouring vessel hero infographic</li>
+          <li>Circular network connection diagram</li>
+          <li>Vessel-shaped platform cards</li>
+        </ul>
+        <a href="version-k.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version L: Underground River -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-l">
+          <div class="glow-spots">
+            <div class="glow-spot glow-spot-1"></div>
+            <div class="glow-spot glow-spot-2"></div>
+            <div class="glow-spot glow-spot-3"></div>
+          </div>
+          <div class="river-line river-line-1"></div>
+          <div class="river-line river-line-2"></div>
+          <div class="preview-text">
+            Underground River
+            <span>Deep & Glowing</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version L</span>
+        <h2 class="design-title">Underground River</h2>
+        <p class="design-description">The most immersive dark theme. Glowing terracotta vessel nodes float in a deep mycelial waters network, like finding light in the underground.</p>
+        <ul class="design-features">
+          <li>Deep immersive dark color scheme</li>
+          <li>Glowing terracotta vessel nodes</li>
+          <li>Underground watershed map infographic</li>
+          <li>Contrast light mission section</li>
+        </ul>
+        <a href="version-l.html" class="design-cta">
           Explore This Design
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
