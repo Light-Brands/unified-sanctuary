@@ -298,6 +298,194 @@
       margin-top: 0.5rem;
     }
 
+    /* Version D - Slate & Granite Preview */
+    .preview-d {
+      background: linear-gradient(135deg, #4A5568 0%, #2C3E50 50%, #718096 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-d .layers {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .preview-d .layer {
+      position: absolute;
+      width: 120%;
+      left: -10%;
+      height: 30%;
+      opacity: 0.6;
+    }
+
+    .preview-d .layer-1 {
+      top: 10%;
+      background: #718096;
+      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+    }
+
+    .preview-d .layer-2 {
+      top: 35%;
+      background: #4A5568;
+      clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+    }
+
+    .preview-d .layer-3 {
+      top: 60%;
+      background: #B87333;
+      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+      opacity: 0.4;
+    }
+
+    .preview-d .preview-text {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #F7F5F2;
+      text-align: center;
+    }
+
+    .preview-d .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B87333;
+      margin-top: 0.5rem;
+    }
+
+    /* Version E - Terracotta & Clay Preview */
+    .preview-e {
+      background: #FDF8F3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .preview-e .vessel {
+      width: 120px;
+      height: 160px;
+      position: relative;
+    }
+
+    .preview-e .vessel svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-e .preview-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #5D4037;
+    }
+
+    .preview-e .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #C67B5C;
+      margin-top: 0.5rem;
+    }
+
+    /* Version F - River Stone Preview */
+    .preview-f {
+      background: linear-gradient(180deg, #F5F3EF 0%, #D9D0C3 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-f .waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+    }
+
+    .preview-f .wave {
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      left: -50%;
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    }
+
+    .preview-f .wave-1 {
+      bottom: 0;
+      background: #7BA3A8;
+      opacity: 0.3;
+    }
+
+    .preview-f .wave-2 {
+      bottom: 15%;
+      background: #3D6B7D;
+      opacity: 0.2;
+    }
+
+    .preview-f .stones {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .preview-f .stone {
+      border-radius: 50%;
+    }
+
+    .preview-f .stone-1 {
+      width: 30px;
+      height: 22px;
+      background: linear-gradient(135deg, #C4B8A8 0%, #9A8B7A 100%);
+    }
+
+    .preview-f .stone-2 {
+      width: 24px;
+      height: 18px;
+      background: linear-gradient(135deg, #7BA3A8 0%, #3D6B7D 100%);
+    }
+
+    .preview-f .stone-3 {
+      width: 36px;
+      height: 26px;
+      background: linear-gradient(135deg, #D9D0C3 0%, #C4B8A8 100%);
+    }
+
+    .preview-f .preview-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .preview-f .preview-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #1E3A4C;
+    }
+
+    .preview-f .preview-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #3D6B7D;
+      margin-top: 0.5rem;
+    }
+
     /* Card Body */
     .design-body {
       padding: 2rem;
@@ -420,7 +608,7 @@
       </svg>
     </div>
     <h1>Choose Your Direction</h1>
-    <p>Three unique homepage designs for Unified Sanctuaries. Each embodies our brand essence in a distinct way. Explore them and choose the one that feels right.</p>
+    <p>Six unique homepage designs for Unified Sanctuaries. Each embodies our brand essence in a distinct way. Explore them and choose the one that feels right.</p>
   </header>
 
   <main class="design-grid">
@@ -515,6 +703,125 @@
           <li>Energetic but grounded aesthetic</li>
         </ul>
         <a href="version-c.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version D: Slate & Granite -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-d">
+          <div class="layers">
+            <div class="layer layer-1"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-3"></div>
+          </div>
+          <div class="preview-text">
+            Slate & Granite
+            <span>Geological & Layered</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version D</span>
+        <h2 class="design-title">Slate & Granite</h2>
+        <p class="design-description">A geological, layered design inspired by bedrock formations. Cool slate tones with copper accents create an enduring, foundational aesthetic with stratified infographics.</p>
+        <ul class="design-features">
+          <li>Layered, geological visual elements</li>
+          <li>Cool slate and granite color palette</li>
+          <li>Stratified infographic sections</li>
+          <li>Custom SVG icons throughout</li>
+        </ul>
+        <a href="version-d.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version E: Terracotta & Clay -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-e">
+          <div class="vessel">
+            <svg viewBox="0 0 120 160" fill="none">
+              <path d="M30 40 Q20 60 24 90 Q28 120 60 125 Q92 120 96 90 Q100 60 90 40 Q80 24 60 20 Q40 24 30 40 Z" fill="url(#vesselGrad)"/>
+              <ellipse cx="60" cy="22" rx="30" ry="6" fill="#A65D3F"/>
+              <ellipse cx="60" cy="22" rx="24" ry="4" fill="#5D4037"/>
+              <path d="M26 60 Q60 55 94 60" stroke="#E8D4BC" stroke-width="2" fill="none" opacity="0.5"/>
+              <path d="M24 85 Q60 80 96 85" stroke="#E8D4BC" stroke-width="2" fill="none" opacity="0.5"/>
+              <defs>
+                <linearGradient id="vesselGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#D4A574"/>
+                  <stop offset="50%" stop-color="#C67B5C"/>
+                  <stop offset="100%" stop-color="#A65D3F"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="preview-text">
+            Terracotta & Clay
+            <span>Warm & Handcrafted</span>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version E</span>
+        <h2 class="design-title">Terracotta & Clay</h2>
+        <p class="design-description">A warm, pottery-inspired design with handcrafted aesthetics. Terracotta and clay tones evoke the patient artistry of shaping community together.</p>
+        <ul class="design-features">
+          <li>Warm terracotta color palette</li>
+          <li>Pottery and vessel visual metaphors</li>
+          <li>Circular interconnection diagrams</li>
+          <li>Process timeline infographics</li>
+        </ul>
+        <a href="version-e.html" class="design-cta">
+          Explore This Design
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Version F: River Stone -->
+    <article class="design-card">
+      <div class="design-preview">
+        <div class="preview-illustration preview-f">
+          <div class="waves">
+            <div class="wave wave-1"></div>
+            <div class="wave wave-2"></div>
+          </div>
+          <div class="preview-content">
+            <div class="stones">
+              <div class="stone stone-1"></div>
+              <div class="stone stone-2"></div>
+              <div class="stone stone-3"></div>
+            </div>
+            <div class="preview-text">
+              River Stone
+              <span>Flowing & Polished</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="design-body">
+        <span class="design-label">Version F</span>
+        <h2 class="design-title">River Stone</h2>
+        <p class="design-description">A smooth, flowing design inspired by water-polished stones. River blues and warm grays create a sense of continuous, gentle transformation.</p>
+        <ul class="design-features">
+          <li>Flowing water and wave animations</li>
+          <li>Smooth, rounded visual elements</li>
+          <li>River flow infographic diagrams</li>
+          <li>Pebble-shaped statistics displays</li>
+        </ul>
+        <a href="version-f.html" class="design-cta">
           Explore This Design
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
