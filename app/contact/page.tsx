@@ -154,19 +154,35 @@ export default function ContactPage() {
         <div className={styles.faqGrid}>
           <div className={styles.faqCard}>
             <h3>Where are you located?</h3>
-            <p>We&apos;re currently in the land search phase, focused on the Southern Vermont region around Brattleboro, Guilford, and Putney.</p>
+            <p>We&apos;re currently in the land search phase, focused on the Southern Vermont region around Brattleboro, Guilford, and Putney. We&apos;re seeking 50-150 acres with water access, agricultural potential, and ideally some existing structures.</p>
           </div>
           <div className={styles.faqCard}>
             <h3>Can I visit?</h3>
-            <p>Once we secure land, we&apos;ll host open days and community events. Sign up for our newsletter to be the first to know.</p>
+            <p>Once we secure land, we&apos;ll host regular open days, community work parties, and seasonal gatherings. Sign up for our newsletter to be the first to know about events and visiting opportunities.</p>
           </div>
           <div className={styles.faqCard}>
             <h3>How can I get involved now?</h3>
-            <p>Join as a member, volunteer your skills, or donate to our land fund. Every contribution helps us move forward.</p>
+            <p>Join as a Supporter, Member, or Steward to access community benefits. Volunteer your skills in areas like permaculture design, legal work, or communications. Or donate to our land acquisition fund—every contribution helps.</p>
           </div>
           <div className={styles.faqCard}>
             <h3>Are you accepting residents?</h3>
-            <p>Not yet - we&apos;re still searching for land. But we&apos;re building relationships with future community members now.</p>
+            <p>Not yet—we&apos;re still searching for land. However, we&apos;re actively building relationships with future community members. Steward-level members have priority consideration for residency once we&apos;re established.</p>
+          </div>
+          <div className={styles.faqCard}>
+            <h3>How much does it cost to live there?</h3>
+            <p>Our model prioritizes accessibility. Residents will pay monthly land use fees based on household size and income, plus contribute labor hours. We&apos;re designing pathways where people can build equity through contribution, not just capital.</p>
+          </div>
+          <div className={styles.faqCard}>
+            <h3>What is the Unified Token?</h3>
+            <p>The Unified Token is our community currency. Contributors earn tokens for volunteer work, which can be spent on products and services within the community—reducing reliance on cash and building a circular economy.</p>
+          </div>
+          <div className={styles.faqCard}>
+            <h3>Can I bring my family?</h3>
+            <p>Yes! We&apos;re designing Unified Sanctuaries to be multi-generational. Families with children are welcome, and we&apos;re planning shared childcare arrangements, educational programming, and safe spaces for kids to explore nature.</p>
+          </div>
+          <div className={styles.faqCard}>
+            <h3>Is this a religious community?</h3>
+            <p>No, we&apos;re not affiliated with any religion. We welcome people of all spiritual backgrounds. Our values are rooted in ecological stewardship, community care, and Indigenous wisdom traditions, but we honor diverse paths.</p>
           </div>
         </div>
       </Section>

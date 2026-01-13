@@ -14,37 +14,40 @@ const membershipTiers = [
   {
     name: 'Supporter',
     price: '$10/month',
-    description: 'Stay connected and support our growth',
+    description: 'Stay connected and support the land acquisition effort while enjoying community access',
     benefits: [
-      'Monthly newsletter updates',
-      'Access to community events',
-      'Voting rights on community surveys',
-      'Unified Token rewards',
+      'Monthly newsletter with behind-the-scenes updates',
+      'Invitations to virtual and in-person community gatherings',
+      'Voting rights on community surveys and input sessions',
+      'Earn Unified Tokens for engagement and referrals',
+      'Name listed on our Supporters page',
     ],
   },
   {
     name: 'Member',
     price: '$25/month',
-    description: 'Deeper engagement and access',
+    description: 'Deeper engagement with priority access to programs and platform benefits',
     benefits: [
-      'Everything in Supporter',
-      'Priority event registration',
-      'Discounts on retreats and workshops',
-      'Farm stand discount',
-      'Participation in working groups',
+      'Everything in Supporter tier',
+      'Priority registration for retreats and workshops',
+      '15% discount on all retreats and educational programs',
+      '15% discount at the farm stand when operational',
+      'Join working groups shaping community development',
+      'Access to member-only online community space',
     ],
     featured: true,
   },
   {
     name: 'Steward',
     price: '$75/month',
-    description: 'Full participation in community life',
+    description: 'Full participation with governance voice and pathway to residency',
     benefits: [
-      'Everything in Member',
-      'Governance participation',
-      'Annual retreat included',
-      'Housing consideration priority',
-      'Pathway to residency',
+      'Everything in Member tier',
+      'Participate in governance and Anchor Circle meetings',
+      'One free retreat day annually when operational',
+      'Priority consideration for future residency',
+      'Direct input on community development decisions',
+      'Mentorship from core team members',
     ],
   },
 ];
@@ -52,23 +55,23 @@ const membershipTiers = [
 const pathways = [
   {
     title: 'Residency',
-    description: 'Live on the land as part of our community. Residencies are earned through contribution and commitment.',
-    link: '/get-involved/residency',
+    description: 'Live on the land as part of our community. Residencies are earned through contribution and commitment. Start as a Steward member to begin the pathway.',
+    link: '/contact?subject=Residency%20Interest',
   },
   {
     title: 'Work Exchange',
-    description: 'Trade your skills and labor for room and board during seasonal work periods.',
-    link: '/get-involved/work-exchange',
+    description: 'Trade your skills and labor for room and board during seasonal work periods. Programs will begin once we secure land—express interest now to be first in line.',
+    link: '/contact?subject=Work%20Exchange%20Interest',
   },
   {
     title: 'Volunteer',
-    description: 'Give your time and skills to specific projects. Earn Unified Tokens for your contributions.',
-    link: '/get-involved/volunteer',
+    description: 'Give your time and skills to specific projects. Earn Unified Tokens for your contributions. We have immediate needs in several areas.',
+    link: '#volunteer',
   },
   {
     title: 'Partner',
-    description: 'Collaborate with us on events, educational programs, or bioregional initiatives.',
-    link: '/get-involved/partner',
+    description: 'Collaborate with us on events, educational programs, or bioregional initiatives. We welcome aligned organizations and individuals.',
+    link: '#partner',
   },
 ];
 
@@ -177,15 +180,15 @@ export default function GetInvolvedPage() {
         <div className={styles.partnerGrid}>
           <div className={styles.partnerCard}>
             <h3>Event Hosting</h3>
-            <p>Host your retreat, workshop, or gathering at our venue when we&apos;re operational.</p>
+            <p>Host your retreat, workshop, festival, or gathering at our venue. We offer flexible indoor/outdoor spaces, professional AV support, and on-site accommodations. Affordable rates for aligned organizations.</p>
           </div>
           <div className={styles.partnerCard}>
             <h3>Educational Programs</h3>
-            <p>Develop curriculum together around permaculture, healing arts, or community building.</p>
+            <p>Co-develop curriculum in permaculture, healing arts, natural building, or community governance. We offer space, infrastructure, and a built-in audience of engaged learners.</p>
           </div>
           <div className={styles.partnerCard}>
             <h3>Bioregional Collaboration</h3>
-            <p>Connect with other Southern Vermont initiatives for mutual support and resource sharing.</p>
+            <p>Connect with the growing network of Southern Vermont regenerative initiatives. We&apos;re building relationships with farms, land trusts, and community organizations for mutual support and resource sharing.</p>
           </div>
         </div>
       </Section>

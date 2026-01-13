@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 const principles = [
   {
     title: 'Two Realms of Governance',
-    description: 'Community-wide decisions (shared resources, membership, values) are made collectively. Platform-specific decisions are made by those working within each platform.',
+    description: 'The Residential Realm governs shared living spaces, membership, and community culture. The Commons/Enterprise Realm governs the four platforms and economic activities. Each realm has its own decision-making processes.',
   },
   {
     title: 'Platform Autonomy',
-    description: 'Each of our four platforms (Farm, Retreat, Venue, Community) operates with significant autonomy within shared agreements and values.',
+    description: 'Each platform (Farm, Retreat, Venue, Community Living) operates with significant autonomy—setting its own schedules, budgets, and internal processes. Autonomy is balanced with accountability to shared values and the Anchor Circle.',
   },
   {
     title: 'Consent-Based Decisions',
-    description: 'Major decisions require no sustained objections rather than unanimous agreement. This allows progress while honoring concerns.',
+    description: 'Major decisions require no sustained objections rather than unanimous agreement. Anyone can raise a concern, and the community works to integrate that wisdom. This allows progress while honoring all voices.',
   },
   {
-    title: 'Transparency',
-    description: 'All governance processes, financials, and decisions are documented and accessible to community members.',
+    title: 'Radical Transparency',
+    description: 'All governance processes, meeting notes, financials, and decisions are documented and accessible to community members. We believe transparency builds trust and prevents the concentration of informal power.',
   },
 ];
 
@@ -38,27 +38,27 @@ const circleRoles = [
 const agreements = [
   {
     title: 'Nonviolent Communication',
-    description: 'We practice NVC as our default mode of addressing needs and navigating disagreement.',
+    description: 'We practice NVC as our foundational communication framework. All community members commit to expressing needs without blame and listening with empathy before responding.',
   },
   {
     title: 'Conflict Resolution Protocol',
-    description: 'Three-step process: direct dialogue, facilitated conversation, circle review.',
+    description: 'Three-step restorative process: direct dialogue between parties, facilitated conversation with a trained mediator, then circle review with community witnesses if needed. Focus on repair, not punishment.',
   },
   {
     title: 'Contribution Expectations',
-    description: 'All residents contribute through labor, skills, or other agreed-upon forms of participation.',
+    description: 'All residents contribute a minimum of 10 hours weekly through labor, skills, or agreed-upon participation. Contributions are tracked and honored equally whether physical, administrative, or creative.',
   },
   {
     title: 'Environmental Commitments',
-    description: 'Shared standards for land use, waste, energy, and ecological impact.',
+    description: 'Shared standards including composting all organic waste, using only approved ecological products, respecting quiet zones and wildlife corridors, and participating in land stewardship rotations.',
   },
   {
     title: 'Financial Transparency',
-    description: 'Open books policy with regular community financial reviews.',
+    description: 'Complete open books policy. Monthly financial summaries shared with all members. Quarterly deep-dive reviews open to full community. Major expenditures require community consent.',
   },
   {
     title: 'Guest & Visitor Guidelines',
-    description: 'Clear protocols for welcoming visitors while maintaining community privacy and safety.',
+    description: 'Visitors welcomed with 48-hour advance notice. Maximum 2-week stays for non-members. Guests respect quiet hours, community spaces, and are accompanied by their host in shared areas.',
   },
 ];
 
