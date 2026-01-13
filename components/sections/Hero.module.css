@@ -1,11 +1,61 @@
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 4rem;
+  justify-content: center;
+  padding: 6rem 4rem 4rem;
   background: var(--color-cream);
   overflow: hidden;
+}
+
+/* Background decorations */
+.bgDecorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgCircle1 {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(94, 154, 162, 0.08) 0%, transparent 70%);
+  animation: gentlePulse 8s ease-in-out infinite;
+}
+
+.bgCircle2 {
+  position: absolute;
+  bottom: -30%;
+  left: -15%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 120, 80, 0.06) 0%, transparent 70%);
+  animation: gentlePulse 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.bgCircle3 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(90, 138, 106, 0.05) 0%, transparent 70%);
+  animation: gentlePulse 6s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
 }
 
 .networkBg {
@@ -14,7 +64,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.08;
+  opacity: 0.15;
 }
 
 .networkBg svg {
@@ -25,7 +75,7 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
+  gap: 5rem;
   max-width: 1400px;
   margin: 0 auto;
   align-items: center;
@@ -38,20 +88,38 @@
 }
 
 .tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--color-terracotta);
   margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  background: rgba(212, 120, 80, 0.08);
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.taglineIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--color-terracotta);
+  color: white;
+  border-radius: 50%;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
   font-weight: 300;
   color: var(--color-river-deep);
-  margin-bottom: 1.5rem;
-  line-height: 1.15;
+  margin-bottom: 1.75rem;
+  line-height: 1.1;
 }
 
 .title em {
@@ -63,11 +131,18 @@
 }
 
 .subtitle {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--color-charcoal);
   opacity: 0.75;
   margin-bottom: 2.5rem;
   line-height: 1.85;
+  max-width: 540px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .visual {
@@ -77,9 +152,44 @@
 .diagram {
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 20px 40px rgba(21, 48, 63, 0.1));
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-river-mist);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-river-mist), transparent);
 }
 
 @media (max-width: 1024px) {
+  .hero {
+    padding: 5rem 2rem 3rem;
+    min-height: auto;
+  }
+
   .content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -90,14 +200,63 @@
     padding-right: 0;
   }
 
+  .tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
   .visual {
     max-width: 500px;
     margin: 0 auto;
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+
+  .bgCircle1 {
+    width: 400px;
+    height: 400px;
+    right: -30%;
+    top: -10%;
+  }
+
+  .bgCircle2 {
+    width: 500px;
+    height: 500px;
+    left: -40%;
+    bottom: -20%;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .bgCircle3 {
+    display: none;
   }
 }

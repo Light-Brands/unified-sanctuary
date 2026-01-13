@@ -1,9 +1,158 @@
 .network {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .network svg {
   width: 100%;
   height: auto;
+}
+
+/* Labels */
+.label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Animations */
+.pulseRing {
+  animation: pulseExpand 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulseExpand {
+  0%, 100% { transform: scale(0.95); opacity: 0.1; }
+  50% { transform: scale(1.02); opacity: 0.2; }
+}
+
+.orbitRing {
+  stroke-dasharray: 10 6;
+  animation: orbitSpin 45s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes orbitSpin {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -500; }
+}
+
+.flowLine {
+  stroke-dasharray: 12 6;
+  animation: flowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes flowPulse {
+  0% { stroke-dashoffset: 0; opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { stroke-dashoffset: -36; opacity: 0.3; }
+}
+
+.centerPulse {
+  animation: centerBreathe 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes centerBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.node {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.node:hover {
+  transform: scale(1.08);
+}
+
+.particle {
+  filter: blur(0.5px);
+}
+
+/* Info badges */
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem;
+  background: white;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.85rem;
+  color: var(--color-river-deep);
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--color-river-mist), var(--color-sage-mist));
+  border-radius: 50%;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .network {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .badges {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .badgeIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .badgeIcon svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .badge {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
 }
