@@ -5,17 +5,20 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(21, 48, 63, 0.04);
 }
 
 .hover:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(21, 48, 63, 0.08);
 }
 
 /* Platform cards have a colored top border */
 .platform {
   text-align: center;
+  padding: 2rem 1.75rem 1.5rem;
 }
 
 .platform::before {
@@ -25,22 +28,59 @@
   left: 0;
   right: 0;
   height: 4px;
+  transition: height var(--transition-base);
+}
+
+.platform:hover::before {
+  height: 6px;
+}
+
+.platform::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.platform:hover::after {
+  opacity: 1;
 }
 
 .farm::before {
   background: linear-gradient(90deg, var(--color-farm), var(--color-sage-mist));
 }
 
+.farm::after {
+  background: linear-gradient(180deg, rgba(90, 54, 14, 0.05) 0%, transparent 100%);
+}
+
 .retreat::before {
   background: linear-gradient(90deg, var(--color-retreat), var(--color-river-mist));
+}
+
+.retreat::after {
+  background: linear-gradient(180deg, rgba(74, 145, 153, 0.05) 0%, transparent 100%);
 }
 
 .venue::before {
   background: linear-gradient(90deg, var(--color-venue), var(--color-terracotta));
 }
 
+.venue::after {
+  background: linear-gradient(180deg, rgba(214, 69, 39, 0.05) 0%, transparent 100%);
+}
+
 .community::before {
   background: linear-gradient(90deg, var(--color-community), var(--color-clay));
+}
+
+.community::after {
+  background: linear-gradient(180deg, rgba(196, 90, 21, 0.05) 0%, transparent 100%);
 }
 
 .card h3 {

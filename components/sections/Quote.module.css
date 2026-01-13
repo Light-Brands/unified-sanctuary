@@ -1,29 +1,145 @@
 .section {
   text-align: center;
-  padding: 6rem 3rem;
+  padding: 7rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative flowing lines */
+.decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.decorLeft {
+  position: absolute;
+  left: 5%;
+  top: 0;
+  height: 100%;
+  width: 100px;
+}
+
+.decorRight {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  height: 100%;
+  width: 100px;
+}
+
+/* Large quote marks */
+.quoteMarkLeft,
+.quoteMarkRight {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 12rem;
+  color: var(--color-river-mist);
+  opacity: 0.08;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.quoteMarkLeft {
+  top: 1rem;
+  left: 10%;
+}
+
+.quoteMarkRight {
+  bottom: 0;
+  right: 10%;
 }
 
 .vessel {
-  width: 60px;
-  height: 75px;
-  margin: 0 auto 2rem;
+  width: 70px;
+  height: 85px;
+  margin: 0 auto 2.5rem;
+  animation: vesselFloat 4s ease-in-out infinite;
+}
+
+@keyframes vesselFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.vessel svg {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 .content blockquote {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   font-style: italic;
   color: var(--color-river-deep);
-  line-height: 1.45;
-  margin: 0 auto 1.5rem;
-  max-width: 750px;
+  line-height: 1.5;
+  margin: 0 auto 2rem;
+  max-width: 800px;
+  font-weight: 300;
 }
 
 .content cite {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
   font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--color-terracotta);
   font-style: normal;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-weight: 600;
+}
+
+.citeLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-terracotta), transparent);
+}
+
+@media (max-width: 1024px) {
+  .quoteMarkLeft,
+  .quoteMarkRight {
+    font-size: 8rem;
+  }
+
+  .quoteMarkLeft {
+    left: 2%;
+  }
+
+  .quoteMarkRight {
+    right: 2%;
+  }
+
+  .decorLeft,
+  .decorRight {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .quoteMarkLeft,
+  .quoteMarkRight {
+    font-size: 6rem;
+    opacity: 0.05;
+  }
+
+  .citeLine {
+    width: 25px;
+  }
+
+  .content blockquote {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    margin-bottom: 1.5rem;
+  }
 }

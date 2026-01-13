@@ -6,20 +6,48 @@ import styles from './Hero.module.css';
 export const Hero: React.FC = () => {
   return (
     <header className={styles.hero}>
+      {/* Decorative background elements */}
+      <div className={styles.bgDecorations}>
+        <div className={styles.bgCircle1} />
+        <div className={styles.bgCircle2} />
+        <div className={styles.bgCircle3} />
+      </div>
+
       {/* Network background */}
       <div className={styles.networkBg}>
         <svg viewBox="0 0 1000 600" fill="none">
-          <g stroke="#5E9AA2" strokeWidth="1.5">
-            <path d="M50 300 Q250 200 450 300 T850 280" className="network-flow"/>
-            <path d="M100 150 Q300 250 500 150 T900 180" className="network-flow"/>
-            <path d="M80 450 Q280 350 480 450 T880 420" className="network-flow"/>
+          <defs>
+            <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#5E9AA2" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#5E9AA2" stopOpacity="0.4"/>
+              <stop offset="100%" stopColor="#5E9AA2" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#D47850" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#D47850" stopOpacity="0.3"/>
+              <stop offset="100%" stopColor="#D47850" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+          <g strokeWidth="2">
+            <path d="M50 300 Q250 200 450 300 T850 280" stroke="url(#flowGrad1)" className="network-flow"/>
+            <path d="M100 150 Q300 250 500 150 T900 180" stroke="url(#flowGrad2)" className="network-flow"/>
+            <path d="M80 450 Q280 350 480 450 T880 420" stroke="url(#flowGrad1)" className="network-flow"/>
+            <path d="M200 520 Q400 420 600 520 T950 500" stroke="url(#flowGrad2)" className="network-flow"/>
           </g>
         </svg>
       </div>
 
       <div className={styles.content}>
         <div className={styles.text}>
-          <p className={styles.tagline}>Regenerative Community in Vermont</p>
+          <p className={styles.tagline}>
+            <span className={styles.taglineIcon}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            Regenerative Community in Vermont
+          </p>
           <h1 className={styles.title}>
             The Vessel <em>Holds</em>.<br/>The Water <em>Nourishes</em>.
           </h1>
@@ -27,15 +55,26 @@ export const Hero: React.FC = () => {
             Like clay vessels filling and flowing into one another, our four platforms share resources,
             wisdom, and support. What nourishes one strengthens all through the living network.
           </p>
-          <Button href="/vision" size="lg">
-            Explore Our Vision
-            <ArrowRight size={18} />
-          </Button>
+          <div className={styles.buttons}>
+            <Button href="/vision" size="lg">
+              Explore Our Vision
+              <ArrowRight size={18} />
+            </Button>
+            <Button href="/get-involved" variant="secondary" size="lg">
+              Join the Flow
+            </Button>
+          </div>
         </div>
 
         <div className={styles.visual}>
           <HeroIllustration />
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className={styles.scrollIndicator}>
+        <div className={styles.scrollLine} />
+        <span>Scroll to explore</span>
       </div>
     </header>
   );
