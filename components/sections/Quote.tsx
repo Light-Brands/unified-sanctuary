@@ -3,7 +3,7 @@ import { Section } from '../ui';
 import styles from './Quote.module.css';
 
 interface QuoteProps {
-  text: string;
+  text?: string;
   attribution?: string;
 }
 
