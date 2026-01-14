@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Section, SectionHeader, Button } from '@/components/ui';
+import { Section, SectionHeader, Button, Accordion, AccordionItem } from '@/components/ui';
 import { CTA } from '@/components/sections';
 import { Check, Heart } from '@/components/icons';
 import styles from './page.module.css';
@@ -87,26 +87,30 @@ export default function SupportPage() {
           subtitle="Every contribution brings us closer to securing land"
         />
 
-        <div className={styles.donationGrid}>
-          {donationTiers.map((tier) => (
-            <div key={tier.name} className={styles.donationCard}>
-              <div className={styles.donationAmount}>{tier.amount}</div>
-              <h3>{tier.name}</h3>
-              <p className={styles.donationDescription}>{tier.description}</p>
+        <Accordion variant="card" allowMultiple>
+          {donationTiers.map((tier, i) => (
+            <AccordionItem
+              key={tier.name}
+              title={`${tier.name} — ${tier.amount}`}
+              subtitle={tier.description}
+              defaultOpen={i === 0}
+            >
               <ul className={styles.rewards}>
-                {tier.rewards.map((reward, i) => (
-                  <li key={i}>
+                {tier.rewards.map((reward, j) => (
+                  <li key={j}>
                     <Check size={14} />
                     {reward}
                   </li>
                 ))}
               </ul>
-              <Button href={`/contact?subject=Donation%20-%20${tier.name}%20(${tier.amount})`} size="sm">
-                Donate {tier.amount}
-              </Button>
-            </div>
+              <div className={styles.tierAction}>
+                <Button href={`/contact?subject=Donation%20-%20${tier.name}%20(${tier.amount})`} size="sm">
+                  Donate {tier.amount}
+                </Button>
+              </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
 
         <div className={styles.donateInfo}>
           <div className={styles.fiscalSponsor}>
@@ -181,28 +185,20 @@ export default function SupportPage() {
           subtitle="Complete transparency in how we use funds"
         />
 
-        <div className={styles.allocationGrid}>
-          <div className={styles.allocationCard}>
-            <div className={styles.percentage}>40%</div>
-            <h3>Land Acquisition</h3>
+        <Accordion variant="card" allowMultiple>
+          <AccordionItem title="Land Acquisition" badge="40%" defaultOpen>
             <p>Down payment and closing costs for 50-150 acres in Southern Vermont. This is the foundation—without land, nothing else is possible.</p>
-          </div>
-          <div className={styles.allocationCard}>
-            <div className={styles.percentage}>25%</div>
-            <h3>Infrastructure</h3>
+          </AccordionItem>
+          <AccordionItem title="Infrastructure" badge="25%">
             <p>Essential systems: well/water, solar/power, access roads, and first dwelling construction using natural building techniques.</p>
-          </div>
-          <div className={styles.allocationCard}>
-            <div className={styles.percentage}>20%</div>
-            <h3>Operations</h3>
+          </AccordionItem>
+          <AccordionItem title="Operations" badge="20%">
             <p>Legal structuring for the trust, administrative costs, community organizing, and initial staffing to coordinate the build-out.</p>
-          </div>
-          <div className={styles.allocationCard}>
-            <div className={styles.percentage}>15%</div>
-            <h3>Reserve</h3>
+          </AccordionItem>
+          <AccordionItem title="Reserve" badge="15%">
             <p>Emergency fund for unexpected costs, weather delays, or opportunities. Responsible stewardship requires a buffer for the unknown.</p>
-          </div>
-        </div>
+          </AccordionItem>
+        </Accordion>
       </Section>
 
       <CTA

@@ -1,0 +1,254 @@
+/* Accordion Container */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Variants */
+.default .item {
+  border-bottom: 1px solid rgba(21, 48, 63, 0.1);
+}
+
+.default .item:first-child {
+  border-top: 1px solid rgba(21, 48, 63, 0.1);
+}
+
+.card {
+  gap: 12px;
+}
+
+.card .item {
+  background: var(--color-soft-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.card .item.open {
+  box-shadow: var(--shadow-md);
+}
+
+.minimal .item {
+  /* No borders or backgrounds */
+}
+
+/* Accordion Item */
+.item {
+  position: relative;
+}
+
+/* Trigger Button */
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  transition: background-color var(--transition-fast);
+}
+
+.trigger:hover {
+  background: rgba(21, 48, 63, 0.02);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--color-river-mist);
+  outline-offset: -2px;
+}
+
+.card .trigger {
+  padding: 18px 24px;
+}
+
+.minimal .trigger {
+  padding: 12px 0;
+}
+
+/* Trigger Content */
+.triggerContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-river-mist), var(--color-river-blue));
+  color: white;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-river-deep);
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--color-river-blue);
+  opacity: 0.8;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-terracotta);
+  color: white;
+  border-radius: var(--radius-full);
+}
+
+/* Chevron */
+.chevron {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-river-mist);
+  transition: transform var(--transition-base);
+}
+
+.item.open .chevron {
+  transform: rotate(180deg);
+}
+
+/* Content */
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-base);
+}
+
+.item.open .content {
+  grid-template-rows: 1fr;
+}
+
+.contentInner {
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.item.open .contentInner {
+  padding: 0 20px 24px;
+}
+
+.card .contentInner {
+  padding: 0 24px;
+}
+
+.card .item.open .contentInner {
+  padding: 0 24px 24px;
+}
+
+.minimal .contentInner {
+  padding: 0;
+}
+
+.minimal .item.open .contentInner {
+  padding: 0 0 16px;
+}
+
+/* Content Styling */
+.contentInner p {
+  color: var(--color-charcoal);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.contentInner p:last-child {
+  margin-bottom: 0;
+}
+
+.contentInner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contentInner ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--color-charcoal);
+  line-height: 1.6;
+}
+
+.contentInner ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-river-mist);
+}
+
+.contentInner ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trigger {
+    padding: 16px;
+  }
+
+  .card .trigger {
+    padding: 16px 20px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contentInner {
+    padding: 0 16px;
+  }
+
+  .item.open .contentInner {
+    padding: 0 16px 20px;
+  }
+
+  .card .contentInner {
+    padding: 0 20px;
+  }
+
+  .card .item.open .contentInner {
+    padding: 0 20px 20px;
+  }
+}

@@ -131,6 +131,13 @@
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
+.avatarSmall {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+}
+
 .teamMember:hover .avatar {
   transform: scale(1.08);
   box-shadow: 0 8px 25px rgba(46, 90, 106, 0.35);

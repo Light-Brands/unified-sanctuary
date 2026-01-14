@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Section, SectionHeader } from '@/components/ui';
+import { Section, SectionHeader, Accordion, AccordionItem } from '@/components/ui';
 import { CTA } from '@/components/sections';
 import styles from './page.module.css';
 
@@ -85,14 +85,13 @@ export default function GovernancePage() {
           subtitle="Principles that guide our collective decision-making"
         />
 
-        <div className={styles.principlesGrid}>
+        <Accordion variant="card" allowMultiple>
           {principles.map((principle, i) => (
-            <div key={i} className={styles.principleCard}>
-              <h3>{principle.title}</h3>
+            <AccordionItem key={i} title={principle.title} defaultOpen={i === 0}>
               <p>{principle.description}</p>
-            </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Anchor Circle */}
@@ -146,14 +145,13 @@ export default function GovernancePage() {
           subtitle="The shared commitments that hold us together"
         />
 
-        <div className={styles.agreementsGrid}>
+        <Accordion variant="card" allowMultiple>
           {agreements.map((agreement, i) => (
-            <div key={i} className={styles.agreementCard}>
-              <h3>{agreement.title}</h3>
+            <AccordionItem key={i} title={agreement.title} defaultOpen={i === 0}>
               <p>{agreement.description}</p>
-            </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       <CTA
