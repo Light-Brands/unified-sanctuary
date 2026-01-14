@@ -38,11 +38,8 @@ export default function ContactPage() {
       <Section variant="light">
         <div className={styles.heroContent}>
           <p className={styles.tagline}>Contact</p>
-          <h1>Let&apos;s Connect</h1>
-          <p className={styles.lead}>
-            Questions, ideas, or just want to say hello? We&apos;d love to hear from you.
-            Every connection strengthens the network.
-          </p>
+          <h1>Connect</h1>
+          <p className={styles.lead}>Questions or ideas? We&apos;d love to hear from you.</p>
         </div>
       </Section>
 
@@ -135,10 +132,7 @@ export default function ContactPage() {
 
             <div className={styles.responseNote}>
               <h4>Response Time</h4>
-              <p>
-                We&apos;re a small team doing big work. Please allow 2-3 business days
-                for a response. If it&apos;s urgent, mention that in your subject line.
-              </p>
+              <p>2-3 business days. Urgent? Note in subject.</p>
             </div>
           </div>
         </div>
@@ -147,42 +141,42 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <Section variant="light">
         <SectionHeader
-          title="Common Questions"
-          subtitle="Quick answers to things people often ask"
+          title="FAQ"
+          subtitle="Quick answers"
         />
 
         <div className={styles.faqGrid}>
           <div className={styles.faqCard}>
-            <h3>Where are you located?</h3>
-            <p>We&apos;re currently in the land search phase, focused on the Southern Vermont region around Brattleboro, Guilford, and Putney. We&apos;re seeking 50-150 acres with water access, agricultural potential, and ideally some existing structures.</p>
+            <h3>Location?</h3>
+            <p>Searching in Southern Vermont: Brattleboro, Guilford, Putney. Seeking 50-150 acres.</p>
           </div>
           <div className={styles.faqCard}>
             <h3>Can I visit?</h3>
-            <p>Once we secure land, we&apos;ll host regular open days, community work parties, and seasonal gatherings. Sign up for our newsletter to be the first to know about events and visiting opportunities.</p>
+            <p>Once we have land. Sign up for newsletter.</p>
           </div>
           <div className={styles.faqCard}>
-            <h3>How can I get involved now?</h3>
-            <p>Join as a Supporter, Member, or Steward to access community benefits. Volunteer your skills in areas like permaculture design, legal work, or communications. Or donate to our land acquisition fund—every contribution helps.</p>
+            <h3>Get involved now?</h3>
+            <p>Join as Supporter, Member, or Steward. Volunteer skills. Donate.</p>
           </div>
           <div className={styles.faqCard}>
-            <h3>Are you accepting residents?</h3>
-            <p>Not yet—we&apos;re still searching for land. However, we&apos;re actively building relationships with future community members. Steward-level members have priority consideration for residency once we&apos;re established.</p>
+            <h3>Accepting residents?</h3>
+            <p>Not yet. Stewards have priority when established.</p>
           </div>
           <div className={styles.faqCard}>
-            <h3>How much does it cost to live there?</h3>
-            <p>Our model prioritizes accessibility. Residents will pay monthly land use fees based on household size and income, plus contribute labor hours. We&apos;re designing pathways where people can build equity through contribution, not just capital.</p>
+            <h3>Cost to live there?</h3>
+            <p>Land use fees based on income plus labor hours. Equity through contribution.</p>
           </div>
           <div className={styles.faqCard}>
-            <h3>What is the Unified Token?</h3>
-            <p>The Unified Token is our community currency. Contributors earn tokens for volunteer work, which can be spent on products and services within the community—reducing reliance on cash and building a circular economy.</p>
+            <h3>Unified Token?</h3>
+            <p>Community currency. Earn through work, spend within community.</p>
           </div>
           <div className={styles.faqCard}>
-            <h3>Can I bring my family?</h3>
-            <p>Yes! We&apos;re designing Unified Sanctuaries to be multi-generational. Families with children are welcome, and we&apos;re planning shared childcare arrangements, educational programming, and safe spaces for kids to explore nature.</p>
+            <h3>Families?</h3>
+            <p>Welcome. Multi-generational design with childcare and education.</p>
           </div>
           <div className={styles.faqCard}>
-            <h3>Is this a religious community?</h3>
-            <p>No, we&apos;re not affiliated with any religion. We welcome people of all spiritual backgrounds. Our values are rooted in ecological stewardship, community care, and Indigenous wisdom traditions, but we honor diverse paths.</p>
+            <h3>Religious?</h3>
+            <p>No. All backgrounds welcome. Ecological and community values.</p>
           </div>
         </div>
       </Section>

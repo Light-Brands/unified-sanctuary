@@ -5,108 +5,71 @@ import { Check } from '@/components/icons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Partner With Us',
-  description: 'Collaborate with Unified Sanctuaries on events, educational programs, bioregional initiatives, and research partnerships.',
+  title: 'Partner',
+  description: 'Events, education, bioregional, and research partnerships.',
 };
 
 const partnershipTypes = [
   {
-    title: 'Event Hosting',
+    title: 'Events',
     icon: '🎪',
-    description: 'Host your retreat, workshop, festival, wedding, or gathering at our venue',
+    description: 'Host retreats, workshops, festivals, weddings',
     offerings: [
-      'Flexible indoor and outdoor event spaces',
-      'Professional A/V and event production support',
-      'On-site accommodations and camping options',
-      'Catering coordination with farm-fresh ingredients',
-      'Affordable rates for aligned organizations and artists',
-      'Production partnership opportunities for larger events',
+      'Indoor/outdoor spaces',
+      'A/V and production',
+      'Accommodations',
+      'Farm-fresh catering',
     ],
-    ideal: 'Retreat leaders, workshop facilitators, event producers, wedding planners, artists, and festival organizers seeking a regenerative venue.',
+    ideal: 'Event producers, retreat leaders, artists.',
   },
   {
-    title: 'Educational Programs',
+    title: 'Education',
     icon: '📚',
-    description: 'Co-develop and deliver transformative learning experiences',
+    description: 'Co-develop learning experiences',
     offerings: [
-      'Curriculum co-development in permaculture, healing arts, natural building',
-      'Access to land, facilities, and infrastructure for hands-on learning',
-      'Built-in audience of engaged community members and visitors',
-      'Documentation and filming for online course development',
-      'Revenue-sharing models for ongoing programs',
-      'Certification pathway partnerships',
+      'Curriculum development',
+      'Land and facilities',
+      'Built-in audience',
+      'Revenue sharing',
     ],
-    ideal: 'Educators, practitioners, and organizations teaching permaculture, herbalism, natural building, somatic healing, community governance, and related topics.',
+    ideal: 'Educators in permaculture, healing arts, building.',
   },
   {
-    title: 'Bioregional Collaboration',
+    title: 'Bioregional',
     icon: '🌿',
-    description: 'Connect with the growing network of Southern Vermont regenerative initiatives',
+    description: 'Vermont regenerative network',
     offerings: [
-      'Resource sharing with regional farms and land trusts',
-      'Joint programming and cross-promotion',
-      'Collective purchasing and distribution networks',
-      'Mutual aid and skill-sharing agreements',
-      'Collaborative grant applications',
-      'Bioregional council participation',
+      'Resource sharing',
+      'Joint programming',
+      'Mutual aid',
+      'Grant collaboration',
     ],
-    ideal: 'Local farms, land trusts, conservation organizations, community gardens, food security initiatives, and regenerative agriculture projects.',
+    ideal: 'Farms, land trusts, food security projects.',
   },
   {
-    title: 'Research Partnerships',
+    title: 'Research',
     icon: '🔬',
-    description: 'Conduct studies and experiments in our living laboratory',
+    description: 'Living laboratory',
     offerings: [
-      'Access to land and facilities for field research',
-      'Collaboration on soil health, biodiversity, and ecosystem studies',
-      'Community governance and social structure research opportunities',
-      'Regenerative economics and alternative currency studies',
-      'Natural building and sustainable technology testing',
-      'Data sharing and co-publication agreements',
+      'Field research access',
+      'Ecosystem studies',
+      'Governance research',
+      'Data sharing',
     ],
-    ideal: 'Academic institutions, research organizations, and independent researchers studying regenerative systems, community resilience, and sustainable living.',
+    ideal: 'Academic and independent researchers.',
   },
 ];
 
 const collaborationBenefits = [
-  {
-    title: 'Aligned Values',
-    description: 'Work with a community deeply committed to regeneration, equity, and collective wellbeing.',
-  },
-  {
-    title: 'Beautiful Setting',
-    description: 'Access stunning Southern Vermont landscapes, from forests to meadows to mountain views.',
-  },
-  {
-    title: 'Built-In Community',
-    description: 'Tap into an engaged network of practitioners, learners, and supporters.',
-  },
-  {
-    title: 'Flexible Structures',
-    description: 'We design partnership agreements that work for your organization and goals.',
-  },
-  {
-    title: 'Long-Term Relationships',
-    description: 'We seek partnerships that grow and deepen over time, not one-off transactions.',
-  },
-  {
-    title: 'Mutual Support',
-    description: 'Partnerships are reciprocal—we grow together and support each other\'s missions.',
-  },
+  { title: 'Aligned Values', description: 'Regeneration, equity, wellbeing.' },
+  { title: 'Beautiful Setting', description: 'Vermont forests and meadows.' },
+  { title: 'Built-In Community', description: 'Engaged network.' },
+  { title: 'Flexible', description: 'Agreements that work for you.' },
+  { title: 'Long-Term', description: 'Growing relationships.' },
+  { title: 'Mutual Support', description: 'We grow together.' },
 ];
 
-const partnerTestimonials = [
-  {
-    quote: 'Unified Sanctuaries understands that real impact comes from collaboration. Their approach to partnership is rooted in mutual benefit and shared vision.',
-    author: 'Future Partner',
-    role: 'Retreat Leader',
-  },
-  {
-    quote: 'The team brings genuine care and expertise to every collaboration. They\'re building something special in Vermont.',
-    author: 'Future Partner',
-    role: 'Educator',
-  },
-];
+const partnerTestimonials: { quote: string; author: string; role: string }[] = [];
 
 export default function PartnerPage() {
   return (
@@ -114,12 +77,10 @@ export default function PartnerPage() {
       {/* Hero */}
       <Section variant="light">
         <div className={styles.heroContent}>
-          <p className={styles.tagline}>Partner With Us</p>
-          <h1>Create Regenerative<br/>Impact Together</h1>
+          <p className={styles.tagline}>Partner</p>
+          <h1>Create Together</h1>
           <p className={styles.lead}>
-            Unified Sanctuaries welcomes collaboration with aligned organizations, educators,
-            and practitioners. Whether you want to host events, develop educational programs,
-            or build bioregional connections, we&apos;re building infrastructure for partnership.
+            Events, education, bioregional connections. We welcome collaboration.
           </p>
         </div>
       </Section>
@@ -127,8 +88,8 @@ export default function PartnerPage() {
       {/* Partnership Types */}
       <Section id="partnership-types">
         <SectionHeader
-          title="Partnership Opportunities"
-          subtitle="Multiple pathways for collaboration"
+          title="Opportunities"
+          subtitle="Ways to collaborate"
         />
 
         <div className={styles.partnerGrid}>
@@ -162,8 +123,8 @@ export default function PartnerPage() {
       {/* Why Partner */}
       <Section variant="gradient" id="why-partner">
         <SectionHeader
-          title="Why Partner With Us"
-          subtitle="The benefits of collaborative creation"
+          title="Why Partner"
+          subtitle="Benefits"
         />
 
         <div className={styles.benefitsGrid}>
@@ -180,23 +141,16 @@ export default function PartnerPage() {
       <Section id="venue">
         <div className={styles.venueContent}>
           <div className={styles.venueText}>
-            <h2>Our Event Spaces</h2>
-            <p>
-              When our venue becomes operational, we&apos;ll offer a range of spaces designed
-              for gatherings of all sizes. Our vision includes:
-            </p>
+            <h2>Event Spaces</h2>
+            <p>When operational:</p>
             <ul>
-              <li><strong>Indoor Event Hall:</strong> Flexible space for workshops, performances, and celebrations (capacity 100-200)</li>
-              <li><strong>Outdoor Amphitheater:</strong> Natural bowl setting for festivals, concerts, and ceremonies</li>
-              <li><strong>Workshop Spaces:</strong> Multiple rooms for breakout sessions and hands-on learning</li>
-              <li><strong>Retreat Accommodations:</strong> Private and shared lodging for overnight guests</li>
-              <li><strong>Campground:</strong> Tent and vehicle camping with facilities</li>
-              <li><strong>Farm-to-Table Kitchen:</strong> Full commercial kitchen with fresh ingredients from our farm</li>
+              <li><strong>Indoor Hall:</strong> 100-200 capacity</li>
+              <li><strong>Amphitheater:</strong> Outdoor festivals</li>
+              <li><strong>Workshop Rooms:</strong> Breakout sessions</li>
+              <li><strong>Accommodations:</strong> Lodging and camping</li>
+              <li><strong>Kitchen:</strong> Farm-to-table catering</li>
             </ul>
-            <p className={styles.venueNote}>
-              While we&apos;re still in land acquisition phase, we welcome early conversations
-              with potential event partners to shape our venue development.
-            </p>
+            <p className={styles.venueNote}>Still in land acquisition. Early conversations welcome.</p>
           </div>
           <div className={styles.venueVisual}>
             <div className={styles.venuePlaceholder}>
@@ -210,30 +164,30 @@ export default function PartnerPage() {
       {/* Partnership Process */}
       <Section variant="light" id="process">
         <SectionHeader
-          title="Partnership Process"
-          subtitle="How we build collaborative relationships"
+          title="Process"
+          subtitle="Four steps"
         />
 
         <div className={styles.processGrid}>
           <div className={styles.processCard}>
             <div className={styles.processNumber}>1</div>
-            <h4>Initial Conversation</h4>
-            <p>Reach out to share your vision and explore alignment. We&apos;ll discuss goals, values, and potential collaboration structures.</p>
+            <h4>Conversation</h4>
+            <p>Share your vision. Explore alignment.</p>
           </div>
           <div className={styles.processCard}>
             <div className={styles.processNumber}>2</div>
-            <h4>Proposal Development</h4>
-            <p>Together, we&apos;ll develop a partnership proposal that outlines scope, responsibilities, resources, and mutual benefits.</p>
+            <h4>Proposal</h4>
+            <p>Scope, responsibilities, benefits.</p>
           </div>
           <div className={styles.processCard}>
             <div className={styles.processNumber}>3</div>
-            <h4>Agreement & Planning</h4>
-            <p>We formalize the partnership with clear agreements and begin detailed planning for implementation.</p>
+            <h4>Agreement</h4>
+            <p>Formalize and plan.</p>
           </div>
           <div className={styles.processCard}>
             <div className={styles.processNumber}>4</div>
-            <h4>Collaborate & Grow</h4>
-            <p>We execute together, evaluate outcomes, and look for ways to deepen and expand our collaboration over time.</p>
+            <h4>Collaborate</h4>
+            <p>Execute and grow.</p>
           </div>
         </div>
       </Section>
@@ -241,29 +195,19 @@ export default function PartnerPage() {
       {/* Current Partners Section */}
       <Section id="network">
         <div className={styles.networkContent}>
-          <h2>Building a Bioregional Network</h2>
-          <p>
-            Unified Sanctuaries is actively building relationships with farms, land trusts,
-            educational organizations, and community projects throughout Southern Vermont and beyond.
-          </p>
-          <p>
-            We envision a network of interconnected eco-villages and regenerative initiatives
-            that share knowledge, resources, and support. If you&apos;re part of this emerging
-            ecosystem—or want to be—we&apos;d love to connect.
-          </p>
+          <h2>Bioregional Network</h2>
+          <p>Building relationships with farms, land trusts, and community projects throughout Vermont.</p>
           <div className={styles.networkCta}>
-            <h3>Areas of Bioregional Connection</h3>
+            <h3>Connection Areas</h3>
             <div className={styles.networkTags}>
-              <span>Regenerative Farms</span>
+              <span>Farms</span>
               <span>Land Trusts</span>
-              <span>Community Gardens</span>
+              <span>Gardens</span>
               <span>Food Security</span>
               <span>Permaculture</span>
               <span>Healing Arts</span>
-              <span>Natural Building</span>
-              <span>Alternative Education</span>
-              <span>Conservation</span>
-              <span>Climate Resilience</span>
+              <span>Building</span>
+              <span>Education</span>
             </div>
           </div>
         </div>
@@ -272,50 +216,36 @@ export default function PartnerPage() {
       {/* FAQ */}
       <Section variant="light">
         <SectionHeader
-          title="Partnership FAQ"
-          subtitle="Common questions about collaboration"
+          title="FAQ"
+          subtitle="Common questions"
         />
 
         <div className={styles.faqGrid}>
           <div className={styles.faqItem}>
-            <h4>When will the venue be available?</h4>
-            <p>
-              We&apos;re currently in the land acquisition phase. Once we secure property, we&apos;ll
-              move through development phases. We welcome early partnerships to help shape our
-              venue and programming.
-            </p>
+            <h4>Venue availability?</h4>
+            <p>After land acquisition. Early partnerships welcome.</p>
           </div>
           <div className={styles.faqItem}>
-            <h4>What are your rates?</h4>
-            <p>
-              We offer flexible, values-aligned pricing. Rates depend on event size, duration,
-              services needed, and organizational alignment. We prioritize accessibility for
-              community-benefit events.
-            </p>
+            <h4>Rates?</h4>
+            <p>Flexible, values-aligned pricing.</p>
           </div>
           <div className={styles.faqItem}>
-            <h4>Do you work with for-profit organizations?</h4>
-            <p>
-              Yes, we partner with mission-aligned businesses. We&apos;re especially interested
-              in B-Corps, cooperatives, and companies with genuine regenerative practices.
-            </p>
+            <h4>For-profit partners?</h4>
+            <p>Yes, if mission-aligned.</p>
           </div>
           <div className={styles.faqItem}>
-            <h4>Can we develop an ongoing program together?</h4>
-            <p>
-              Absolutely. We love building long-term educational and programmatic partnerships.
-              Revenue-sharing and co-branding arrangements are available for ongoing programs.
-            </p>
+            <h4>Ongoing programs?</h4>
+            <p>Yes. Revenue-sharing available.</p>
           </div>
         </div>
       </Section>
 
       <CTA
-        title="Ready to Collaborate?"
-        subtitle="Let's explore how we can create regenerative impact together."
-        primaryText="Start a Conversation"
+        title="Ready?"
+        subtitle="Let's create together."
+        primaryText="Start Conversation"
         primaryHref="/contact?subject=Partnership%20Inquiry"
-        secondaryText="View All Ways to Get Involved"
+        secondaryText="Get Involved"
         secondaryHref="/get-involved"
       />
     </>

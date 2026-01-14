@@ -49,11 +49,10 @@ export const Hero: React.FC = () => {
             Searching for Land in Southern Vermont
           </p>
           <h1 className={styles.title}>
-            Land <em>Held</em> in Trust.<br/>Community <em>Built</em> Together.
+            Land in Trust. Community Together.
           </h1>
           <p className={styles.subtitle}>
-            We&apos;re creating a collectively stewarded sanctuary where a regenerative farm,
-            retreat center, event venue, and community living space support each other and the land.
+            A regenerative farm, retreat center, event venue, and community—all sharing one piece of land in Southern Vermont.
           </p>
           <div className={styles.buttons}>
             <Button href="/vision" size="lg">

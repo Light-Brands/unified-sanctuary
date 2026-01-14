@@ -13,14 +13,14 @@ import {
 import styles from './Values.module.css';
 
 const values = [
-  { name: 'Regeneration', icon: Seedling, description: 'Giving back more than we take' },
-  { name: 'Non-Speculative Land', icon: Globe, description: 'Land as commons, not commodity' },
-  { name: 'Equity Through Contribution', icon: Scale, description: 'Value all forms of giving' },
-  { name: 'Participatory Governance', icon: Hands, description: 'Decisions by those affected' },
-  { name: 'Open-Source Sharing', icon: BookOpen, description: 'Knowledge freely shared' },
-  { name: 'Indigenous Wisdom', icon: TreePine, description: 'Honoring original stewards' },
-  { name: 'Joy as Medicine', icon: Sparkles, description: 'Celebration heals community' },
-  { name: 'Flexibility & Resilience', icon: Waves, description: 'Adapting with grace' },
+  { name: 'Regeneration', icon: Seedling, description: 'Give back more than we take' },
+  { name: 'Land in Trust', icon: Globe, description: 'Commons, not commodity' },
+  { name: 'Equity', icon: Scale, description: 'Value all contributions' },
+  { name: 'Participation', icon: Hands, description: 'Decide together' },
+  { name: 'Open Source', icon: BookOpen, description: 'Share what we learn' },
+  { name: 'Indigenous Wisdom', icon: TreePine, description: 'Honor original stewards' },
+  { name: 'Joy', icon: Sparkles, description: 'Celebration heals' },
+  { name: 'Resilience', icon: Waves, description: 'Adapt with grace' },
 ];
 
 export const Values: React.FC = () => {
@@ -28,8 +28,8 @@ export const Values: React.FC = () => {
     <Section variant="dark">
       <div className={styles.container}>
         <SectionHeader
-          title="Rooted in Values"
-          subtitle="The principles that guide everything we do"
+          title="Our Values"
+          subtitle="What guides us"
         />
 
         <div className={styles.flow}>

@@ -10,16 +10,12 @@ export const Mission: React.FC = () => {
           <div className={styles.vessel}></div>
         </div>
         <div className={styles.text}>
-          <h2>Land Heals People.<br/>People Heal Land.</h2>
+          <h2>What We&apos;re Building</h2>
           <p>
-            Unified Sanctuaries is a regenerative, land-based community committed to meeting
-            our basic needs of food, housing, and belonging within a supportive,
-            earth-centered environment.
+            Unified Sanctuaries is a regenerative community focused on food, housing, and belonging.
           </p>
           <p>
-            We&apos;re in the pre-land phase, actively searching for property in Southern Vermont
-            and forming the legal structures to hold it in trust—protected from speculation and
-            stewarded for generations to come.
+            We&apos;re searching for land in Southern Vermont to hold in trust—protected from speculation, stewarded for generations.
           </p>
         </div>
       </div>

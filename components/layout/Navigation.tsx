@@ -13,11 +13,11 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'About', href: '/about', description: 'Our story and team' },
-  { label: 'Vision', href: '/vision', description: 'Four platforms, one purpose' },
-  { label: 'Governance', href: '/governance', description: 'How we make decisions' },
-  { label: 'Get Involved', href: '/get-involved', description: 'Join the community' },
-  { label: 'Support', href: '/support', description: 'Help grow the vision' },
+  { label: 'About', href: '/about', description: 'Story and team' },
+  { label: 'Vision', href: '/vision', description: 'Four platforms' },
+  { label: 'Governance', href: '/governance', description: 'How we decide' },
+  { label: 'Get Involved', href: '/get-involved', description: 'Join us' },
+  { label: 'Support', href: '/support', description: 'Help us grow' },
 ];
 
 export const Navigation: React.FC = () => {
@@ -115,7 +115,7 @@ export const Navigation: React.FC = () => {
 
           {/* Mobile menu footer */}
           <div className={styles.mobileFooter}>
-            <p>Regenerative Community in Vermont</p>
+            <p>Southern Vermont</p>
           </div>
         </div>
       </div>

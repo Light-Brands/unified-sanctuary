@@ -5,45 +5,45 @@ import { Calendar } from '@/components/icons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'News & Updates',
-  description: 'Stay updated on Unified Sanctuaries - our land search progress, community events, and journey toward creating a regenerative community in Vermont.',
+  title: 'News',
+  description: 'Land search, events, and community updates.',
 };
 
 const updates = [
   {
     date: 'January 2026',
-    title: 'Land Search Continues in Southern Vermont',
-    content: 'We have narrowed our search to three promising properties in the Brattleboro-Guilford-Putney triangle. Each offers unique possibilities for our four-platform vision. One property features an existing farmhouse and barn, another has exceptional water access with a year-round stream, and the third offers the acreage we need for the full community build-out. Site visits are scheduled for February.',
-    category: 'Land Search',
+    title: 'Three Properties Under Consideration',
+    content: 'Narrowed to three properties in Brattleboro-Guilford-Putney triangle. Site visits in February.',
+    category: 'Land',
   },
   {
     date: 'December 2025',
-    title: 'Winter Gathering: Community Visioning Session',
-    content: 'Over 30 people joined us for a day of shared dreaming, mapping out what the first year on land might look like. We used participatory design methods to envision the initial infrastructure, housing placement, and farm layout. Key themes emerged: the importance of a central gathering space, the need for both privacy and connection, and enthusiasm for learn-by-doing building workshops.',
+    title: 'Winter Visioning Gathering',
+    content: '30+ people mapped first year on land. Key themes: gathering space, privacy/connection balance.',
     category: 'Community',
   },
   {
     date: 'November 2025',
     title: 'Fiscal Sponsorship Secured',
-    content: 'We are now fiscally sponsored, allowing us to receive tax-deductible donations. This is a major milestone for our fundraising efforts. Our fiscal sponsor has experience supporting land-based community projects and aligns with our values around regenerative economics. All donations now go directly toward the land acquisition fund.',
+    content: 'Tax-deductible donations now possible. Donations go to land fund.',
     category: 'Milestone',
   },
   {
     date: 'October 2025',
-    title: 'Core Team Grows to Ten',
-    content: 'We welcome Pato to the core team, bringing deep permaculture expertise and decades of experience designing regenerative systems. Pato has worked with communities across Central and South America, specializing in water harvesting, food forests, and natural building. Our team now includes expertise across all four planned platforms.',
+    title: 'Core Team: Ten Members',
+    content: 'Pato joins with permaculture expertise. Expertise across all four platforms.',
     category: 'Team',
   },
   {
     date: 'September 2025',
     title: 'Brand Identity Complete',
-    content: 'Our new visual identity reflects our core values: land held in trust, community built together. The design emphasizes the interconnection of our four platforms and our commitment to transparent, collectively stewarded land. Our tagline captures what makes us different: land protected from speculation and community created through shared purpose.',
+    content: 'Visual identity reflects land in trust, community together.',
     category: 'Milestone',
   },
   {
     date: 'August 2025',
-    title: 'First Community Survey Results',
-    content: 'Over 200 people responded to our community needs survey. Top priorities identified: affordable housing options (78%), local food access (72%), healing arts and wellness spaces (68%), and educational programming (65%). Respondents expressed strong interest in membership programs and work-exchange opportunities. These insights are shaping our platform designs.',
+    title: 'Community Survey Results',
+    content: '200+ responses. Top priorities: housing (78%), food (72%), wellness (68%).',
     category: 'Research',
   },
 ];
@@ -54,11 +54,10 @@ export default function NewsPage() {
       {/* Hero */}
       <Section variant="light">
         <div className={styles.heroContent}>
-          <p className={styles.tagline}>News & Updates</p>
-          <h1>The Journey Unfolds</h1>
+          <p className={styles.tagline}>News</p>
+          <h1>Updates</h1>
           <p className={styles.lead}>
-            Follow along as we search for land, build community, and move toward
-            our vision of regenerative living in Vermont.
+            Land search, community building, progress in Vermont.
           </p>
         </div>
       </Section>
@@ -90,10 +89,7 @@ export default function NewsPage() {
       <Section variant="gradient">
         <div className={styles.newsletterCTA}>
           <h2>Stay Connected</h2>
-          <p>
-            Join our newsletter for monthly updates on the land search,
-            community events, and ways to get involved.
-          </p>
+          <p>Monthly updates on land search and events.</p>
           <div className={styles.newsletterForm}>
             <input type="email" placeholder="your@email.com" />
             <button type="submit">Subscribe</button>
@@ -102,8 +98,8 @@ export default function NewsPage() {
       </Section>
 
       <CTA
-        title="Want to Be Part of the Story?"
-        subtitle="There are many ways to contribute to what we're building."
+        title="Be Part of It"
+        subtitle="Many ways to contribute."
         primaryText="Get Involved"
         primaryHref="/get-involved"
         secondaryText="Support Us"
