@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className={styles.bottom}>
-        <p>Unified Sanctuaries 2026. The vessel holds. The water nourishes.</p>
+        <p>Unified Sanctuaries 2026. Land held in trust. Community built together.</p>
       </div>
     </footer>
   );

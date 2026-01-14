@@ -37,7 +37,7 @@ const updates = [
   {
     date: 'September 2025',
     title: 'Brand Identity Complete',
-    content: 'Our new visual identity reflects our core values: vessels that hold and pour, networks that connect and nourish. The vessel motif represents our four platforms—each holding something essential, each pouring into the others. The tagline "The vessel holds. The water nourishes." captures the interdependence at the heart of our model.',
+    content: 'Our new visual identity reflects our core values: land held in trust, community built together. The design emphasizes the interconnection of our four platforms and our commitment to transparent, collectively stewarded land. Our tagline captures what makes us different: land protected from speculation and community created through shared purpose.',
     category: 'Milestone',
   },
   {
@@ -89,7 +89,7 @@ export default function NewsPage() {
       {/* Newsletter CTA */}
       <Section variant="gradient">
         <div className={styles.newsletterCTA}>
-          <h2>Stay in the Flow</h2>
+          <h2>Stay Connected</h2>
           <p>
             Join our newsletter for monthly updates on the land search,
             community events, and ways to get involved.

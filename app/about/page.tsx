@@ -27,7 +27,7 @@ const team = [
   { name: 'Eslerh', role: 'Filmmaker & Multimedia Artist', bio: 'Visual storyteller working across film, ritual theater, and multimedia installation. Eslerh documents our journey and creates immersive artistic experiences.' },
   { name: 'Scotty', role: 'Soil Scientist & Natural Builder', bio: 'Expert in soil health, composting systems, and natural building techniques. Scotty ensures our foundation—both literal and ecological—is strong.' },
   { name: 'Jess', role: 'Civil Engineer & Healing Arts', bio: 'Licensed civil engineer with a passion for bathhouse design and healing spaces. Jess bridges technical infrastructure with holistic wellness.' },
-  { name: 'Michael', role: 'Financial Steward & Operations', bio: 'Background in accounting and festival production operations. Michael ensures our resources flow with integrity and our systems run smoothly.' },
+  { name: 'Michael', role: 'Financial Steward & Operations', bio: 'Background in accounting and festival production operations. Michael ensures our resources are managed with integrity and our systems run smoothly.' },
   { name: 'Pato', role: 'Permaculturist & Builder', bio: 'Decades of experience in permaculture design, natural building, and nonprofit management. Pato designs systems that mimic nature&apos;s wisdom and abundance.' },
 ];
 
@@ -49,7 +49,7 @@ const values = [
   },
   {
     title: 'Participatory Governance',
-    description: 'Decisions flow from those most affected. Our Anchor Circle model ensures diverse voices shape our direction.',
+    description: 'Decisions are made by those most affected. Our Anchor Circle model ensures diverse voices shape our direction.',
     icon: Hands,
   },
   {
@@ -80,7 +80,7 @@ const exploreLinks = [
   {
     href: '/get-involved',
     title: 'Get Involved',
-    description: 'Find your place in the network',
+    description: 'Find your place in this community',
     color: 'var(--color-sage-mist)',
   },
 ];
@@ -133,7 +133,7 @@ export default function AboutPage() {
       <Section variant="gradient">
         <SectionHeader
           title="Our Core Team"
-          subtitle="The humans weaving this vision into reality"
+          subtitle="The people bringing this vision to life"
         />
         <div className={styles.teamGrid}>
           {team.map((member, index) => (

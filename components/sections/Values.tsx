@@ -29,7 +29,7 @@ export const Values: React.FC = () => {
       <div className={styles.container}>
         <SectionHeader
           title="Rooted in Values"
-          subtitle="The principles that flow through everything we grow"
+          subtitle="The principles that guide everything we do"
         />
 
         <div className={styles.flow}>

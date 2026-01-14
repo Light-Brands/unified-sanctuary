@@ -8,8 +8,8 @@ interface QuoteProps {
 }
 
 export const Quote: React.FC<QuoteProps> = ({
-  text = '"The vessel holds. The water nourishes. The network connects. Together, they create abundance."',
-  attribution = 'The Unified Sanctuaries Ethos',
+  text = '"We hold the land in trust so that no one owns it and everyone benefits. What we build here, we build for those who come after."',
+  attribution = 'Unified Sanctuaries',
 }) => {
   return (
     <Section className={styles.section}>

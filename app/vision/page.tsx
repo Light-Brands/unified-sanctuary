@@ -104,10 +104,10 @@ export default function VisionPage() {
       <Section variant="light">
         <div className={styles.heroContent}>
           <p className={styles.tagline}>Our Vision</p>
-          <h1>Four Vessels, One Living Network</h1>
+          <h1>Four Platforms, One Shared Vision</h1>
           <p className={styles.lead}>
-            Like clay vessels filling and flowing into one another, our four platforms share
-            resources, wisdom, and support. What nourishes one strengthens all.
+            A regenerative farm, retreat center, event venue, and community living space—
+            each supporting the others through shared stewardship of land held in trust.
           </p>
         </div>
       </Section>
@@ -116,7 +116,7 @@ export default function VisionPage() {
       <Section id="platforms">
         <SectionHeader
           title="The Four Platforms"
-          subtitle="Each holds something essential for the whole"
+          subtitle="Each contributes something essential to the whole"
         />
 
         <div className={styles.platformsContainer}>

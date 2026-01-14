@@ -46,14 +46,14 @@ export const Hero: React.FC = () => {
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </span>
-            Regenerative Community in Vermont
+            Searching for Land in Southern Vermont
           </p>
           <h1 className={styles.title}>
-            The Vessel <em>Holds</em>.<br/>The Water <em>Nourishes</em>.
+            Land <em>Held</em> in Trust.<br/>Community <em>Built</em> Together.
           </h1>
           <p className={styles.subtitle}>
-            Like clay vessels filling and flowing into one another, our four platforms share resources,
-            wisdom, and support. What nourishes one strengthens all through the living network.
+            We&apos;re creating a collectively stewarded sanctuary where a regenerative farm,
+            retreat center, event venue, and community living space support each other and the land.
           </p>
           <div className={styles.buttons}>
             <Button href="/vision" size="lg">
@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
               <ArrowRight size={18} />
             </Button>
             <Button href="/get-involved" variant="secondary" size="lg">
-              Join the Flow
+              Get Involved
             </Button>
           </div>
         </div>

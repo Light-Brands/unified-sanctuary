@@ -34,7 +34,7 @@ const donationTiers = [
   {
     amount: '$500',
     name: 'Grove',
-    description: 'Nourish the network and become a founding supporter',
+    description: 'Make a significant impact and become a founding supporter',
     rewards: [
       'All Sapling rewards',
       'One free retreat day when operational',
@@ -72,10 +72,10 @@ export default function SupportPage() {
       <Section variant="light">
         <div className={styles.heroContent}>
           <p className={styles.tagline}>Support Us</p>
-          <h1>Pour Into the Vessel</h1>
+          <h1>Help Us Find Our Land</h1>
           <p className={styles.lead}>
-            Your support helps us find and secure land, build infrastructure,
-            and create a model that other communities can replicate.
+            Your support helps us secure land in Southern Vermont, build the infrastructure
+            we need, and create a model that other communities can replicate.
           </p>
         </div>
       </Section>
@@ -84,7 +84,7 @@ export default function SupportPage() {
       <Section id="donate">
         <SectionHeader
           title="Donate"
-          subtitle="Every contribution nourishes the network"
+          subtitle="Every contribution brings us closer to securing land"
         />
 
         <div className={styles.donationGrid}>
