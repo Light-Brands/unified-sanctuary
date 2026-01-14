@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Section, SectionHeader } from '@/components/ui';
 import { CTA } from '@/components/sections';
 import { Calendar } from '@/components/icons';
@@ -14,37 +13,37 @@ const updates = [
   {
     date: 'January 2026',
     title: 'Land Search Continues in Southern Vermont',
-    excerpt: 'We have narrowed our search to three promising properties in the Brattleboro-Guilford-Putney triangle. Each offers unique possibilities for our four-platform vision.',
+    content: 'We have narrowed our search to three promising properties in the Brattleboro-Guilford-Putney triangle. Each offers unique possibilities for our four-platform vision. One property features an existing farmhouse and barn, another has exceptional water access with a year-round stream, and the third offers the acreage we need for the full community build-out. Site visits are scheduled for February.',
     category: 'Land Search',
   },
   {
     date: 'December 2025',
     title: 'Winter Gathering: Community Visioning Session',
-    excerpt: 'Over 30 people joined us for a day of shared dreaming, mapping out what the first year on land might look like.',
+    content: 'Over 30 people joined us for a day of shared dreaming, mapping out what the first year on land might look like. We used participatory design methods to envision the initial infrastructure, housing placement, and farm layout. Key themes emerged: the importance of a central gathering space, the need for both privacy and connection, and enthusiasm for learn-by-doing building workshops.',
     category: 'Community',
   },
   {
     date: 'November 2025',
     title: 'Fiscal Sponsorship Secured',
-    excerpt: 'We are now fiscally sponsored, allowing us to receive tax-deductible donations. This is a major milestone for our fundraising efforts.',
+    content: 'We are now fiscally sponsored, allowing us to receive tax-deductible donations. This is a major milestone for our fundraising efforts. Our fiscal sponsor has experience supporting land-based community projects and aligns with our values around regenerative economics. All donations now go directly toward the land acquisition fund.',
     category: 'Milestone',
   },
   {
     date: 'October 2025',
     title: 'Core Team Grows to Ten',
-    excerpt: 'We welcome Pato to the core team, bringing deep permaculture expertise and decades of experience designing regenerative systems.',
+    content: 'We welcome Pato to the core team, bringing deep permaculture expertise and decades of experience designing regenerative systems. Pato has worked with communities across Central and South America, specializing in water harvesting, food forests, and natural building. Our team now includes expertise across all four planned platforms.',
     category: 'Team',
   },
   {
     date: 'September 2025',
     title: 'Brand Identity Complete',
-    excerpt: 'Our new visual identity reflects our core values: vessels that hold and pour, networks that connect and nourish. The vessel holds. The water nourishes.',
+    content: 'Our new visual identity reflects our core values: vessels that hold and pour, networks that connect and nourish. The vessel motif represents our four platforms—each holding something essential, each pouring into the others. The tagline "The vessel holds. The water nourishes." captures the interdependence at the heart of our model.',
     category: 'Milestone',
   },
   {
     date: 'August 2025',
     title: 'First Community Survey Results',
-    excerpt: 'Over 200 people responded to our community needs survey. Top priorities: affordable housing, local food access, and healing arts spaces.',
+    content: 'Over 200 people responded to our community needs survey. Top priorities identified: affordable housing options (78%), local food access (72%), healing arts and wellness spaces (68%), and educational programming (65%). Respondents expressed strong interest in membership programs and work-exchange opportunities. These insights are shaping our platform designs.',
     category: 'Research',
   },
 ];
@@ -77,8 +76,7 @@ export default function NewsPage() {
                 </span>
               </div>
               <h2>{update.title}</h2>
-              <p>{update.excerpt}</p>
-              <Link href="#" className={styles.readMore}>Read more</Link>
+              <p>{update.content}</p>
             </article>
           ))}
         </div>

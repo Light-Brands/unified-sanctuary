@@ -19,16 +19,16 @@ export const metadata: Metadata = {
 };
 
 const team = [
-  { name: 'Sydney', role: 'Community Builder & Visionary', bio: 'Weaving connections and holding the vision for what Unified Sanctuaries can become.' },
-  { name: 'Lynney', role: 'Farmer & Herbalist', bio: 'Bringing deep knowledge of regenerative agriculture and medicinal plant cultivation.' },
-  { name: 'Nina', role: 'Storyteller & Communications', bio: 'Crafting the narratives that share our mission with the world.' },
-  { name: 'Josie', role: 'Earth Lawyer', bio: 'Navigating legal frameworks to protect land and community interests.' },
-  { name: 'Tiff', role: 'Somatic Therapist', bio: 'Holding space for healing and embodied transformation.' },
-  { name: 'Eslerh', role: 'Filmmaker & Visual Artist', bio: 'Documenting our journey and creating visual expressions of our work.' },
-  { name: 'Scotty', role: 'Soil Scientist', bio: 'Understanding the ground beneath us and helping it thrive.' },
-  { name: 'Jess', role: 'Civil Engineer', bio: 'Designing infrastructure that works with natural systems.' },
-  { name: 'Michael', role: 'Financial Steward', bio: 'Managing resources with integrity and transparency.' },
-  { name: 'Pato', role: 'Permaculturist', bio: 'Designing systems that mimic nature&apos;s wisdom and abundance.' },
+  { name: 'Sydney', role: 'Community Builder & Visionary', bio: 'With roots in event production and governance design, Sydney weaves connections across communities. A decade of work in participatory organizing guides the vision for Unified Sanctuaries.' },
+  { name: 'Lynney', role: 'Farmer & Herbalist', bio: 'A lifelong grower with expertise in regenerative agriculture, herbal medicine, and farm-to-table culinary arts. Lynney brings hands-on experience running community-supported agriculture programs.' },
+  { name: 'Nina', role: 'Storyteller & Medicine Maker', bio: 'Homesteader, herbalist, and keeper of stories. Nina crafts the narratives that connect our work to the wider world while tending medicines from the land.' },
+  { name: 'Josie', role: 'Earth Lawyer & Playwright', bio: 'An environmental attorney who also crafts chocolate and writes plays. Josie navigates legal frameworks to protect land while nurturing creative expression.' },
+  { name: 'Tiff', role: 'Somatic Therapist & Facilitator', bio: 'Trained in somatic therapy, art therapy, and retreat facilitation. Tiff holds space for deep healing work and embodied transformation practices.' },
+  { name: 'Eslerh', role: 'Filmmaker & Multimedia Artist', bio: 'Visual storyteller working across film, ritual theater, and multimedia installation. Eslerh documents our journey and creates immersive artistic experiences.' },
+  { name: 'Scotty', role: 'Soil Scientist & Natural Builder', bio: 'Expert in soil health, composting systems, and natural building techniques. Scotty ensures our foundation—both literal and ecological—is strong.' },
+  { name: 'Jess', role: 'Civil Engineer & Healing Arts', bio: 'Licensed civil engineer with a passion for bathhouse design and healing spaces. Jess bridges technical infrastructure with holistic wellness.' },
+  { name: 'Michael', role: 'Financial Steward & Operations', bio: 'Background in accounting and festival production operations. Michael ensures our resources flow with integrity and our systems run smoothly.' },
+  { name: 'Pato', role: 'Permaculturist & Builder', bio: 'Decades of experience in permaculture design, natural building, and nonprofit management. Pato designs systems that mimic nature&apos;s wisdom and abundance.' },
 ];
 
 const values = [

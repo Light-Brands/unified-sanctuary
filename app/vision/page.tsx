@@ -69,31 +69,31 @@ const phases = [
     number: 0,
     name: 'Land Acquisition',
     status: 'Current',
-    description: 'Finding and securing the right piece of land in Southern Vermont. Building our core team and establishing legal structures.',
+    description: 'Actively searching for 50-150 acres in Southern Vermont with water access, existing structures, and agricultural potential. Building our core team of 10+ stewards while establishing the legal trust structure to hold land outside of speculation.',
   },
   {
     number: 1,
     name: 'Foundation',
     status: 'Next',
-    description: 'First dwelling construction, basic infrastructure, establishing resident stability and initial farming operations.',
+    description: 'First dwelling construction using natural building workshops. Installing core infrastructure: water systems, power, and access roads. Establishing the first 3-5 resident households and beginning soil restoration and initial garden beds.',
   },
   {
     number: 2,
     name: 'Growth',
     status: 'Future',
-    description: 'Farm systems expansion, cafe opening, foundational businesses established, more housing construction.',
+    description: 'Expanding farm operations with orchards, market gardens, and herb cultivation. Opening a small cafe and farm stand. Launching the first educational workshops. Constructing 5-10 additional homes through learn-by-doing festivals filmed for online learners.',
   },
   {
     number: 3,
     name: 'Flourishing',
     status: 'Future',
-    description: 'Retreat center and bathhouse construction, event venue build-out, full community capacity.',
+    description: 'Building the retreat center with wellness spaces and bathhouse/spa. Constructing the event venue with professional AV capabilities. Reaching 15-20 resident households. Establishing all four platforms as self-sustaining operations.',
   },
   {
     number: 4,
     name: 'Maturity',
     status: 'Future',
-    description: 'Bioregional service, network expansion, becoming a teaching site for other communities.',
+    description: 'Operating as a bioregional hub supporting other eco-villages and regenerative projects. Hosting apprenticeships and extended residencies. Expanding the open-source blueprint network. Serving as a model that has been successfully replicated.',
   },
 ];
 

@@ -13,36 +13,56 @@ const donationTiers = [
   {
     amount: '$25',
     name: 'Seedling',
-    description: 'Plant a seed of support',
-    rewards: ['Thank you email', 'Name on supporter wall'],
+    description: 'Plant a seed of support and help us grow toward our vision',
+    rewards: [
+      'Personal thank you email from the team',
+      'Name listed on our Supporters page',
+      'Quarterly email updates on our progress',
+    ],
   },
   {
     amount: '$100',
     name: 'Sapling',
-    description: 'Help our roots grow deeper',
-    rewards: ['All previous rewards', 'Quarterly update calls', 'Community event invite'],
+    description: 'Help our roots grow deeper into the Vermont soil',
+    rewards: [
+      'All Seedling rewards',
+      'Invitation to quarterly virtual update calls',
+      'Priority invitation to community events',
+      'Unified Token welcome gift (50 UT)',
+    ],
   },
   {
     amount: '$500',
     name: 'Grove',
-    description: 'Nourish the network',
-    rewards: ['All previous rewards', 'Free retreat day (when operational)', 'Founding supporter recognition'],
+    description: 'Nourish the network and become a founding supporter',
+    rewards: [
+      'All Sapling rewards',
+      'One free retreat day when operational',
+      'Founding supporter recognition on-site',
+      'Behind-the-scenes land search updates',
+    ],
   },
   {
     amount: '$1,000+',
     name: 'Forest',
-    description: 'Become foundational support',
-    rewards: ['All previous rewards', 'Annual dinner with founders', 'Legacy plaque on land'],
+    description: 'Become foundational support for the community we are building',
+    rewards: [
+      'All Grove rewards',
+      'Annual dinner with founders and core team',
+      'Legacy recognition plaque installed on the land',
+      'Lifetime free access to community events',
+    ],
   },
 ];
 
 const investmentFeatures = [
-  'Non-speculative land removal',
-  'Contribution-based equity model',
-  'Transparent financial reporting',
-  'Community governance participation',
-  'Long-term stewardship focus',
-  'Open-source documentation',
+  'Non-speculative: land is removed from the market permanently',
+  'Contribution-based equity through financial and labor investment',
+  'Quarterly transparent financial reporting to all investors',
+  'Voice in community governance decisions',
+  'Long-term stewardship focus over short-term returns',
+  'Open-source documentation of our model for replication',
+  'Exit at book value (not market speculation)',
 ];
 
 export default function SupportPage() {
@@ -81,7 +101,7 @@ export default function SupportPage() {
                   </li>
                 ))}
               </ul>
-              <Button href="#donate-form" size="sm">
+              <Button href={`/contact?subject=Donation%20-%20${tier.name}%20(${tier.amount})`} size="sm">
                 Donate {tier.amount}
               </Button>
             </div>
@@ -165,22 +185,22 @@ export default function SupportPage() {
           <div className={styles.allocationCard}>
             <div className={styles.percentage}>40%</div>
             <h3>Land Acquisition</h3>
-            <p>Down payment and securing the right piece of land in Southern Vermont</p>
+            <p>Down payment and closing costs for 50-150 acres in Southern Vermont. This is the foundation—without land, nothing else is possible.</p>
           </div>
           <div className={styles.allocationCard}>
             <div className={styles.percentage}>25%</div>
             <h3>Infrastructure</h3>
-            <p>Essential systems: water, power, access roads, and first structures</p>
+            <p>Essential systems: well/water, solar/power, access roads, and first dwelling construction using natural building techniques.</p>
           </div>
           <div className={styles.allocationCard}>
             <div className={styles.percentage}>20%</div>
             <h3>Operations</h3>
-            <p>Legal, administrative, and community organizing costs</p>
+            <p>Legal structuring for the trust, administrative costs, community organizing, and initial staffing to coordinate the build-out.</p>
           </div>
           <div className={styles.allocationCard}>
             <div className={styles.percentage}>15%</div>
             <h3>Reserve</h3>
-            <p>Emergency fund and unforeseen expenses</p>
+            <p>Emergency fund for unexpected costs, weather delays, or opportunities. Responsible stewardship requires a buffer for the unknown.</p>
           </div>
         </div>
       </Section>
