@@ -39,8 +39,8 @@ export const Platforms: React.FC = () => {
   return (
     <Section variant="gradient">
       <SectionHeader
-        title="Four Vessels, One Purpose"
-        subtitle="Each holds something essential for the whole"
+        title="Four Platforms, Shared Purpose"
+        subtitle="Each contributes something essential to the whole"
       />
 
       <div className={styles.grid}>

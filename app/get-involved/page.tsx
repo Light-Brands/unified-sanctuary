@@ -82,7 +82,7 @@ export default function GetInvolvedPage() {
       <Section variant="light">
         <div className={styles.heroContent}>
           <p className={styles.tagline}>Get Involved</p>
-          <h1>Find Your Place<br/>in the Network</h1>
+          <h1>Find Your Place<br/>in This Community</h1>
           <p className={styles.lead}>
             Whether you&apos;re ready to move onto the land or just want to stay connected,
             there&apos;s a place for you in Unified Sanctuaries.
@@ -124,7 +124,7 @@ export default function GetInvolvedPage() {
       <Section variant="gradient" id="pathways">
         <SectionHeader
           title="Pathways to Participation"
-          subtitle="Multiple ways to weave yourself into the community"
+          subtitle="Multiple ways to join and contribute"
         />
 
         <div className={styles.pathwaysGrid}>
@@ -148,7 +148,7 @@ export default function GetInvolvedPage() {
             <p>
               We&apos;re building something together, and every pair of hands helps.
               Volunteers earn Unified Tokens for their contributions—a community currency
-              that can be exchanged for goods, services, and experiences within the network.
+              that can be exchanged for goods, services, and experiences within the community.
             </p>
             <h3>Current Needs</h3>
             <ul>

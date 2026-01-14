@@ -69,10 +69,11 @@ export default function GovernancePage() {
       <Section variant="light">
         <div className={styles.heroContent}>
           <p className={styles.tagline}>How We Govern</p>
-          <h1>Power Flows Like Water</h1>
+          <h1>Shared Leadership, Clear Accountability</h1>
           <p className={styles.lead}>
-            Decisions emerge from those most affected, flowing through clear channels
-            of participation and accountability. No one person holds the vessel—we all do.
+            Decisions emerge from those most affected, with clear processes for participation
+            and accountability. We&apos;re moving beyond one-person leadership toward circles
+            of trusted stewards.
           </p>
         </div>
       </Section>

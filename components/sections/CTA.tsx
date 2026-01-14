@@ -13,8 +13,8 @@ interface CTAProps {
 }
 
 export const CTA: React.FC<CTAProps> = ({
-  title = 'Be Part of the Flow',
-  subtitle = "Whether you're ready to pour in or just curious to receive, there's a place for you here.",
+  title = 'Be Part of What We\'re Building',
+  subtitle = "Whether you want to live on the land, contribute skills, or support from afar, there's a place for you here.",
   primaryText = 'Get Involved',
   primaryHref = '/get-involved',
   secondaryText = 'Support the Vision',

@@ -6,8 +6,8 @@ export const CircularNetwork: React.FC = () => {
   return (
     <Section variant="light">
       <SectionHeader
-        title="A Network That Nourishes"
-        subtitle="Four vessels around one flowing center. Resources, wisdom, and support circulate continuously."
+        title="Four Platforms, One Community"
+        subtitle="A farm, retreat center, event venue, and living space—each strengthening the others through shared stewardship."
       />
 
       <div className={styles.network}>
@@ -139,7 +139,7 @@ export const CircularNetwork: React.FC = () => {
               <path d="M12 6v6l4 2"/>
             </svg>
           </span>
-          <span>Continuous Flow</span>
+          <span>Ongoing Collaboration</span>
         </div>
         <div className={styles.badge}>
           <span className={styles.badgeIcon}>
