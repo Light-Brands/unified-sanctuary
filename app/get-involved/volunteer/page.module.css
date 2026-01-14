@@ -1,0 +1,404 @@
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tagline {
+  display: block;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+}
+
+.heroContent h1 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  max-width: 650px;
+}
+
+/* Current Needs Grid */
+.needsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.needsCard {
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.needsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.needsIcon {
+  font-size: 2rem;
+}
+
+.needsHeader h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.opportunityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opportunityList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.opportunityList li svg {
+  color: var(--color-sage-mist);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ctaBlock {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-cream);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaBlock p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Programs Grid */
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.programCard {
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.programCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.programDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.programDetails {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-cream);
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+.detailValue {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-river-deep);
+}
+
+/* Token Section */
+.tokenContent {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.tokenVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.tokenCircle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-river-blue), var(--color-sage-mist));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(46, 90, 106, 0.3);
+}
+
+.tokenCircle span {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.tokenCircle p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.tokenText h2 {
+  margin-bottom: 1.5rem;
+}
+
+.tokenText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.tokenText h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.tokenText ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.tokenText ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.tokenText ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+}
+
+.tokenNote {
+  font-size: 0.95rem !important;
+  font-style: italic;
+  opacity: 0.65 !important;
+}
+
+/* Trust Units Section */
+.trustContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.trustText h2 {
+  margin-bottom: 1.5rem;
+}
+
+.trustText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.trustText h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.trustText ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.trustText ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.trustText ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+}
+
+.trustVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.trustCircle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-terracotta), var(--color-earth));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(139, 115, 85, 0.3);
+}
+
+.trustCircle span {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.trustCircle p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Steps Grid */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.stepNumber {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-river-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.stepCard h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.stepCard p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .needsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .programsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .tokenContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .tokenVisual {
+    order: -1;
+  }
+
+  .trustContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .trustVisual {
+    order: -1;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
