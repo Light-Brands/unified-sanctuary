@@ -3,3 +3,4 @@ export { Card } from './Card';
 export { Section, SectionHeader } from './Section';
 export { Input, Textarea } from './Input';
 export { Newsletter } from './Newsletter';
+export { Accordion, AccordionItem } from './Accordion';

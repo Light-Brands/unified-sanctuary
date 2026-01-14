@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Section, SectionHeader, Card } from '@/components/ui';
+import { Section, SectionHeader, Card, Accordion, AccordionItem } from '@/components/ui';
 import { CTA } from '@/components/sections';
 import styles from './page.module.css';
 
@@ -119,21 +119,22 @@ export default function VisionPage() {
           subtitle="Each contributes something essential to the whole"
         />
 
-        <div className={styles.platformsContainer}>
-          {platforms.map((platform) => (
-            <div key={platform.id} id={platform.id} className={`${styles.platform} ${styles[platform.id]}`}>
-              <div className={styles.platformHeader}>
-                <h3>{platform.name}</h3>
-                <p>{platform.description}</p>
-              </div>
+        <Accordion variant="card" allowMultiple>
+          {platforms.map((platform, i) => (
+            <AccordionItem
+              key={platform.id}
+              title={platform.name}
+              subtitle={platform.description}
+              defaultOpen={i === 0}
+            >
               <ul className={styles.features}>
-                {platform.features.map((feature, i) => (
-                  <li key={i}>{feature}</li>
+                {platform.features.map((feature, j) => (
+                  <li key={j}>{feature}</li>
                 ))}
               </ul>
-            </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Phases */}
@@ -143,45 +144,37 @@ export default function VisionPage() {
           subtitle="Growing organically, one season at a time"
         />
 
-        <div className={styles.phasesTimeline}>
+        <Accordion variant="card" allowMultiple>
           {phases.map((phase) => (
-            <div key={phase.number} className={`${styles.phase} ${phase.status === 'Current' ? styles.current : ''}`}>
-              <div className={styles.phaseNumber}>
-                <span>{phase.number}</span>
-              </div>
-              <div className={styles.phaseContent}>
-                <div className={styles.phaseStatus}>{phase.status}</div>
-                <h3>{phase.name}</h3>
-                <p>{phase.description}</p>
-              </div>
-            </div>
+            <AccordionItem
+              key={phase.number}
+              title={`Phase ${phase.number}: ${phase.name}`}
+              badge={phase.status}
+              defaultOpen={phase.status === 'Current'}
+            >
+              <p>{phase.description}</p>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Open Source */}
       <Section id="open-source">
-        <div className={styles.openSource}>
-          <h2>An Open-Source Blueprint</h2>
-          <p className={styles.openSourceLead}>
-            We&apos;re not just building a community—we&apos;re creating a replicable model.
-            Everything we learn, we share openly with the world.
-          </p>
-          <div className={styles.openSourceGrid}>
-            <div className={styles.openSourceCard}>
-              <h3>Documentation</h3>
-              <p>Every process, system, and lesson learned will be documented and freely available.</p>
-            </div>
-            <div className={styles.openSourceCard}>
-              <h3>Templates</h3>
-              <p>Governance structures, legal frameworks, and operational templates for other communities.</p>
-            </div>
-            <div className={styles.openSourceCard}>
-              <h3>Network</h3>
-              <p>Connecting with other regenerative communities to share resources and knowledge.</p>
-            </div>
-          </div>
-        </div>
+        <SectionHeader
+          title="An Open-Source Blueprint"
+          subtitle="We're not just building a community—we're creating a replicable model."
+        />
+        <Accordion variant="card" allowMultiple>
+          <AccordionItem title="Documentation" defaultOpen>
+            <p>Every process, system, and lesson learned will be documented and freely available.</p>
+          </AccordionItem>
+          <AccordionItem title="Templates">
+            <p>Governance structures, legal frameworks, and operational templates for other communities.</p>
+          </AccordionItem>
+          <AccordionItem title="Network">
+            <p>Connecting with other regenerative communities to share resources and knowledge.</p>
+          </AccordionItem>
+        </Accordion>
       </Section>
 
       <CTA

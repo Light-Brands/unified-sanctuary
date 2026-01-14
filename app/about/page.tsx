@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Section, SectionHeader, Button, Card } from '@/components/ui';
+import { Section, SectionHeader, Button, Card, Accordion, AccordionItem } from '@/components/ui';
 import { CTA } from '@/components/sections';
 import {
   Seedling,
@@ -135,18 +135,18 @@ export default function AboutPage() {
           title="Our Core Team"
           subtitle="The people bringing this vision to life"
         />
-        <div className={styles.teamGrid}>
-          {team.map((member, index) => (
-            <Card key={member.name}>
-              <div className={styles.teamMember} style={{ animationDelay: `${index * 0.05}s` }}>
-                <div className={styles.avatar}>{member.name[0]}</div>
-                <h3>{member.name}</h3>
-                <p className={styles.role}>{member.role}</p>
-                <p className={styles.bio}>{member.bio}</p>
-              </div>
-            </Card>
+        <Accordion variant="card" allowMultiple>
+          {team.map((member) => (
+            <AccordionItem
+              key={member.name}
+              title={member.name}
+              subtitle={member.role}
+              icon={<span className={styles.avatarSmall}>{member.name[0]}</span>}
+            >
+              <p>{member.bio}</p>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Values Section */}
@@ -155,24 +155,21 @@ export default function AboutPage() {
           title="Our Values"
           subtitle="The principles that guide everything we do"
         />
-        <div className={styles.valuesGrid}>
+        <Accordion variant="card" allowMultiple>
           {values.map((value, index) => {
             const IconComponent = value.icon;
             return (
-              <div
+              <AccordionItem
                 key={value.title}
-                className={styles.valueCard}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                title={value.title}
+                icon={<IconComponent size={20} />}
+                defaultOpen={index === 0}
               >
-                <div className={styles.valueIcon}>
-                  <IconComponent size={24} />
-                </div>
-                <h3>{value.title}</h3>
                 <p>{value.description}</p>
-              </div>
+              </AccordionItem>
             );
           })}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Links to Sub-pages */}

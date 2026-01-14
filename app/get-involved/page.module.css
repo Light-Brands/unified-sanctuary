@@ -104,6 +104,12 @@
   margin-top: 2px;
 }
 
+.tierAction {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(21, 48, 63, 0.08);
+}
+
 /* Pathways Grid */
 .pathwaysGrid {
   display: grid;

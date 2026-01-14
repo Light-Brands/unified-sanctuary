@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Section, SectionHeader, Button, Card } from '@/components/ui';
+import { Section, SectionHeader, Button, Card, Accordion, AccordionItem } from '@/components/ui';
 import { CTA } from '@/components/sections';
 import { Check } from '@/components/icons';
 import styles from './page.module.css';
@@ -97,27 +97,31 @@ export default function GetInvolvedPage() {
           subtitle="Support our mission and access community benefits"
         />
 
-        <div className={styles.membershipGrid}>
-          {membershipTiers.map((tier) => (
-            <div key={tier.name} className={`${styles.membershipCard} ${tier.featured ? styles.featured : ''}`}>
-              {tier.featured && <div className={styles.featuredBadge}>Most Popular</div>}
-              <h3>{tier.name}</h3>
-              <div className={styles.price}>{tier.price}</div>
-              <p className={styles.tierDescription}>{tier.description}</p>
+        <Accordion variant="card" allowMultiple>
+          {membershipTiers.map((tier, i) => (
+            <AccordionItem
+              key={tier.name}
+              title={`${tier.name} — ${tier.price}`}
+              subtitle={tier.description}
+              badge={tier.featured ? 'Most Popular' : undefined}
+              defaultOpen={tier.featured || i === 0}
+            >
               <ul className={styles.benefits}>
-                {tier.benefits.map((benefit, i) => (
-                  <li key={i}>
+                {tier.benefits.map((benefit, j) => (
+                  <li key={j}>
                     <Check size={16} />
                     {benefit}
                   </li>
                 ))}
               </ul>
-              <Button href="/contact" variant={tier.featured ? 'primary' : 'secondary'}>
-                Join as {tier.name}
-              </Button>
-            </div>
+              <div className={styles.tierAction}>
+                <Button href="/contact" variant={tier.featured ? 'primary' : 'secondary'} size="sm">
+                  Join as {tier.name}
+                </Button>
+              </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Pathways */}
@@ -127,17 +131,18 @@ export default function GetInvolvedPage() {
           subtitle="Multiple ways to join and contribute"
         />
 
-        <div className={styles.pathwaysGrid}>
-          {pathways.map((pathway) => (
-            <Card key={pathway.title}>
-              <h3>{pathway.title}</h3>
+        <Accordion variant="card" allowMultiple>
+          {pathways.map((pathway, i) => (
+            <AccordionItem key={pathway.title} title={pathway.title} defaultOpen={i === 0}>
               <p>{pathway.description}</p>
-              <Button href={pathway.link} variant="ghost" size="sm">
-                Learn more
-              </Button>
-            </Card>
+              <div className={styles.tierAction}>
+                <Button href={pathway.link} variant="ghost" size="sm">
+                  Learn more
+                </Button>
+              </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Section>
 
       {/* Volunteer Section */}
@@ -177,20 +182,17 @@ export default function GetInvolvedPage() {
           subtitle="Collaborate on creating regenerative impact"
         />
 
-        <div className={styles.partnerGrid}>
-          <div className={styles.partnerCard}>
-            <h3>Event Hosting</h3>
+        <Accordion variant="card" allowMultiple>
+          <AccordionItem title="Event Hosting" defaultOpen>
             <p>Host your retreat, workshop, festival, or gathering at our venue. We offer flexible indoor/outdoor spaces, professional AV support, and on-site accommodations. Affordable rates for aligned organizations.</p>
-          </div>
-          <div className={styles.partnerCard}>
-            <h3>Educational Programs</h3>
+          </AccordionItem>
+          <AccordionItem title="Educational Programs">
             <p>Co-develop curriculum in permaculture, healing arts, natural building, or community governance. We offer space, infrastructure, and a built-in audience of engaged learners.</p>
-          </div>
-          <div className={styles.partnerCard}>
-            <h3>Bioregional Collaboration</h3>
+          </AccordionItem>
+          <AccordionItem title="Bioregional Collaboration">
             <p>Connect with the growing network of Southern Vermont regenerative initiatives. We&apos;re building relationships with farms, land trusts, and community organizations for mutual support and resource sharing.</p>
-          </div>
-        </div>
+          </AccordionItem>
+        </Accordion>
       </Section>
 
       <CTA
