@@ -11,113 +11,116 @@ export const CircularNetwork: React.FC = () => {
       />
 
       <div className={styles.network}>
-        <svg viewBox="0 0 500 500" fill="none">
+        <svg viewBox="0 0 600 400" fill="none">
           <defs>
-            <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#5E9AA2"/>
-              <stop offset="50%" stopColor="#D47850"/>
-              <stop offset="100%" stopColor="#5E9AA2"/>
+              <stop offset="100%" stopColor="#7AB5BD"/>
             </linearGradient>
-            <linearGradient id="centerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id="vesselBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#D47850"/>
+              <stop offset="100%" stopColor="#C45A15"/>
+            </linearGradient>
+            <linearGradient id="vesselInnerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#2E5A6A"/>
-              <stop offset="100%" stopColor="#15303F"/>
+              <stop offset="100%" stopColor="#3D7A8A"/>
             </linearGradient>
-            <linearGradient id="vesselInnerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#E0A568"/>
-              <stop offset="100%" stopColor="#D47850"/>
-            </linearGradient>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
             <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="4" stdDeviation="8" floodOpacity="0.15"/>
+              <feDropShadow dx="0" dy="4" stdDeviation="6" floodOpacity="0.15"/>
             </filter>
           </defs>
 
-          {/* Background pulse rings */}
-          <circle cx="250" cy="250" r="220" stroke="#5E9AA2" strokeWidth="1" fill="none" opacity="0.1" className={styles.pulseRing}/>
-          <circle cx="250" cy="250" r="200" stroke="#D47850" strokeWidth="0.5" fill="none" opacity="0.08" className={styles.pulseRing} style={{ animationDelay: '1s' }}/>
-
-          {/* Orbit rings */}
-          <circle cx="250" cy="250" r="180" stroke="url(#orbitGrad)" strokeWidth="2" fill="none" className={styles.orbitRing} opacity="0.35"/>
-          <circle cx="250" cy="250" r="130" stroke="#5E9AA2" strokeWidth="1.5" fill="none" className={styles.orbitRing} opacity="0.2" style={{ animationDirection: 'reverse' }}/>
-
-          {/* Flow lines between nodes */}
-          <g stroke="#5E9AA2" strokeWidth="2.5" fill="none" opacity="0.5">
-            <path d="M250 70 Q350 150 430 250" className={styles.flowLine}/>
-            <path d="M430 250 Q350 350 250 430" className={styles.flowLine} style={{ animationDelay: '0.5s' }}/>
-            <path d="M250 430 Q150 350 70 250" className={styles.flowLine} style={{ animationDelay: '1s' }}/>
-            <path d="M70 250 Q150 150 250 70" className={styles.flowLine} style={{ animationDelay: '1.5s' }}/>
-          </g>
-
-          {/* Center vessel */}
+          {/* Main source vessel (top left) */}
           <g filter="url(#softShadow)">
-            <circle cx="250" cy="250" r="52" fill="url(#centerGrad)"/>
-            <circle cx="250" cy="250" r="40" fill="#2E5A6A" className={styles.centerPulse}/>
-            <path d="M233 233 Q225 250 230 264 Q237 276 250 278 Q263 276 270 264 Q275 250 267 233 Q259 221 250 218 Q241 221 233 233 Z"
-                  fill="url(#vesselInnerGrad)"/>
-            <ellipse cx="250" cy="221" rx="17" ry="4" fill="#B85A35"/>
-            {/* Water shimmer */}
-            <ellipse cx="244" cy="248" rx="6" ry="10" fill="white" opacity="0.15"/>
+            {/* Vessel body */}
+            <path d="M70 40 Q40 70 45 115 Q50 160 90 170 Q130 160 135 115 Q140 70 110 40 Q95 30 90 30 Q85 30 70 40 Z"
+                  fill="url(#vesselBodyGrad)"/>
+            {/* Vessel rim */}
+            <ellipse cx="90" cy="35" rx="30" ry="8" fill="#B85A35"/>
+            {/* Inner dark area (representing depth/water) */}
+            <ellipse cx="90" cy="100" rx="35" ry="45" fill="url(#vesselInnerGrad)"/>
           </g>
 
-          {/* Farm node (top) */}
+          {/* Flowing stream from vessel to distribution point */}
+          <g className={styles.flowStream}>
+            <path d="M135 100 Q200 80 280 120 Q340 150 300 220"
+                  stroke="url(#streamGrad)"
+                  strokeWidth="12"
+                  fill="none"
+                  strokeLinecap="round"
+                  opacity="0.9"/>
+            <path d="M135 100 Q200 80 280 120 Q340 150 300 220"
+                  stroke="#7AB5BD"
+                  strokeWidth="6"
+                  fill="none"
+                  strokeLinecap="round"
+                  opacity="0.5"/>
+          </g>
+
+          {/* Distribution point (where stream meets lines) */}
+          <circle cx="300" cy="220" r="4" fill="#5E9AA2"/>
+
+          {/* Connecting dashed lines to each platform */}
+          <g stroke="#5E9AA2" strokeWidth="2" strokeDasharray="8 6" fill="none" opacity="0.6">
+            {/* Line to Farm */}
+            <line x1="300" y1="220" x2="100" y2="310" className={styles.connectionLine}/>
+            {/* Line to Retreat */}
+            <line x1="300" y1="220" x2="233" y2="310" className={styles.connectionLine}/>
+            {/* Line to Venue */}
+            <line x1="300" y1="220" x2="367" y2="310" className={styles.connectionLine}/>
+            {/* Line to Community */}
+            <line x1="300" y1="220" x2="500" y2="310" className={styles.connectionLine}/>
+          </g>
+
+          {/* Farm vessel */}
           <g className={styles.node} filter="url(#softShadow)">
-            <circle cx="250" cy="65" r="38" fill="white"/>
-            <circle cx="250" cy="65" r="35" fill="#FAF8F5"/>
-            <circle cx="250" cy="65" r="32" fill="white" opacity="0.5"/>
-            <path d="M238 60 Q234 67 236 75 Q240 83 250 85 Q260 83 264 75 Q266 67 262 60 Q258 53 250 51 Q242 53 238 60 Z" fill="#5A360E"/>
-            <path d="M250 67 L250 59" stroke="#5C7C5E" strokeWidth="2.5" strokeLinecap="round"/>
-            <circle cx="250" cy="57" r="4" fill="#6B8E6B"/>
-            <circle cx="244" cy="59" r="2.5" fill="#8FBC8F"/>
-            <circle cx="256" cy="59" r="2.5" fill="#8FBC8F"/>
+            <path d="M80 310 Q65 325 68 345 Q72 365 100 370 Q128 365 132 345 Q135 325 120 310 Q108 300 100 300 Q92 300 80 310 Z"
+                  fill="#6B5344"/>
+            <ellipse cx="100" cy="305" rx="18" ry="5" fill="#5A4539"/>
+            {/* Sprout icon */}
+            <line x1="100" y1="340" x2="100" y2="325" stroke="#5C7C5E" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="100" cy="322" r="4" fill="#6B8E6B"/>
           </g>
-          <text x="250" y="18" textAnchor="middle" className={styles.label} fill="#5A360E">FARM</text>
+          <text x="100" y="395" textAnchor="middle" className={styles.label} fill="#5A360E">Farm</text>
 
-          {/* Retreat node (right) */}
+          {/* Retreat vessel */}
           <g className={styles.node} filter="url(#softShadow)">
-            <circle cx="435" cy="250" r="38" fill="white"/>
-            <circle cx="435" cy="250" r="35" fill="#FAF8F5"/>
-            <circle cx="435" cy="250" r="32" fill="white" opacity="0.5"/>
-            <path d="M423 245 Q419 252 421 260 Q425 268 435 270 Q445 268 449 260 Q451 252 447 245 Q443 238 435 236 Q427 238 423 245 Z" fill="#4A9199"/>
-            <path d="M435 242 Q442 252 442 260 Q442 268 435 268 Q428 268 428 260 Q428 252 435 242 Z" fill="white" opacity="0.4"/>
-            <ellipse cx="435" cy="266" rx="6" ry="2.5" fill="white" opacity="0.3"/>
+            <path d="M213 310 Q198 325 201 345 Q205 365 233 370 Q261 365 265 345 Q268 325 253 310 Q241 300 233 300 Q225 300 213 310 Z"
+                  fill="#5E9AA2"/>
+            <ellipse cx="233" cy="305" rx="18" ry="5" fill="#4A8890"/>
+            {/* Water drop icon */}
+            <path d="M233 325 Q240 335 238 345 Q235 352 233 352 Q231 352 228 345 Q226 335 233 325 Z" fill="#7AB5BD" opacity="0.6"/>
           </g>
-          <text x="485" y="255" textAnchor="start" className={styles.label} fill="#4A9199">RETREAT</text>
+          <text x="233" y="395" textAnchor="middle" className={styles.label} fill="#4A9199">Retreat</text>
 
-          {/* Venue node (bottom) */}
+          {/* Venue vessel */}
           <g className={styles.node} filter="url(#softShadow)">
-            <circle cx="250" cy="435" r="38" fill="white"/>
-            <circle cx="250" cy="435" r="35" fill="#FAF8F5"/>
-            <circle cx="250" cy="435" r="32" fill="white" opacity="0.5"/>
-            <path d="M238 432 Q234 440 236 448 Q240 456 250 458 Q260 456 264 448 Q266 440 262 432 Q258 424 250 422 Q242 424 238 432 Z" fill="#D64527"/>
-            <path d="M250 428 Q256 438 254 444 Q252 450 250 452 Q248 450 246 444 Q244 438 250 428" fill="#FFD93D" opacity="0.7"/>
-            <circle cx="244" cy="436" r="2" fill="#FFD93D" opacity="0.5"/>
-            <circle cx="256" cy="434" r="1.5" fill="#FFD93D" opacity="0.5"/>
+            <path d="M347 310 Q332 325 335 345 Q339 365 367 370 Q395 365 399 345 Q402 325 387 310 Q375 300 367 300 Q359 300 347 310 Z"
+                  fill="#D47850"/>
+            <ellipse cx="367" cy="305" rx="18" ry="5" fill="#C45A15"/>
+            {/* Flame icon */}
+            <path d="M367 325 Q374 335 372 343 Q370 350 367 352 Q364 350 362 343 Q360 335 367 325 Z" fill="#E8A86D" opacity="0.8"/>
           </g>
-          <text x="250" y="490" textAnchor="middle" className={styles.label} fill="#D64527">VENUE</text>
+          <text x="367" y="395" textAnchor="middle" className={styles.label} fill="#D64527">Venue</text>
 
-          {/* Community node (left) */}
+          {/* Community vessel */}
           <g className={styles.node} filter="url(#softShadow)">
-            <circle cx="65" cy="250" r="38" fill="white"/>
-            <circle cx="65" cy="250" r="35" fill="#FAF8F5"/>
-            <circle cx="65" cy="250" r="32" fill="white" opacity="0.5"/>
-            <path d="M53 245 Q49 252 51 260 Q55 268 65 270 Q75 268 79 260 Q81 252 77 245 Q73 238 65 236 Q57 238 53 245 Z" fill="#C45A15"/>
-            <path d="M65 244 L71 250 L71 262 L59 262 L59 250 Z" fill="#8B4513"/>
-            <rect x="63" y="256" width="4" height="6" fill="#5D4037"/>
+            <path d="M480 310 Q465 325 468 345 Q472 365 500 370 Q528 365 532 345 Q535 325 520 310 Q508 300 500 300 Q492 300 480 310 Z"
+                  fill="#D47850"/>
+            <ellipse cx="500" cy="305" rx="18" ry="5" fill="#C45A15"/>
+            {/* House icon */}
+            <path d="M500 328 L508 336 L508 348 L492 348 L492 336 Z" fill="#8B4513"/>
+            <path d="M500 328 L492 336 L508 336 Z" fill="#A0522D"/>
           </g>
-          <text x="15" y="255" textAnchor="end" className={styles.label} fill="#C45A15">COMMUNITY</text>
+          <text x="500" y="395" textAnchor="middle" className={styles.label} fill="#C45A15">Community</text>
 
-          {/* Animated particles */}
-          <circle r="3" fill="#5E9AA2" opacity="0.6" className={styles.particle}>
-            <animateMotion dur="8s" repeatCount="indefinite" path="M250 70 Q350 150 430 250 Q350 350 250 430 Q150 350 70 250 Q150 150 250 70"/>
-          </circle>
-          <circle r="2.5" fill="#D47850" opacity="0.5" className={styles.particle}>
-            <animateMotion dur="10s" repeatCount="indefinite" begin="2s" path="M250 70 Q350 150 430 250 Q350 350 250 430 Q150 350 70 250 Q150 150 250 70"/>
+          {/* Animated droplet along stream */}
+          <circle r="4" fill="#7AB5BD" opacity="0.7" className={styles.droplet}>
+            <animateMotion
+              dur="3s"
+              repeatCount="indefinite"
+              path="M135 100 Q200 80 280 120 Q340 150 300 220"
+            />
           </circle>
         </svg>
       </div>

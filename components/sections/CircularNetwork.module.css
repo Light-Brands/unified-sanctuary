@@ -1,5 +1,5 @@
 .network {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -12,55 +12,32 @@
 /* Labels */
 .label {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-/* Animations */
-.pulseRing {
-  animation: pulseExpand 4s ease-in-out infinite;
-  transform-origin: center;
+/* Flow stream animation */
+.flowStream path {
+  animation: streamFlow 2s ease-in-out infinite;
 }
 
-@keyframes pulseExpand {
-  0%, 100% { transform: scale(0.95); opacity: 0.1; }
-  50% { transform: scale(1.02); opacity: 0.2; }
+@keyframes streamFlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
-.orbitRing {
-  stroke-dasharray: 10 6;
-  animation: orbitSpin 45s linear infinite;
-  transform-origin: center;
+/* Connection lines */
+.connectionLine {
+  animation: dashFlow 1.5s linear infinite;
 }
 
-@keyframes orbitSpin {
+@keyframes dashFlow {
   from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -500; }
+  to { stroke-dashoffset: -28; }
 }
 
-.flowLine {
-  stroke-dasharray: 12 6;
-  animation: flowPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes flowPulse {
-  0% { stroke-dashoffset: 0; opacity: 0.3; }
-  50% { opacity: 0.6; }
-  100% { stroke-dashoffset: -36; opacity: 0.3; }
-}
-
-.centerPulse {
-  animation: centerBreathe 3s ease-in-out infinite;
-  transform-origin: center;
-}
-
-@keyframes centerBreathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-}
-
+/* Platform nodes */
 .node {
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -70,7 +47,8 @@
   transform: scale(1.08);
 }
 
-.particle {
+/* Animated droplet */
+.droplet {
   filter: blur(0.5px);
 }
 
