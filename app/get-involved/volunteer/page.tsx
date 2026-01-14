@@ -5,88 +5,83 @@ import { Check } from '@/components/icons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Volunteer & Contribute',
-  description: 'Give your time, skills, and talents to help build Unified Sanctuaries. Earn Unified Tokens for your contributions.',
+  title: 'Volunteer',
+  description: 'Give time and skills. Earn Unified Tokens.',
 };
 
 const currentNeeds = [
   {
-    category: 'Land & Research',
+    category: 'Research',
     icon: '🔍',
     opportunities: [
-      'Land search support and property research',
-      'Vermont zoning and permitting research',
-      'Grant writing and funding research',
-      'Legal research on land trust structures',
+      'Land search',
+      'Zoning research',
+      'Grant writing',
     ],
   },
   {
-    category: 'Creative & Digital',
+    category: 'Creative',
     icon: '🎨',
     opportunities: [
-      'Website development and design',
-      'Content creation and storytelling',
-      'Social media management',
-      'Video production and editing',
-      'Photography for events and documentation',
+      'Website and design',
+      'Content creation',
+      'Video and photography',
     ],
   },
   {
-    category: 'Professional Services',
+    category: 'Professional',
     icon: '📋',
     opportunities: [
-      'Legal advising (nonprofit, land trust, contracts)',
-      'Financial advising and accounting',
-      'Business planning and strategy',
-      'Fundraising and donor relations',
+      'Legal advising',
+      'Financial advising',
+      'Fundraising',
     ],
   },
   {
-    category: 'Design & Planning',
+    category: 'Design',
     icon: '🏗️',
     opportunities: [
-      'Permaculture design consultation',
-      'Architectural and natural building planning',
-      'Infrastructure planning',
-      'Event planning and coordination',
+      'Permaculture',
+      'Natural building',
+      'Event planning',
     ],
   },
 ];
 
 const contributionPrograms = [
   {
-    title: 'Skill-Based Volunteering',
-    description: 'Contribute your professional expertise on a project basis. From a few hours to ongoing commitment, we match your skills with our current needs.',
-    commitment: '2-10 hours/month',
+    title: 'Skill Volunteering',
+    description: 'Project-based expertise.',
+    commitment: '2-10 hrs/month',
     tokens: '10-50 UT/month',
   },
   {
-    title: 'Work Exchange Residency',
-    description: 'Trade your skills and labor for room and board during seasonal work periods. Live on the land while contributing to daily operations.',
-    commitment: '20-25 hours/week',
+    title: 'Work Exchange',
+    description: 'Skills for room and board.',
+    commitment: '20-25 hrs/week',
     tokens: 'Room + Board + 25 UT/week',
   },
   {
-    title: 'Building Workshop Leader',
-    description: 'Lead hands-on infrastructure workshops teaching natural building, permaculture installation, or other construction skills.',
-    commitment: 'Workshop-based',
+    title: 'Workshop Leader',
+    description: 'Lead building workshops.',
+    commitment: 'Per workshop',
     tokens: '100+ UT/workshop',
   },
   {
-    title: 'Platform Stewardship',
-    description: 'Take on significant responsibility for developing and managing one of our core platforms: farm, retreat center, venue, or community living space.',
-    commitment: '15-30 hours/week',
+    title: 'Platform Steward',
+    description: 'Manage a core platform.',
+    commitment: '15-30 hrs/week',
     tokens: 'Negotiated + Trust Units',
   },
 ];
 
 const tokenBenefits = [
-  'Purchase farm produce, preserved goods, and artisanal products',
-  'Book healing arts sessions, massages, and wellness services',
-  'Attend workshops, retreats, and educational programs',
-  'Access event tickets and community celebrations',
-  'Exchange with other community members for goods and services',
-  'Accumulate toward residency pathway consideration',
+  'Farm produce and goods',
+  'Healing arts sessions',
+  'Workshops and retreats',
+  'Event tickets',
+  'Community exchanges',
+  'Residency credits',
 ];
 
 export default function VolunteerPage() {
@@ -95,12 +90,10 @@ export default function VolunteerPage() {
       {/* Hero */}
       <Section variant="light">
         <div className={styles.heroContent}>
-          <p className={styles.tagline}>Volunteer & Contribute</p>
-          <h1>Build Something<br/>Beautiful Together</h1>
+          <p className={styles.tagline}>Volunteer</p>
+          <h1>Build Together</h1>
           <p className={styles.lead}>
-            We&apos;re building something together, and every pair of hands helps. Volunteers earn
-            Unified Tokens for their contributions—a community currency that recognizes your
-            work and can be exchanged for goods, services, and experiences within the network.
+            Every hand helps. Earn Unified Tokens for your contributions.
           </p>
         </div>
       </Section>
@@ -108,8 +101,8 @@ export default function VolunteerPage() {
       {/* Current Needs */}
       <Section id="current-needs">
         <SectionHeader
-          title="Current Volunteer Needs"
-          subtitle="Where we need help right now"
+          title="Current Needs"
+          subtitle="Where we need help"
         />
 
         <div className={styles.needsGrid}>
@@ -132,7 +125,7 @@ export default function VolunteerPage() {
         </div>
 
         <div className={styles.ctaBlock}>
-          <p>Have skills we haven&apos;t listed? We&apos;re always open to unexpected gifts.</p>
+          <p>Have other skills? We&apos;re open.</p>
           <Button href="/contact?subject=Volunteer%20Interest">Offer Your Skills</Button>
         </div>
       </Section>
@@ -140,8 +133,8 @@ export default function VolunteerPage() {
       {/* Contribution Programs */}
       <Section variant="gradient" id="programs">
         <SectionHeader
-          title="Ways to Contribute"
-          subtitle="From occasional volunteering to full-time commitment"
+          title="Programs"
+          subtitle="Ways to contribute"
         />
 
         <div className={styles.programsGrid}>
@@ -177,25 +170,16 @@ export default function VolunteerPage() {
             </div>
           </div>
           <div className={styles.tokenText}>
-            <h2>The Unified Token Economy</h2>
+            <h2>Unified Token</h2>
             <p>
-              The Unified Token is our internal community currency designed to incentivize
-              participation and build a regenerative local economy. Unlike traditional volunteer
-              work, your contributions here earn tangible value that circulates within our ecosystem.
+              Community currency. Your contributions earn real value.
             </p>
-            <h3>What Tokens Can Do</h3>
+            <h3>Use Tokens For</h3>
             <ul>
               {tokenBenefits.map((benefit, i) => (
                 <li key={i}>{benefit}</li>
               ))}
             </ul>
-            <h3>How Tokens Work</h3>
-            <p className={styles.tokenNote}>
-              Contributors earn tokens based on the type and impact of their work. Tokens are
-              tracked in our community ledger and can be spent with any participating community
-              business or individual. The system reduces reliance on government-issued currency
-              and promotes circular exchanges that keep value within the community.
-            </p>
           </div>
         </div>
       </Section>
@@ -204,26 +188,15 @@ export default function VolunteerPage() {
       <Section variant="light" id="trust-units">
         <div className={styles.trustContent}>
           <div className={styles.trustText}>
-            <h2>Earning Long-Term Equity</h2>
-            <p>
-              For those who make significant, lasting contributions to Unified Sanctuaries,
-              we offer a pathway to earning Trust Units—long-term equity in the project itself.
-            </p>
-            <h3>What Earns Trust Units</h3>
+            <h2>Trust Units</h2>
+            <p>Long-term equity for significant contributions.</p>
+            <h3>Earns Trust Units</h3>
             <ul>
-              <li>Infrastructure development (buildings, systems, land improvements)</li>
-              <li>Significant project contributions (major initiatives, leadership)</li>
-              <li>Ecological improvements (soil building, water systems, biodiversity)</li>
-              <li>Long-term stewardship of platforms or operations</li>
+              <li>Infrastructure development</li>
+              <li>Major project leadership</li>
+              <li>Ecological improvements</li>
+              <li>Long-term stewardship</li>
             </ul>
-            <h3>What Trust Units Mean</h3>
-            <p>
-              Trust units represent your stake in the long-term value of Unified Sanctuaries.
-              They reflect the value you&apos;ve created and can be liquidated upon exit (in some
-              cases over time, based on the property&apos;s value and available resources). This
-              ensures that those who invest in the health and growth of the community are
-              rewarded with enduring benefits.
-            </p>
           </div>
           <div className={styles.trustVisual}>
             <div className={styles.trustCircle}>
@@ -237,40 +210,40 @@ export default function VolunteerPage() {
       {/* Getting Started */}
       <Section id="getting-started">
         <SectionHeader
-          title="Getting Started"
-          subtitle="How to begin your contribution journey"
+          title="Get Started"
+          subtitle="Four steps"
         />
 
         <div className={styles.stepsGrid}>
           <div className={styles.stepCard}>
             <div className={styles.stepNumber}>1</div>
             <h4>Reach Out</h4>
-            <p>Contact us to share your skills, interests, and availability. We&apos;ll schedule a conversation to learn more about you.</p>
+            <p>Share your skills and interests.</p>
           </div>
           <div className={styles.stepCard}>
             <div className={styles.stepNumber}>2</div>
-            <h4>Find Your Fit</h4>
-            <p>We&apos;ll match your offerings with current needs and discuss contribution structures that work for your situation.</p>
+            <h4>Find Fit</h4>
+            <p>Match your offerings with needs.</p>
           </div>
           <div className={styles.stepCard}>
             <div className={styles.stepNumber}>3</div>
-            <h4>Start Contributing</h4>
-            <p>Begin your work and start earning Unified Tokens. Connect with fellow contributors and become part of our growing community.</p>
+            <h4>Contribute</h4>
+            <p>Start earning Unified Tokens.</p>
           </div>
           <div className={styles.stepCard}>
             <div className={styles.stepNumber}>4</div>
-            <h4>Grow Your Role</h4>
-            <p>As you contribute, opportunities for deeper involvement—including work exchange, stewardship, and residency—may open up.</p>
+            <h4>Grow</h4>
+            <p>Deeper involvement opens up.</p>
           </div>
         </div>
       </Section>
 
       <CTA
-        title="Ready to Contribute?"
-        subtitle="Share your gifts and help us build a regenerative future."
-        primaryText="Offer Your Skills"
+        title="Ready?"
+        subtitle="Share your gifts."
+        primaryText="Offer Skills"
         primaryHref="/contact?subject=Volunteer%20Interest"
-        secondaryText="View All Ways to Get Involved"
+        secondaryText="Get Involved"
         secondaryHref="/get-involved"
       />
     </>

@@ -5,25 +5,25 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Governance',
-  description: 'Learn about how Unified Sanctuaries makes decisions through participatory governance, the Anchor Circle model, and community agreements.',
+  description: 'How we make decisions. Participatory governance and community agreements.',
 };
 
 const principles = [
   {
-    title: 'Two Realms of Governance',
-    description: 'The Residential Realm governs shared living spaces, membership, and community culture. The Commons/Enterprise Realm governs the four platforms and economic activities. Each realm has its own decision-making processes.',
+    title: 'Two Realms',
+    description: 'Residential Realm governs living and culture. Commons Realm governs the platforms and economics.',
   },
   {
     title: 'Platform Autonomy',
-    description: 'Each platform (Farm, Retreat, Venue, Community Living) operates with significant autonomy—setting its own schedules, budgets, and internal processes. Autonomy is balanced with accountability to shared values and the Anchor Circle.',
+    description: 'Each platform sets its own schedules and budgets, accountable to shared values.',
   },
   {
-    title: 'Consent-Based Decisions',
-    description: 'Major decisions require no sustained objections rather than unanimous agreement. Anyone can raise a concern, and the community works to integrate that wisdom. This allows progress while honoring all voices.',
+    title: 'Consent-Based',
+    description: 'Decisions require no sustained objections. All voices heard.',
   },
   {
-    title: 'Radical Transparency',
-    description: 'All governance processes, meeting notes, financials, and decisions are documented and accessible to community members. We believe transparency builds trust and prevents the concentration of informal power.',
+    title: 'Transparency',
+    description: 'Open meetings, financials, and documentation. Trust through visibility.',
   },
 ];
 
@@ -38,27 +38,27 @@ const circleRoles = [
 const agreements = [
   {
     title: 'Nonviolent Communication',
-    description: 'We practice NVC as our foundational communication framework. All community members commit to expressing needs without blame and listening with empathy before responding.',
+    description: 'Express needs without blame. Listen with empathy.',
   },
   {
-    title: 'Conflict Resolution Protocol',
-    description: 'Three-step restorative process: direct dialogue between parties, facilitated conversation with a trained mediator, then circle review with community witnesses if needed. Focus on repair, not punishment.',
+    title: 'Conflict Resolution',
+    description: 'Direct dialogue, then mediation, then circle review. Focus on repair.',
   },
   {
-    title: 'Contribution Expectations',
-    description: 'All residents contribute a minimum of 10 hours weekly through labor, skills, or agreed-upon participation. Contributions are tracked and honored equally whether physical, administrative, or creative.',
+    title: 'Contribution',
+    description: '10 hours weekly. Labor, skills, or participation—all honored equally.',
   },
   {
-    title: 'Environmental Commitments',
-    description: 'Shared standards including composting all organic waste, using only approved ecological products, respecting quiet zones and wildlife corridors, and participating in land stewardship rotations.',
+    title: 'Environmental',
+    description: 'Composting, ecological products, quiet zones, land stewardship rotations.',
   },
   {
-    title: 'Financial Transparency',
-    description: 'Complete open books policy. Monthly financial summaries shared with all members. Quarterly deep-dive reviews open to full community. Major expenditures require community consent.',
+    title: 'Financial',
+    description: 'Open books. Monthly summaries. Major purchases need consent.',
   },
   {
-    title: 'Guest & Visitor Guidelines',
-    description: 'Visitors welcomed with 48-hour advance notice. Maximum 2-week stays for non-members. Guests respect quiet hours, community spaces, and are accompanied by their host in shared areas.',
+    title: 'Guests',
+    description: '48-hour notice. Two-week max stays. Hosts accompany guests.',
   },
 ];
 
@@ -68,12 +68,10 @@ export default function GovernancePage() {
       {/* Hero */}
       <Section variant="light">
         <div className={styles.heroContent}>
-          <p className={styles.tagline}>How We Govern</p>
-          <h1>Shared Leadership, Clear Accountability</h1>
+          <p className={styles.tagline}>Governance</p>
+          <h1>How We Decide</h1>
           <p className={styles.lead}>
-            Decisions emerge from those most affected, with clear processes for participation
-            and accountability. We&apos;re moving beyond one-person leadership toward circles
-            of trusted stewards.
+            Decisions by those affected. Circles of stewards, not singular leaders.
           </p>
         </div>
       </Section>
@@ -82,7 +80,7 @@ export default function GovernancePage() {
       <Section id="how-we-operate">
         <SectionHeader
           title="How We Operate"
-          subtitle="Principles that guide our collective decision-making"
+          subtitle="Guiding principles"
         />
 
         <Accordion variant="card" allowMultiple>
@@ -97,8 +95,8 @@ export default function GovernancePage() {
       {/* Anchor Circle */}
       <Section variant="gradient" id="anchor-circle">
         <SectionHeader
-          title="The Anchor Circle"
-          subtitle="A rotating elected body that holds community-wide decisions"
+          title="Anchor Circle"
+          subtitle="Elected body for community-wide decisions"
         />
 
         <div className={styles.circleContainer}>
@@ -121,7 +119,7 @@ export default function GovernancePage() {
 
           <div className={styles.circleInfo}>
             <h3>Structure</h3>
-            <p>5-7 members elected by the community, serving staggered 2-year terms. No single person serves more than two consecutive terms.</p>
+            <p>5-7 members, 2-year staggered terms, max two consecutive terms.</p>
 
             <h3>Responsibilities</h3>
             <ul className={styles.rolesList}>
@@ -133,7 +131,7 @@ export default function GovernancePage() {
             </ul>
 
             <h3>Accountability</h3>
-            <p>Monthly open meetings. Quarterly community reviews. Annual elections for rotating seats.</p>
+            <p>Monthly meetings. Quarterly reviews. Annual elections.</p>
           </div>
         </div>
       </Section>
@@ -141,8 +139,8 @@ export default function GovernancePage() {
       {/* Community Agreements */}
       <Section id="agreements">
         <SectionHeader
-          title="Community Agreements"
-          subtitle="The shared commitments that hold us together"
+          title="Agreements"
+          subtitle="Shared commitments"
         />
 
         <Accordion variant="card" allowMultiple>
@@ -155,9 +153,9 @@ export default function GovernancePage() {
       </Section>
 
       <CTA
-        title="Governance That Grows"
-        subtitle="Our model is designed to evolve. We're always learning and adapting."
-        primaryText="Learn More About Us"
+        title="Evolving Model"
+        subtitle="Always learning and adapting."
+        primaryText="About Us"
         primaryHref="/about"
         secondaryText="Get Involved"
         secondaryHref="/get-involved"

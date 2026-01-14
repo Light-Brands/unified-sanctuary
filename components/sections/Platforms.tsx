@@ -7,30 +7,30 @@ import styles from './Platforms.module.css';
 const platforms = [
   {
     id: 'farm',
-    name: 'Permaculture Farm',
-    description: 'Regenerative agriculture and food sovereignty',
-    features: ['Organic produce', 'Education programs', 'CSA membership'],
+    name: 'Farm',
+    description: 'Regenerative agriculture',
+    features: ['Organic produce', 'Education', 'CSA'],
     href: '/vision#farm',
   },
   {
     id: 'retreat',
-    name: 'Retreat & Healing',
-    description: 'Immersive wellness sanctuary',
-    features: ['Wellness retreats', 'Healing arts', 'Bathhouse & spa'],
+    name: 'Retreat',
+    description: 'Wellness sanctuary',
+    features: ['Retreats', 'Healing arts', 'Spa'],
     href: '/vision#retreat',
   },
   {
     id: 'venue',
-    name: 'Event Venue',
-    description: 'Gatherings and celebrations',
-    features: ['Weddings & events', 'Festivals', 'Community markets'],
+    name: 'Venue',
+    description: 'Gatherings & celebrations',
+    features: ['Events', 'Festivals', 'Markets'],
     href: '/vision#venue',
   },
   {
     id: 'community',
-    name: 'Community Living',
-    description: '20+ homes woven together',
-    features: ['Diverse housing', 'Shared spaces', 'Residency paths'],
+    name: 'Community',
+    description: '20+ homes together',
+    features: ['Housing', 'Shared spaces', 'Residency'],
     href: '/vision#community',
   },
 ] as const;
@@ -39,8 +39,8 @@ export const Platforms: React.FC = () => {
   return (
     <Section variant="gradient">
       <SectionHeader
-        title="Four Platforms, Shared Purpose"
-        subtitle="Each contributes something essential to the whole"
+        title="The Four Platforms"
+        subtitle="Each supports the whole"
       />
 
       <div className={styles.grid}>

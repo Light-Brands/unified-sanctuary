@@ -7,7 +7,7 @@ export const CircularNetwork: React.FC = () => {
     <Section variant="light">
       <SectionHeader
         title="Four Platforms, One Community"
-        subtitle="A farm, retreat center, event venue, and living space—each strengthening the others through shared stewardship."
+        subtitle="Farm, retreat, venue, and housing—each supporting the others."
       />
 
       <div className={styles.network}>
@@ -130,7 +130,7 @@ export const CircularNetwork: React.FC = () => {
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
           </span>
-          <span>Resource Sharing</span>
+          <span>Shared Resources</span>
         </div>
         <div className={styles.badge}>
           <span className={styles.badgeIcon}>
@@ -139,7 +139,7 @@ export const CircularNetwork: React.FC = () => {
               <path d="M12 6v6l4 2"/>
             </svg>
           </span>
-          <span>Ongoing Collaboration</span>
+          <span>Collaboration</span>
         </div>
         <div className={styles.badge}>
           <span className={styles.badgeIcon}>
@@ -149,7 +149,7 @@ export const CircularNetwork: React.FC = () => {
               <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
             </svg>
           </span>
-          <span>Mutual Support</span>
+          <span>Mutual Aid</span>
         </div>
       </div>
     </Section>

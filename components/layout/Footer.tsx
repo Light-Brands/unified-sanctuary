@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
       <div className={styles.grid}>
         <div className={styles.brand}>
           <h4 className={styles.heading}>Unified Sanctuaries</h4>
-          <p>A living blueprint for regenerative living & community resilience in Southern Vermont.</p>
+          <p>Regenerative community in Southern Vermont.</p>
         </div>
 
         <div>
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className={styles.bottom}>
-        <p>Unified Sanctuaries 2026. Land held in trust. Community built together.</p>
+        <p>Unified Sanctuaries 2026</p>
       </div>
     </footer>
   );
